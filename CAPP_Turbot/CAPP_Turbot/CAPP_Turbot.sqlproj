@@ -80,4 +80,7 @@
     <Build Include="dbo\Tables\APP_SupportTicket.sql" />
     <Build Include="dbo\Tables\APP_AdminRdv.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Insert_AppTurbot.sql" />
+  </ItemGroup>
 </Project>
