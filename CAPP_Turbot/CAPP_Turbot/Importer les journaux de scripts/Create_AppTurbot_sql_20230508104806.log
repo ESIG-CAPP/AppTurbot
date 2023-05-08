@@ -1,0 +1,12 @@
+08.05.2023 12:48:06	Ce journal contient des informations sur l'importation du script 'Create_AppTurbot.sql' dans le projet 'CAPP_Turbot' sur l'ordinateur 'ESIG-305-13' par l'utilisateur 'LOIC.AGST.
+08.05.2023 12:48:06	Début de l'importation du fichier : \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\Create_AppTurbot.sql 
+08.05.2023 12:48:06	Nom de fichier \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\Create_AppTurbot.sql (taille : 13239)
+08.05.2023 12:48:06	Analyse du script d'importation
+08.05.2023 12:48:06	Nombre total de lots dans le script : 1
+08.05.2023 12:48:06	Nombre total d'instructions dans le script : 19
+08.05.2023 12:48:06	Le script a été correctement importé dans le projet.
+08.05.2023 12:48:06	Analyse des objets de schéma...
+08.05.2023 12:48:06	Analyse du projet à la recherche des éléments en double
+08.05.2023 12:48:06	Fin du traitement des éléments en double
+08.05.2023 12:48:06	Un résumé de l'opération d'importation a été enregistré à l'emplacement suivant : \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\Importer les journaux de scripts\Create_AppTurbot_sql_20230508104806.log.
+08.05.2023 12:48:06	Cliquez sur Terminer pour continuer...

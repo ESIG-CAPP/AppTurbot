@@ -1,0 +1,10 @@
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\bin\Debug\CAPP_Turbot.dacpac
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\bin\Debug\CAPP_Turbot.dll
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\bin\Debug\CAPP_Turbot.pdb
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\CAPP_Turbot.sqlproj.AssemblyReference.cache
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\Model.xml
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\refactor.xml
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\postdeploy.sql
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\predeploy.sql
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\CAPP_Turbot.dll
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\CAPP_Turbot\CAPP_Turbot\obj\Debug\CAPP_Turbot.pdb
