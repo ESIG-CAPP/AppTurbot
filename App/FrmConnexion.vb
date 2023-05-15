@@ -12,8 +12,7 @@
             Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
             Dim CheckPassword As Boolean = BCrypt.CheckPassword(efMDP.Text, rqtPassword)
             If CheckPassword Then
-                'FrmAcceuil.ShowDialog()
-                lblErreur.Text = "Mot de passe inhhhhhhhhhhhhcorrect"
+                FrmAcceuil.ShowDialog()
             Else
                 lblErreur.Text = "Mot de passe incorrect"
             End If
