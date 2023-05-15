@@ -1,0 +1,17 @@
+J:\Github\AppTurbot\App\bin\Debug\BDD_Turbot.mdf
+J:\Github\AppTurbot\App\bin\Debug\BDD_Turbot_log.ldf
+J:\Github\AppTurbot\App\bin\Debug\App.exe.config
+J:\Github\AppTurbot\App\bin\Debug\App.exe
+J:\Github\AppTurbot\App\bin\Debug\App.pdb
+J:\Github\AppTurbot\App\bin\Debug\App.xml
+J:\Github\AppTurbot\App\bin\Debug\BCrypt.dll
+J:\Github\AppTurbot\App\obj\Debug\App.vbproj.AssemblyReference.cache
+J:\Github\AppTurbot\App\obj\Debug\App.FrmConnexion.resources
+J:\Github\AppTurbot\App\obj\Debug\App.Resources.resources
+J:\Github\AppTurbot\App\obj\Debug\App.vbproj.GenerateResource.cache
+J:\Github\AppTurbot\App\obj\Debug\App.vbproj.CoreCompileInputs.cache
+J:\Github\AppTurbot\App\obj\Debug\App.vbproj.CopyComplete
+J:\Github\AppTurbot\App\obj\Debug\App.exe
+J:\Github\AppTurbot\App\obj\Debug\App.xml
+J:\Github\AppTurbot\App\obj\Debug\App.pdb
+J:\Github\AppTurbot\App\obj\Debug\App.crypterMDP.resources
