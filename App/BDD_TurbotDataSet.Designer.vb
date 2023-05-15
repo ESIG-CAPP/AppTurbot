@@ -121,6 +121,7 @@ Partial Public Class BDD_TurbotDataSet
         AddHandler MyBase.Tables.CollectionChanged, schemaChangedHandler
         AddHandler MyBase.Relations.CollectionChanged, schemaChangedHandler
         Me.EndInit
+        Me.InitExpressions
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -132,6 +133,9 @@ Partial Public Class BDD_TurbotDataSet
             Dim schemaChangedHandler1 As Global.System.ComponentModel.CollectionChangeEventHandler = AddressOf Me.SchemaChanged
             AddHandler Me.Tables.CollectionChanged, schemaChangedHandler1
             AddHandler Me.Relations.CollectionChanged, schemaChangedHandler1
+            If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.ExcludeSchema) Then
+                Me.InitExpressions
+            End If
             Return
         End If
         Dim strSchema As String = CType(info.GetValue("XmlSchema", GetType(String)),String)
@@ -205,6 +209,7 @@ Partial Public Class BDD_TurbotDataSet
             Me.InitVars
         Else
             Me.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
+            Me.InitExpressions
         End If
         Me.GetSerializationData(info, context)
         Dim schemaChangedHandler As Global.System.ComponentModel.CollectionChangeEventHandler = AddressOf Me.SchemaChanged
@@ -446,6 +451,7 @@ Partial Public Class BDD_TurbotDataSet
     Public Overrides Function Clone() As Global.System.Data.DataSet
         Dim cln As BDD_TurbotDataSet = CType(MyBase.Clone,BDD_TurbotDataSet)
         cln.InitVars
+        cln.InitExpressions
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
     End Function
@@ -735,7 +741,7 @@ Partial Public Class BDD_TurbotDataSet
         MyBase.Tables.Add(Me.tableAPP_Token)
         Me.tableAPP_TypeRdv = New APP_TypeRdvDataTable()
         MyBase.Tables.Add(Me.tableAPP_TypeRdv)
-        Me.tableAPP_Utilisateur = New APP_UtilisateurDataTable()
+        Me.tableAPP_Utilisateur = New APP_UtilisateurDataTable(false)
         MyBase.Tables.Add(Me.tableAPP_Utilisateur)
         Me.tableAPP_UtilisateurAdmin = New APP_UtilisateurAdminDataTable()
         MyBase.Tables.Add(Me.tableAPP_UtilisateurAdmin)
@@ -962,6 +968,13 @@ Partial Public Class BDD_TurbotDataSet
         xs.Add(dsSchema)
         Return type
     End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Private Sub InitExpressions()
+        Me.APP_Utilisateur.AdresseColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseRue"
+        Me.APP_Utilisateur.nmbCommColumn.Expression = "count(child(FK_CU_Utilisateur).CommandeID)"
+    End Sub
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub APP_AdminRdvRowChangeEventHandler(ByVal sender As Object, ByVal e As APP_AdminRdvRowChangeEvent)
@@ -5563,13 +5576,26 @@ Partial Public Class BDD_TurbotDataSet
         
         Private columnUtilisateurType As Global.System.Data.DataColumn
         
+        Private columnAdresse As Global.System.Data.DataColumn
+        
+        Private columnnmbComm As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
+            Me.New(false)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal initExpressions As Boolean)
             MyBase.New
             Me.TableName = "APP_Utilisateur"
             Me.BeginInit
             Me.InitClass
+            If (initExpressions = true) Then
+                Me.InitExpressions
+            End If
             Me.EndInit
         End Sub
         
@@ -5671,6 +5697,22 @@ Partial Public Class BDD_TurbotDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property AdresseColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAdresse
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nmbCommColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnmbComm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5707,9 +5749,22 @@ Partial Public Class BDD_TurbotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function AddAPP_UtilisateurRow(ByVal UtilisateurID As Decimal, ByVal parentAPP_AdresseRowByFK_Utilisateur_Adresse As APP_AdresseRow, ByVal UtilisateurNom As String, ByVal UtilisateurPrenom As String, ByVal UtilisateurEmail As String, ByVal UtilisateurSexe As String, ByVal UtilisateurTel As String, ByVal UtilisateurPassword As String, ByVal UtilisateurType As String, ByVal Adresse As String, ByVal nmbComm As String) As APP_UtilisateurRow
+            Dim rowAPP_UtilisateurRow As APP_UtilisateurRow = CType(Me.NewRow,APP_UtilisateurRow)
+            Dim columnValuesArray() As Object = New Object() {UtilisateurID, Nothing, UtilisateurNom, UtilisateurPrenom, UtilisateurEmail, UtilisateurSexe, UtilisateurTel, UtilisateurPassword, UtilisateurType, Adresse, nmbComm}
+            If (Not (parentAPP_AdresseRowByFK_Utilisateur_Adresse) Is Nothing) Then
+                columnValuesArray(1) = parentAPP_AdresseRowByFK_Utilisateur_Adresse(0)
+            End If
+            rowAPP_UtilisateurRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAPP_UtilisateurRow)
+            Return rowAPP_UtilisateurRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overloads Function AddAPP_UtilisateurRow(ByVal UtilisateurID As Decimal, ByVal parentAPP_AdresseRowByFK_Utilisateur_Adresse As APP_AdresseRow, ByVal UtilisateurNom As String, ByVal UtilisateurPrenom As String, ByVal UtilisateurEmail As String, ByVal UtilisateurSexe As String, ByVal UtilisateurTel As String, ByVal UtilisateurPassword As String, ByVal UtilisateurType As String) As APP_UtilisateurRow
             Dim rowAPP_UtilisateurRow As APP_UtilisateurRow = CType(Me.NewRow,APP_UtilisateurRow)
-            Dim columnValuesArray() As Object = New Object() {UtilisateurID, Nothing, UtilisateurNom, UtilisateurPrenom, UtilisateurEmail, UtilisateurSexe, UtilisateurTel, UtilisateurPassword, UtilisateurType}
+            Dim columnValuesArray() As Object = New Object() {UtilisateurID, Nothing, UtilisateurNom, UtilisateurPrenom, UtilisateurEmail, UtilisateurSexe, UtilisateurTel, UtilisateurPassword, UtilisateurType, Nothing, Nothing}
             If (Not (parentAPP_AdresseRowByFK_Utilisateur_Adresse) Is Nothing) Then
                 columnValuesArray(1) = parentAPP_AdresseRowByFK_Utilisateur_Adresse(0)
             End If
@@ -5750,6 +5805,8 @@ Partial Public Class BDD_TurbotDataSet
             Me.columnUtilisateurTel = MyBase.Columns("UtilisateurTel")
             Me.columnUtilisateurPassword = MyBase.Columns("UtilisateurPassword")
             Me.columnUtilisateurType = MyBase.Columns("UtilisateurType")
+            Me.columnAdresse = MyBase.Columns("Adresse")
+            Me.columnnmbComm = MyBase.Columns("nmbComm")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5773,6 +5830,10 @@ Partial Public Class BDD_TurbotDataSet
             MyBase.Columns.Add(Me.columnUtilisateurPassword)
             Me.columnUtilisateurType = New Global.System.Data.DataColumn("UtilisateurType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUtilisateurType)
+            Me.columnAdresse = New Global.System.Data.DataColumn("Adresse", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAdresse)
+            Me.columnnmbComm = New Global.System.Data.DataColumn("nmbComm", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnmbComm)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnUtilisateurID}, true))
             Me.columnUtilisateurID.AllowDBNull = false
             Me.columnUtilisateurID.Unique = true
@@ -5788,6 +5849,8 @@ Partial Public Class BDD_TurbotDataSet
             Me.columnUtilisateurPassword.MaxLength = 128
             Me.columnUtilisateurType.AllowDBNull = false
             Me.columnUtilisateurType.MaxLength = 20
+            Me.columnAdresse.ReadOnly = true
+            Me.columnnmbComm.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5807,6 +5870,13 @@ Partial Public Class BDD_TurbotDataSet
         Protected Overrides Function GetRowType() As Global.System.Type
             Return GetType(APP_UtilisateurRow)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitExpressions()
+            Me.AdresseColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseRue"
+            Me.nmbCommColumn.Expression = "count(child(FK_CU_Utilisateur).CommandeID)"
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -8240,6 +8310,36 @@ Partial Public Class BDD_TurbotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Adresse() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAPP_Utilisateur.AdresseColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("La valeur pour la colonne 'Adresse' dans la table 'APP_Utilisateur' est DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAPP_Utilisateur.AdresseColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nmbComm() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAPP_Utilisateur.nmbCommColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("La valeur pour la colonne 'nmbComm' dans la table 'APP_Utilisateur' est DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAPP_Utilisateur.nmbCommColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property APP_AdresseRow() As APP_AdresseRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Utilisateur_Adresse")),APP_AdresseRow)
@@ -8283,6 +8383,30 @@ Partial Public Class BDD_TurbotDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetUtilisateurTelNull()
             Me(Me.tableAPP_Utilisateur.UtilisateurTelColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsAdresseNull() As Boolean
+            Return Me.IsNull(Me.tableAPP_Utilisateur.AdresseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetAdresseNull()
+            Me(Me.tableAPP_Utilisateur.AdresseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsnmbCommNull() As Boolean
+            Return Me.IsNull(Me.tableAPP_Utilisateur.nmbCommColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetnmbCommNull()
+            Me(Me.tableAPP_Utilisateur.nmbCommColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11453,7 +11577,7 @@ Namespace BDD_TurbotDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT UtilisateurID, CommandeID FROM dbo.APP_CommandeUtilisateur"
+            Me._commandCollection(0).CommandText = "SELECT UtilisateurID, CommandeID FROM APP_CommandeUtilisateur"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -14805,7 +14929,7 @@ Namespace BDD_TurbotDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT UtilisateurID, AdresseID, UtilisateurNom, UtilisateurPrenom, UtilisateurEm"& _ 
                 "ail, UtilisateurSexe, UtilisateurTel, UtilisateurPassword, UtilisateurType FROM "& _ 
-                "dbo.APP_Utilisateur"
+                "APP_Utilisateur"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -14828,7 +14952,7 @@ Namespace BDD_TurbotDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As BDD_TurbotDataSet.APP_UtilisateurDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TurbotDataSet.APP_UtilisateurDataTable = New BDD_TurbotDataSet.APP_UtilisateurDataTable()
+            Dim dataTable As BDD_TurbotDataSet.APP_UtilisateurDataTable = New BDD_TurbotDataSet.APP_UtilisateurDataTable(true)
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
