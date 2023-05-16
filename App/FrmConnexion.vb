@@ -12,16 +12,16 @@
             Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
             Dim CheckPassword As Boolean = BCrypt.CheckPassword(efMDP.Text, rqtPassword)
             If CheckPassword Then
-                FrmAcceuil.ShowDialog()
+                FrmAccueil.ShowDialog()
             Else
-                lblErreur.Text = "Mot de passe incorrect"
+                MessageBox.Show("Mot de passe incorret !")
+                efMDP.Select()
             End If
         Else
-            lblErreur.Text = "Aucun compte n'existe avec cette adresse email"
+            MessageBox.Show("L'adresse mail est invalide !")
+            efEmail.Select()
         End If
     End Sub
-
-
 
     Private Sub cbShowPasswordLogin_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPassword.CheckedChanged
         If cbShowPassword.Checked = True Then
@@ -34,7 +34,6 @@
     Private Sub APP_UtilisateurBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.TableAdapterManager.UpdateAll(Me.BDD_TurbotDataSet)
-
     End Sub
 
 End Class

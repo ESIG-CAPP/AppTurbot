@@ -67,7 +67,7 @@
       <HintPath>..\BCrypt.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -102,6 +102,12 @@
       <DependentUpon>crypterMDP.vb</DependentUpon>
     </Compile>
     <Compile Include="crypterMDP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAccueil.Designer.vb">
+      <DependentUpon>FrmAccueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAccueil.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConnexion.Designer.vb">
@@ -172,6 +178,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BDD_Turbot.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\3d-technology-geometric-black-background_53876-97124.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
