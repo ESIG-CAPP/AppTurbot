@@ -8,18 +8,23 @@
 
     Private Sub btnConnexion_Click(sender As Object, e As EventArgs) Handles btnConnexion.Click
         Dim rqtCheckMail As String = APP_UtilisateurTableAdapter.rqtCheckIfUserExist(efEmail.Text)
-        If rqtCheckMail = 1 Then
-            Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
-            Dim CheckPassword As Boolean = BCrypt.CheckPassword(efMDP.Text, rqtPassword)
-            If CheckPassword Then
-                FrmAccueil.ShowDialog()
-            Else
-                MessageBox.Show("Mot de passe incorret !")
-                efMDP.Select()
-            End If
+        If efEmail.Text = "" Or efMDP.Text = "" Then
+            MessageBox.Show("Veuillez saisir vos informations de connexion!")
         Else
-            MessageBox.Show("L'adresse mail est invalide !")
-            efEmail.Select()
+            If rqtCheckMail = 1 Then
+                Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
+                Dim CheckPassword As Boolean = BCrypt.CheckPassword(efMDP.Text, rqtPassword)
+                If CheckPassword Then
+                    FrmAccueil.ShowDialog()
+                    Me.Dispose()
+                Else
+                    MsgBox("Votre mot de passe est incorrect", MsgBoxStyle.Exclamation, "Attention !")
+                    efMDP.Select()
+                End If
+            Else
+                MsgBox("L'adresse mail est invalide !", MsgBoxStyle.Exclamation, "Attention !")
+                efEmail.Select()
+            End If
         End If
     End Sub
 
@@ -36,4 +41,7 @@
         Me.TableAdapterManager.UpdateAll(Me.BDD_TurbotDataSet)
     End Sub
 
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Application.Exit()
+    End Sub
 End Class

@@ -22,6 +22,11 @@ App
   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
 </member>
+<member name="P:App.My.Resources.Resources._13386029_5193211">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:App.My.Resources.Resources._3d_technology_geometric_black_background_53876_97124">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
