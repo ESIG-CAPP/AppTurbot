@@ -24,7 +24,6 @@ C:\Users\itslx\OneDrive\Documents\AppTurbot\App\bin\Debug\App.xml
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\bin\Debug\BCrypt.dll
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.vbproj.AssemblyReference.cache
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.vbproj.SuggestedBindingRedirects.cache
-C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.crypterMDP.resources
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmConnexion.resources
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.Resources.resources
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.vbproj.GenerateResource.cache
@@ -35,3 +34,7 @@ C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.xml
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.pdb
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmAccueil.resources
 C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmUtilisateurs.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmCryptage.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmCompte.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmCommandes.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmTicket.resources

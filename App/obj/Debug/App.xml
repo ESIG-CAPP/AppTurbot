@@ -32,6 +32,11 @@ App
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:App.My.Resources.Resources.bg_AppTurbot">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:App.BDD_TurbotDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

@@ -45,10 +45,9 @@ Partial Class FrmConnexion
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(65, 49)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(49, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 20)
+        Me.Label1.Size = New System.Drawing.Size(97, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Adresse email"
         '
@@ -56,10 +55,9 @@ Partial Class FrmConnexion
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label2.Location = New System.Drawing.Point(65, 85)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(49, 69)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 20)
+        Me.Label2.Size = New System.Drawing.Size(93, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Mot de passe"
         '
@@ -69,10 +67,9 @@ Partial Class FrmConnexion
         Me.efEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.efEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.efEmail.ForeColor = System.Drawing.Color.White
-        Me.efEmail.Location = New System.Drawing.Point(208, 49)
-        Me.efEmail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.efEmail.Location = New System.Drawing.Point(156, 40)
         Me.efEmail.Name = "efEmail"
-        Me.efEmail.Size = New System.Drawing.Size(221, 19)
+        Me.efEmail.Size = New System.Drawing.Size(166, 16)
         Me.efEmail.TabIndex = 2
         '
         'efMDP
@@ -81,11 +78,10 @@ Partial Class FrmConnexion
         Me.efMDP.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.efMDP.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.efMDP.ForeColor = System.Drawing.Color.White
-        Me.efMDP.Location = New System.Drawing.Point(208, 81)
-        Me.efMDP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.efMDP.Location = New System.Drawing.Point(156, 66)
         Me.efMDP.Name = "efMDP"
         Me.efMDP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.efMDP.Size = New System.Drawing.Size(221, 19)
+        Me.efMDP.Size = New System.Drawing.Size(166, 16)
         Me.efMDP.TabIndex = 3
         '
         'btnConnexion
@@ -94,10 +90,9 @@ Partial Class FrmConnexion
         Me.btnConnexion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnConnexion.ForeColor = System.Drawing.Color.Black
-        Me.btnConnexion.Location = New System.Drawing.Point(208, 171)
-        Me.btnConnexion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConnexion.Location = New System.Drawing.Point(156, 139)
         Me.btnConnexion.Name = "btnConnexion"
-        Me.btnConnexion.Size = New System.Drawing.Size(221, 47)
+        Me.btnConnexion.Size = New System.Drawing.Size(166, 38)
         Me.btnConnexion.TabIndex = 4
         Me.btnConnexion.Text = "Connexion"
         Me.btnConnexion.UseVisualStyleBackColor = False
@@ -106,10 +101,9 @@ Partial Class FrmConnexion
         '
         Me.cbShowPassword.AutoSize = True
         Me.cbShowPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.cbShowPassword.Location = New System.Drawing.Point(208, 113)
-        Me.cbShowPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbShowPassword.Location = New System.Drawing.Point(156, 92)
         Me.cbShowPassword.Name = "cbShowPassword"
-        Me.cbShowPassword.Size = New System.Drawing.Size(188, 22)
+        Me.cbShowPassword.Size = New System.Drawing.Size(156, 19)
         Me.cbShowPassword.TabIndex = 5
         Me.cbShowPassword.Text = "Afficher le mot de passe"
         Me.cbShowPassword.UseVisualStyleBackColor = True
@@ -160,11 +154,9 @@ Partial Class FrmConnexion
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(463, 186)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(347, 151)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(557, 261)
+        Me.GroupBox1.Size = New System.Drawing.Size(418, 212)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestion d'accès"
@@ -174,12 +166,11 @@ Partial Class FrmConnexion
         Me.TextBox2.BackColor = System.Drawing.Color.White
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(208, 105)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox2.Location = New System.Drawing.Point(156, 85)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(221, 1)
+        Me.TextBox2.Size = New System.Drawing.Size(166, 1)
         Me.TextBox2.TabIndex = 7
         '
         'TextBox1
@@ -187,12 +178,11 @@ Partial Class FrmConnexion
         Me.TextBox1.BackColor = System.Drawing.Color.White
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(208, 69)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(156, 56)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox1.Size = New System.Drawing.Size(221, 1)
+        Me.TextBox1.Size = New System.Drawing.Size(166, 1)
         Me.TextBox1.TabIndex = 6
         '
         'Label3
@@ -201,10 +191,9 @@ Partial Class FrmConnexion
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(299, 51)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(224, 41)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(580, 36)
+        Me.Label3.Size = New System.Drawing.Size(469, 29)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Bienvenue sur notre application de gestion"
         '
@@ -214,27 +203,26 @@ Partial Class FrmConnexion
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnExit.ForeColor = System.Drawing.Color.Black
-        Me.btnExit.Location = New System.Drawing.Point(13, 494)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnExit.Location = New System.Drawing.Point(10, 401)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(130, 47)
+        Me.btnExit.Size = New System.Drawing.Size(98, 38)
         Me.btnExit.TabIndex = 8
         Me.btnExit.Text = "Quitter"
         Me.btnExit.UseVisualStyleBackColor = False
         '
         'FrmConnexion
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImage = Global.App.My.Resources.Resources._3d_technology_geometric_black_background_53876_97124
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FrmConnexion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Connexion"
