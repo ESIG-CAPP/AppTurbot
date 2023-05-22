@@ -29,10 +29,10 @@ Partial Class FrmAccueil
         Me.btnCompte = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnQuitter = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnQuitter = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +60,7 @@ Partial Class FrmAccueil
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(5, 134)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(189, 184)
+        Me.GroupBox1.Size = New System.Drawing.Size(189, 193)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestion du compte"
@@ -129,30 +129,17 @@ Partial Class FrmAccueil
         Me.Panel2.Size = New System.Drawing.Size(965, 125)
         Me.Panel2.TabIndex = 1
         '
-        'btnQuitter
+        'Label3
         '
-        Me.btnQuitter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnQuitter.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnQuitter.ForeColor = System.Drawing.Color.Black
-        Me.btnQuitter.Location = New System.Drawing.Point(999, 550)
-        Me.btnQuitter.Name = "btnQuitter"
-        Me.btnQuitter.Size = New System.Drawing.Size(161, 45)
-        Me.btnQuitter.TabIndex = 3
-        Me.btnQuitter.Text = "Quitter"
-        Me.btnQuitter.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(365, 50)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 24)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Bienvenue"
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(557, 50)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(61, 24)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "[Nom]"
         '
         'Label2
         '
@@ -166,17 +153,30 @@ Partial Class FrmAccueil
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "[Prénom]"
         '
-        'Label3
+        'Label1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(557, 50)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 24)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "[Nom]"
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(365, 50)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(101, 24)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Bienvenue"
+        '
+        'btnQuitter
+        '
+        Me.btnQuitter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnQuitter.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnQuitter.ForeColor = System.Drawing.Color.Black
+        Me.btnQuitter.Location = New System.Drawing.Point(999, 550)
+        Me.btnQuitter.Name = "btnQuitter"
+        Me.btnQuitter.Size = New System.Drawing.Size(161, 45)
+        Me.btnQuitter.TabIndex = 3
+        Me.btnQuitter.Text = "Quitter"
+        Me.btnQuitter.UseVisualStyleBackColor = True
         '
         'FrmAccueil
         '

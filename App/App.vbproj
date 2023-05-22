@@ -67,7 +67,7 @@
       <HintPath>..\BCrypt.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -100,6 +100,12 @@
     </Compile>
     <Compile Include="BDD_TurbotDataSet.vb">
       <DependentUpon>BDD_TurbotDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClients.Designer.vb">
+      <DependentUpon>FrmClients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClients.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCommandes.Designer.vb">
       <DependentUpon>FrmCommandes.vb</DependentUpon>
@@ -161,6 +167,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmClients.resx">
+      <DependentUpon>FrmClients.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCommandes.resx">
       <DependentUpon>FrmCommandes.vb</DependentUpon>
     </EmbeddedResource>
