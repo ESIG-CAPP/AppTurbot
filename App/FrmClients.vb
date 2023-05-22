@@ -37,4 +37,8 @@
     Private Sub AdresseVilleUTextBox_TextChanged(sender As Object, e As EventArgs) Handles AdresseVilleUTextBox.TextChanged
 
     End Sub
+
+    Private Sub APP_UtilisateurBindingNavigator_RefreshItems(sender As Object, e As EventArgs) Handles APP_UtilisateurBindingNavigator.RefreshItems
+
+    End Sub
 End Class

@@ -977,6 +977,7 @@ Partial Public Class BDD_TurbotDataSet
         Me.APP_Utilisateur.AdresseCPUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseCP"
         Me.APP_Utilisateur.AdresseVilleUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseVille"
         Me.APP_Utilisateur.AdressePaysUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdressePays"
+        Me.APP_Utilisateur.NmbCommandeColumn.Expression = "count(child(FK_CU_Utilisateur).CommandeID)"
     End Sub
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -5805,9 +5806,9 @@ Partial Public Class BDD_TurbotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddAPP_UtilisateurRow(ByVal UtilisateurID As Decimal, ByVal parentAPP_AdresseRowByFK_Utilisateur_Adresse As APP_AdresseRow, ByVal UtilisateurNom As String, ByVal UtilisateurPrenom As String, ByVal UtilisateurEmail As String, ByVal UtilisateurSexe As String, ByVal UtilisateurTel As String, ByVal UtilisateurPassword As String, ByVal UtilisateurType As String, ByVal NmbCommande As String) As APP_UtilisateurRow
+        Public Overloads Function AddAPP_UtilisateurRow(ByVal UtilisateurID As Decimal, ByVal parentAPP_AdresseRowByFK_Utilisateur_Adresse As APP_AdresseRow, ByVal UtilisateurNom As String, ByVal UtilisateurPrenom As String, ByVal UtilisateurEmail As String, ByVal UtilisateurSexe As String, ByVal UtilisateurTel As String, ByVal UtilisateurPassword As String, ByVal UtilisateurType As String) As APP_UtilisateurRow
             Dim rowAPP_UtilisateurRow As APP_UtilisateurRow = CType(Me.NewRow,APP_UtilisateurRow)
-            Dim columnValuesArray() As Object = New Object() {UtilisateurID, Nothing, UtilisateurNom, UtilisateurPrenom, UtilisateurEmail, UtilisateurSexe, UtilisateurTel, UtilisateurPassword, UtilisateurType, Nothing, Nothing, Nothing, Nothing, Nothing, NmbCommande}
+            Dim columnValuesArray() As Object = New Object() {UtilisateurID, Nothing, UtilisateurNom, UtilisateurPrenom, UtilisateurEmail, UtilisateurSexe, UtilisateurTel, UtilisateurPassword, UtilisateurType, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
             If (Not (parentAPP_AdresseRowByFK_Utilisateur_Adresse) Is Nothing) Then
                 columnValuesArray(1) = parentAPP_AdresseRowByFK_Utilisateur_Adresse(0)
             End If
@@ -5909,6 +5910,7 @@ Partial Public Class BDD_TurbotDataSet
             Me.columnAdresseCPU.ReadOnly = true
             Me.columnAdresseVilleU.ReadOnly = true
             Me.columnAdressePaysU.ReadOnly = true
+            Me.columnNmbCommande.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5937,6 +5939,7 @@ Partial Public Class BDD_TurbotDataSet
             Me.AdresseCPUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseCP"
             Me.AdresseVilleUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseVille"
             Me.AdressePaysUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdressePays"
+            Me.NmbCommandeColumn.Expression = "count(child(FK_CU_Utilisateur).CommandeID)"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

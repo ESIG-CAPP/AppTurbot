@@ -31,6 +31,7 @@ Partial Class FrmClients
         Dim AdresseVilleULabel As System.Windows.Forms.Label
         Dim AdressePaysULabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmClients))
+        Dim NmbCommandeLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.AdressePaysUTextBox = New System.Windows.Forms.TextBox()
         Me.APP_UtilisateurBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -64,6 +65,7 @@ Partial Class FrmClients
         Me.APP_CommandeUtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeUtilisateurTableAdapter()
         Me.APP_CommandeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_CommandeTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeTableAdapter()
+        Me.NmbCommandeTextBox = New System.Windows.Forms.TextBox()
         UtilisateurNomLabel = New System.Windows.Forms.Label()
         UtilisateurPrenomLabel = New System.Windows.Forms.Label()
         UtilisateurEmailLabel = New System.Windows.Forms.Label()
@@ -71,6 +73,7 @@ Partial Class FrmClients
         AdresseCPULabel = New System.Windows.Forms.Label()
         AdresseVilleULabel = New System.Windows.Forms.Label()
         AdressePaysULabel = New System.Windows.Forms.Label()
+        NmbCommandeLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.APP_UtilisateurBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -146,6 +149,8 @@ Partial Class FrmClients
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(NmbCommandeLabel)
+        Me.GroupBox1.Controls.Add(Me.NmbCommandeTextBox)
         Me.GroupBox1.Controls.Add(AdressePaysULabel)
         Me.GroupBox1.Controls.Add(Me.AdressePaysUTextBox)
         Me.GroupBox1.Controls.Add(AdresseVilleULabel)
@@ -180,6 +185,7 @@ Partial Class FrmClients
         '
         Me.APP_UtilisateurBindingSource1.DataMember = "APP_Utilisateur"
         Me.APP_UtilisateurBindingSource1.DataSource = Me.BDD_TurbotDataSet
+        Me.APP_UtilisateurBindingSource1.Filter = "UtilisateurType = 'Client'"
         '
         'BDD_TurbotDataSet
         '
@@ -421,6 +427,23 @@ Partial Class FrmClients
         '
         Me.APP_CommandeTableAdapter.ClearBeforeFill = True
         '
+        'NmbCommandeLabel
+        '
+        NmbCommandeLabel.AutoSize = True
+        NmbCommandeLabel.Location = New System.Drawing.Point(333, 275)
+        NmbCommandeLabel.Name = "NmbCommandeLabel"
+        NmbCommandeLabel.Size = New System.Drawing.Size(88, 13)
+        NmbCommandeLabel.TabIndex = 15
+        NmbCommandeLabel.Text = "Nmb Commande:"
+        '
+        'NmbCommandeTextBox
+        '
+        Me.NmbCommandeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "NmbCommande", True))
+        Me.NmbCommandeTextBox.Location = New System.Drawing.Point(432, 272)
+        Me.NmbCommandeTextBox.Name = "NmbCommandeTextBox"
+        Me.NmbCommandeTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NmbCommandeTextBox.TabIndex = 16
+        '
         'FrmClients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -479,4 +502,5 @@ Partial Class FrmClients
     Friend WithEvents APP_CommandeUtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CommandeUtilisateurTableAdapter
     Friend WithEvents APP_CommandeBindingSource As BindingSource
     Friend WithEvents APP_CommandeTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CommandeTableAdapter
+    Friend WithEvents NmbCommandeTextBox As TextBox
 End Class

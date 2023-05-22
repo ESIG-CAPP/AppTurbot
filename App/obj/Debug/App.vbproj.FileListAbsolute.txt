@@ -61,3 +61,4 @@ J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.vbproj.CopyComplete
 J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.exe
 J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.xml
 J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.pdb
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmProduits.resources
