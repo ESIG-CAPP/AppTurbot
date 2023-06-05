@@ -25,127 +25,125 @@ Partial Class FrmProduits
         Me.components = New System.ComponentModel.Container()
         Dim CategorieProduitNomLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.APP_ProduitDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Categorie_nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.APP_ProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.APP_CategorieProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.txtNmbProduits = New System.Windows.Forms.TextBox()
+        Me.lblNmbProduits = New System.Windows.Forms.Label()
+        Me.btnAfficherTout = New System.Windows.Forms.Button()
+        Me.APP_ProduitDataGridView = New System.Windows.Forms.DataGridView()
+        Me.APP_ProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_ProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_ProduitTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
-        Me.APP_CategorieProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_CategorieProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.APP_ProduitBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_ProduitBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CategorieProduitNomComboBox = New System.Windows.Forms.ComboBox()
+        Me.Categorie_nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitIDREMPLACEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategorieProduitIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitNomDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitPrixDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProduitImageDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategorienomDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CategorieProduitNomLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_ProduitDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_ProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.APP_ProduitBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_ProduitBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'CategorieProduitNomLabel
+        '
+        CategorieProduitNomLabel.AutoSize = True
+        CategorieProduitNomLabel.Location = New System.Drawing.Point(16, 43)
+        CategorieProduitNomLabel.Name = "CategorieProduitNomLabel"
+        CategorieProduitNomLabel.Size = New System.Drawing.Size(116, 13)
+        CategorieProduitNomLabel.TabIndex = 1
+        CategorieProduitNomLabel.Text = "Categorie Produit Nom:"
+        '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ListBox1)
+        Me.GroupBox1.Controls.Add(Me.txtNmbProduits)
+        Me.GroupBox1.Controls.Add(Me.lblNmbProduits)
         Me.GroupBox1.Controls.Add(CategorieProduitNomLabel)
-        Me.GroupBox1.Controls.Add(Me.CategorieProduitNomComboBox)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnAfficherTout)
         Me.GroupBox1.Location = New System.Drawing.Point(28, 284)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(535, 135)
+        Me.GroupBox1.Size = New System.Drawing.Size(535, 292)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Choix de la catégorie du produit (filtrage)"
         '
-        'APP_ProduitDataGridView
+        'ListBox1
         '
-        Me.APP_ProduitDataGridView.AutoGenerateColumns = False
-        Me.APP_ProduitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.APP_ProduitDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Categorie_nom, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
-        Me.APP_ProduitDataGridView.DataSource = Me.APP_ProduitBindingSource
-        Me.APP_ProduitDataGridView.Location = New System.Drawing.Point(0, 12)
-        Me.APP_ProduitDataGridView.Name = "APP_ProduitDataGridView"
-        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(942, 253)
-        Me.APP_ProduitDataGridView.TabIndex = 2
+        Me.ListBox1.DataSource = Me.APP_CategorieProduitBindingSource
+        Me.ListBox1.DisplayMember = "CategorieProduitNom"
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(138, 38)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(146, 147)
+        Me.ListBox1.TabIndex = 5
+        Me.ListBox1.ValueMember = "CategorieProduitNom"
         '
-        'Categorie_nom
+        'APP_CategorieProduitBindingSource
         '
-        Me.Categorie_nom.DataPropertyName = "Categorie_nom"
-        Me.Categorie_nom.HeaderText = "Categorie_nom"
-        Me.Categorie_nom.Name = "Categorie_nom"
-        Me.Categorie_nom.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProduitID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ProduitID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProduitID_REMPLACE"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ProduitID_REMPLACE"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CategorieProduitID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "CategorieProduitID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ProduitNom"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "ProduitNom"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ProduitDescription"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "ProduitDescription"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProduitPrix"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "ProduitPrix"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ProduitStock"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "ProduitStock"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ProduitImage"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "ProduitImage"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Visible = False
-        '
-        'APP_ProduitBindingSource
-        '
-        Me.APP_ProduitBindingSource.DataMember = "APP_Produit"
-        Me.APP_ProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
+        Me.APP_CategorieProduitBindingSource.DataMember = "APP_CategorieProduit"
+        Me.APP_CategorieProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
         '
         'BDD_TurbotDataSet
         '
         Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
         Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'txtNmbProduits
+        '
+        Me.txtNmbProduits.Location = New System.Drawing.Point(138, 245)
+        Me.txtNmbProduits.Name = "txtNmbProduits"
+        Me.txtNmbProduits.Size = New System.Drawing.Size(146, 20)
+        Me.txtNmbProduits.TabIndex = 4
+        '
+        'lblNmbProduits
+        '
+        Me.lblNmbProduits.AutoSize = True
+        Me.lblNmbProduits.Location = New System.Drawing.Point(6, 252)
+        Me.lblNmbProduits.Name = "lblNmbProduits"
+        Me.lblNmbProduits.Size = New System.Drawing.Size(108, 13)
+        Me.lblNmbProduits.TabIndex = 3
+        Me.lblNmbProduits.Text = "Nombre de produits : "
+        '
+        'btnAfficherTout
+        '
+        Me.btnAfficherTout.Location = New System.Drawing.Point(371, 243)
+        Me.btnAfficherTout.Name = "btnAfficherTout"
+        Me.btnAfficherTout.Size = New System.Drawing.Size(115, 23)
+        Me.btnAfficherTout.TabIndex = 0
+        Me.btnAfficherTout.Text = "Afficher tout"
+        Me.btnAfficherTout.UseVisualStyleBackColor = True
+        '
+        'APP_ProduitDataGridView
+        '
+        Me.APP_ProduitDataGridView.AllowUserToAddRows = False
+        Me.APP_ProduitDataGridView.AllowUserToDeleteRows = False
+        Me.APP_ProduitDataGridView.AutoGenerateColumns = False
+        Me.APP_ProduitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.APP_ProduitDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Categorie_nom, Me.ProduitIDDataGridViewTextBoxColumn, Me.ProduitIDREMPLACEDataGridViewTextBoxColumn, Me.CategorieProduitIDDataGridViewTextBoxColumn, Me.ProduitNomDataGridViewTextBoxColumn, Me.ProduitDescriptionDataGridViewTextBoxColumn, Me.ProduitPrixDataGridViewTextBoxColumn, Me.ProduitStockDataGridViewTextBoxColumn, Me.ProduitImageDataGridViewTextBoxColumn, Me.CategorienomDataGridViewTextBoxColumn})
+        Me.APP_ProduitDataGridView.DataSource = Me.APP_ProduitBindingSource
+        Me.APP_ProduitDataGridView.Location = New System.Drawing.Point(12, 12)
+        Me.APP_ProduitDataGridView.Name = "APP_ProduitDataGridView"
+        Me.APP_ProduitDataGridView.ReadOnly = True
+        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(574, 253)
+        Me.APP_ProduitDataGridView.TabIndex = 2
+        '
+        'APP_ProduitBindingSource
+        '
+        Me.APP_ProduitBindingSource.DataMember = "APP_Produit"
+        Me.APP_ProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
+        Me.APP_ProduitBindingSource.Filter = ""
         '
         'APP_ProduitTableAdapter
         '
@@ -175,71 +173,105 @@ Partial Class FrmProduits
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'APP_CategorieProduitBindingSource
-        '
-        Me.APP_CategorieProduitBindingSource.DataMember = "APP_CategorieProduit"
-        Me.APP_CategorieProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
-        '
         'APP_CategorieProduitTableAdapter
         '
         Me.APP_CategorieProduitTableAdapter.ClearBeforeFill = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(381, 43)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(115, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Afficher tout"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'APP_ProduitBindingSource1
-        '
-        Me.APP_ProduitBindingSource1.DataMember = "APP_Produit"
-        Me.APP_ProduitBindingSource1.DataSource = Me.BDD_TurbotDataSet
         '
         'APP_ProduitBindingSource2
         '
         Me.APP_ProduitBindingSource2.DataMember = "APP_Produit"
         Me.APP_ProduitBindingSource2.DataSource = Me.BDD_TurbotDataSet
         '
-        'CategorieProduitNomLabel
+        'Categorie_nom
         '
-        CategorieProduitNomLabel.AutoSize = True
-        CategorieProduitNomLabel.Location = New System.Drawing.Point(41, 75)
-        CategorieProduitNomLabel.Name = "CategorieProduitNomLabel"
-        CategorieProduitNomLabel.Size = New System.Drawing.Size(116, 13)
-        CategorieProduitNomLabel.TabIndex = 1
-        CategorieProduitNomLabel.Text = "Categorie Produit Nom:"
+        Me.Categorie_nom.DataPropertyName = "Categorie_nom"
+        Me.Categorie_nom.HeaderText = "Categorie_nom"
+        Me.Categorie_nom.Name = "Categorie_nom"
+        Me.Categorie_nom.ReadOnly = True
         '
-        'CategorieProduitNomComboBox
+        'ProduitIDDataGridViewTextBoxColumn
         '
-        Me.CategorieProduitNomComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_CategorieProduitBindingSource, "CategorieProduitNom", True))
-        Me.CategorieProduitNomComboBox.DataSource = Me.APP_CategorieProduitBindingSource
-        Me.CategorieProduitNomComboBox.DisplayMember = "CategorieProduitNom"
-        Me.CategorieProduitNomComboBox.FormattingEnabled = True
-        Me.CategorieProduitNomComboBox.Location = New System.Drawing.Point(163, 72)
-        Me.CategorieProduitNomComboBox.Name = "CategorieProduitNomComboBox"
-        Me.CategorieProduitNomComboBox.Size = New System.Drawing.Size(127, 21)
-        Me.CategorieProduitNomComboBox.TabIndex = 2
-        Me.CategorieProduitNomComboBox.ValueMember = "CategorieProduitNom"
+        Me.ProduitIDDataGridViewTextBoxColumn.DataPropertyName = "ProduitID"
+        Me.ProduitIDDataGridViewTextBoxColumn.HeaderText = "ProduitID"
+        Me.ProduitIDDataGridViewTextBoxColumn.Name = "ProduitIDDataGridViewTextBoxColumn"
+        Me.ProduitIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProduitIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'ProduitIDREMPLACEDataGridViewTextBoxColumn
+        '
+        Me.ProduitIDREMPLACEDataGridViewTextBoxColumn.DataPropertyName = "ProduitID_REMPLACE"
+        Me.ProduitIDREMPLACEDataGridViewTextBoxColumn.HeaderText = "ProduitID_REMPLACE"
+        Me.ProduitIDREMPLACEDataGridViewTextBoxColumn.Name = "ProduitIDREMPLACEDataGridViewTextBoxColumn"
+        Me.ProduitIDREMPLACEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProduitIDREMPLACEDataGridViewTextBoxColumn.Visible = False
+        '
+        'CategorieProduitIDDataGridViewTextBoxColumn
+        '
+        Me.CategorieProduitIDDataGridViewTextBoxColumn.DataPropertyName = "CategorieProduitID"
+        Me.CategorieProduitIDDataGridViewTextBoxColumn.HeaderText = "CategorieProduitID"
+        Me.CategorieProduitIDDataGridViewTextBoxColumn.Name = "CategorieProduitIDDataGridViewTextBoxColumn"
+        Me.CategorieProduitIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CategorieProduitIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'ProduitNomDataGridViewTextBoxColumn
+        '
+        Me.ProduitNomDataGridViewTextBoxColumn.DataPropertyName = "ProduitNom"
+        Me.ProduitNomDataGridViewTextBoxColumn.HeaderText = "ProduitNom"
+        Me.ProduitNomDataGridViewTextBoxColumn.Name = "ProduitNomDataGridViewTextBoxColumn"
+        Me.ProduitNomDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProduitDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ProduitDescriptionDataGridViewTextBoxColumn.DataPropertyName = "ProduitDescription"
+        Me.ProduitDescriptionDataGridViewTextBoxColumn.HeaderText = "ProduitDescription"
+        Me.ProduitDescriptionDataGridViewTextBoxColumn.Name = "ProduitDescriptionDataGridViewTextBoxColumn"
+        Me.ProduitDescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProduitPrixDataGridViewTextBoxColumn
+        '
+        Me.ProduitPrixDataGridViewTextBoxColumn.DataPropertyName = "ProduitPrix"
+        Me.ProduitPrixDataGridViewTextBoxColumn.HeaderText = "ProduitPrix"
+        Me.ProduitPrixDataGridViewTextBoxColumn.Name = "ProduitPrixDataGridViewTextBoxColumn"
+        Me.ProduitPrixDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProduitStockDataGridViewTextBoxColumn
+        '
+        Me.ProduitStockDataGridViewTextBoxColumn.DataPropertyName = "ProduitStock"
+        Me.ProduitStockDataGridViewTextBoxColumn.HeaderText = "ProduitStock"
+        Me.ProduitStockDataGridViewTextBoxColumn.Name = "ProduitStockDataGridViewTextBoxColumn"
+        Me.ProduitStockDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProduitImageDataGridViewTextBoxColumn
+        '
+        Me.ProduitImageDataGridViewTextBoxColumn.DataPropertyName = "ProduitImage"
+        Me.ProduitImageDataGridViewTextBoxColumn.HeaderText = "ProduitImage"
+        Me.ProduitImageDataGridViewTextBoxColumn.Name = "ProduitImageDataGridViewTextBoxColumn"
+        Me.ProduitImageDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProduitImageDataGridViewTextBoxColumn.Visible = False
+        '
+        'CategorienomDataGridViewTextBoxColumn
+        '
+        Me.CategorienomDataGridViewTextBoxColumn.DataPropertyName = "Categorie_nom"
+        Me.CategorienomDataGridViewTextBoxColumn.HeaderText = "Categorie_nom"
+        Me.CategorienomDataGridViewTextBoxColumn.Name = "CategorienomDataGridViewTextBoxColumn"
+        Me.CategorienomDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CategorienomDataGridViewTextBoxColumn.Visible = False
         '
         'FrmProduits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1060, 441)
+        Me.ClientSize = New System.Drawing.Size(1060, 588)
         Me.Controls.Add(Me.APP_ProduitDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmProduits"
         Me.Text = "FrmProduits"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_ProduitDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_ProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.APP_ProduitBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_ProduitBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -253,17 +285,19 @@ Partial Class FrmProduits
     Friend WithEvents APP_ProduitDataGridView As DataGridView
     Friend WithEvents APP_CategorieProduitBindingSource As BindingSource
     Friend WithEvents APP_CategorieProduitTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter
-    Friend WithEvents Categorie_nom As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
-    Friend WithEvents APP_ProduitBindingSource1 As BindingSource
+    Friend WithEvents btnAfficherTout As Button
     Friend WithEvents APP_ProduitBindingSource2 As BindingSource
-    Friend WithEvents CategorieProduitNomComboBox As ComboBox
+    Friend WithEvents txtNmbProduits As TextBox
+    Friend WithEvents lblNmbProduits As Label
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents Categorie_nom As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitIDREMPLACEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CategorieProduitIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitNomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitPrixDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitStockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProduitImageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CategorienomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
