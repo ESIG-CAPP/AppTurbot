@@ -220,7 +220,7 @@ Partial Class FrmProduits
         Me.CategorieProduitNomComboBox.FormattingEnabled = True
         Me.CategorieProduitNomComboBox.Location = New System.Drawing.Point(163, 72)
         Me.CategorieProduitNomComboBox.Name = "CategorieProduitNomComboBox"
-        Me.CategorieProduitNomComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.CategorieProduitNomComboBox.Size = New System.Drawing.Size(127, 21)
         Me.CategorieProduitNomComboBox.TabIndex = 2
         Me.CategorieProduitNomComboBox.ValueMember = "CategorieProduitNom"
         '
