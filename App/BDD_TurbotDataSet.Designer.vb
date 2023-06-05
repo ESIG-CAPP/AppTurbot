@@ -729,7 +729,7 @@ Partial Public Class BDD_TurbotDataSet
         MyBase.Tables.Add(Me.tableAPP_LigneCommande)
         Me.tableAPP_Message = New APP_MessageDataTable()
         MyBase.Tables.Add(Me.tableAPP_Message)
-        Me.tableAPP_Produit = New APP_ProduitDataTable()
+        Me.tableAPP_Produit = New APP_ProduitDataTable(false)
         MyBase.Tables.Add(Me.tableAPP_Produit)
         Me.tableAPP_Rdv = New APP_RdvDataTable()
         MyBase.Tables.Add(Me.tableAPP_Rdv)
@@ -972,6 +972,7 @@ Partial Public Class BDD_TurbotDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Sub InitExpressions()
+        Me.APP_Produit.Categorie_nomColumn.Expression = "parent(FK_Produit_CategorieProduit).CategorieProduitNom"
         Me.APP_Utilisateur.NomPrenomColumn.Expression = "UtilisateurPrenom+' '+UtilisateurNom"
         Me.APP_Utilisateur.AdresseRueUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseRue"
         Me.APP_Utilisateur.AdresseCPUColumn.Expression = "parent(FK_Utilisateur_Adresse).AdresseCP"
@@ -3727,13 +3728,24 @@ Partial Public Class BDD_TurbotDataSet
         
         Private columnProduitImage As Global.System.Data.DataColumn
         
+        Private columnCategorie_nom As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
+            Me.New(false)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal initExpressions As Boolean)
             MyBase.New
             Me.TableName = "APP_Produit"
             Me.BeginInit
             Me.InitClass
+            If (initExpressions = true) Then
+                Me.InitExpressions
+            End If
             Me.EndInit
         End Sub
         
@@ -3827,6 +3839,14 @@ Partial Public Class BDD_TurbotDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Categorie_nomColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCategorie_nom
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3863,9 +3883,25 @@ Partial Public Class BDD_TurbotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function AddAPP_ProduitRow(ByVal ProduitID As Decimal, ByVal parentAPP_ProduitRowByFK_Produit_Produit As APP_ProduitRow, ByVal parentAPP_CategorieProduitRowByFK_Produit_CategorieProduit As APP_CategorieProduitRow, ByVal ProduitNom As String, ByVal ProduitDescription As String, ByVal ProduitPrix As Decimal, ByVal ProduitStock As Decimal, ByVal ProduitImage As String, ByVal Categorie_nom As String) As APP_ProduitRow
+            Dim rowAPP_ProduitRow As APP_ProduitRow = CType(Me.NewRow,APP_ProduitRow)
+            Dim columnValuesArray() As Object = New Object() {ProduitID, Nothing, Nothing, ProduitNom, ProduitDescription, ProduitPrix, ProduitStock, ProduitImage, Categorie_nom}
+            If (Not (parentAPP_ProduitRowByFK_Produit_Produit) Is Nothing) Then
+                columnValuesArray(1) = parentAPP_ProduitRowByFK_Produit_Produit(0)
+            End If
+            If (Not (parentAPP_CategorieProduitRowByFK_Produit_CategorieProduit) Is Nothing) Then
+                columnValuesArray(2) = parentAPP_CategorieProduitRowByFK_Produit_CategorieProduit(0)
+            End If
+            rowAPP_ProduitRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAPP_ProduitRow)
+            Return rowAPP_ProduitRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overloads Function AddAPP_ProduitRow(ByVal ProduitID As Decimal, ByVal parentAPP_ProduitRowByFK_Produit_Produit As APP_ProduitRow, ByVal parentAPP_CategorieProduitRowByFK_Produit_CategorieProduit As APP_CategorieProduitRow, ByVal ProduitNom As String, ByVal ProduitDescription As String, ByVal ProduitPrix As Decimal, ByVal ProduitStock As Decimal, ByVal ProduitImage As String) As APP_ProduitRow
             Dim rowAPP_ProduitRow As APP_ProduitRow = CType(Me.NewRow,APP_ProduitRow)
-            Dim columnValuesArray() As Object = New Object() {ProduitID, Nothing, Nothing, ProduitNom, ProduitDescription, ProduitPrix, ProduitStock, ProduitImage}
+            Dim columnValuesArray() As Object = New Object() {ProduitID, Nothing, Nothing, ProduitNom, ProduitDescription, ProduitPrix, ProduitStock, ProduitImage, Nothing}
             If (Not (parentAPP_ProduitRowByFK_Produit_Produit) Is Nothing) Then
                 columnValuesArray(1) = parentAPP_ProduitRowByFK_Produit_Produit(0)
             End If
@@ -3908,6 +3944,7 @@ Partial Public Class BDD_TurbotDataSet
             Me.columnProduitPrix = MyBase.Columns("ProduitPrix")
             Me.columnProduitStock = MyBase.Columns("ProduitStock")
             Me.columnProduitImage = MyBase.Columns("ProduitImage")
+            Me.columnCategorie_nom = MyBase.Columns("Categorie_nom")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3929,6 +3966,8 @@ Partial Public Class BDD_TurbotDataSet
             MyBase.Columns.Add(Me.columnProduitStock)
             Me.columnProduitImage = New Global.System.Data.DataColumn("ProduitImage", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProduitImage)
+            Me.columnCategorie_nom = New Global.System.Data.DataColumn("Categorie_nom", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCategorie_nom)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnProduitID}, true))
             Me.columnProduitID.AllowDBNull = false
             Me.columnProduitID.Unique = true
@@ -3938,6 +3977,7 @@ Partial Public Class BDD_TurbotDataSet
             Me.columnProduitDescription.MaxLength = 200
             Me.columnProduitPrix.AllowDBNull = false
             Me.columnProduitImage.MaxLength = 255
+            Me.columnCategorie_nom.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3957,6 +3997,12 @@ Partial Public Class BDD_TurbotDataSet
         Protected Overrides Function GetRowType() As Global.System.Type
             Return GetType(APP_ProduitRow)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitExpressions()
+            Me.Categorie_nomColumn.Expression = "parent(FK_Produit_CategorieProduit).CategorieProduitNom"
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -7705,6 +7751,22 @@ Partial Public Class BDD_TurbotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Categorie_nom() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAPP_Produit.Categorie_nomColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("La valeur pour la colonne 'Categorie_nom' dans la table 'APP_Produit' est DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAPP_Produit.Categorie_nomColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property APP_CategorieProduitRow() As APP_CategorieProduitRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Produit_CategorieProduit")),APP_CategorieProduitRow)
@@ -7771,6 +7833,18 @@ Partial Public Class BDD_TurbotDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetProduitImageNull()
             Me(Me.tableAPP_Produit.ProduitImageColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCategorie_nomNull() As Boolean
+            Return Me.IsNull(Me.tableAPP_Produit.Categorie_nomColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetCategorie_nomNull()
+            Me(Me.tableAPP_Produit.Categorie_nomColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12849,7 +12923,7 @@ Namespace BDD_TurbotDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As BDD_TurbotDataSet.APP_ProduitDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TurbotDataSet.APP_ProduitDataTable = New BDD_TurbotDataSet.APP_ProduitDataTable()
+            Dim dataTable As BDD_TurbotDataSet.APP_ProduitDataTable = New BDD_TurbotDataSet.APP_ProduitDataTable(true)
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

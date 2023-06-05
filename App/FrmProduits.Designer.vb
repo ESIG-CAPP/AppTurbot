@@ -23,60 +23,129 @@ Partial Class FrmProduits
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ProduitIDLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProduits))
-        Dim ProduitNomLabel As System.Windows.Forms.Label
+        Dim CategorieProduitNomLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.APP_ProduitDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Categorie_nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.APP_ProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_ProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_ProduitTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
-        Me.APP_ProduitBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ProduitIDTextBox = New System.Windows.Forms.TextBox()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.APP_ProduitBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.ProduitNomTextBox = New System.Windows.Forms.TextBox()
-        ProduitIDLabel = New System.Windows.Forms.Label()
-        ProduitNomLabel = New System.Windows.Forms.Label()
+        Me.APP_CategorieProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.APP_CategorieProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.APP_ProduitBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.APP_ProduitBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategorieProduitNomComboBox = New System.Windows.Forms.ComboBox()
+        CategorieProduitNomLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_ProduitDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_ProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.APP_ProduitBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.APP_ProduitBindingNavigator.SuspendLayout()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_ProduitBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_ProduitBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(ProduitNomLabel)
-        Me.GroupBox1.Controls.Add(Me.ProduitNomTextBox)
-        Me.GroupBox1.Controls.Add(ProduitIDLabel)
-        Me.GroupBox1.Controls.Add(Me.ProduitIDTextBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 22)
+        Me.GroupBox1.Controls.Add(CategorieProduitNomLabel)
+        Me.GroupBox1.Controls.Add(Me.CategorieProduitNomComboBox)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 284)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(751, 211)
+        Me.GroupBox1.Size = New System.Drawing.Size(535, 135)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Détails du produit"
+        Me.GroupBox1.Text = "Choix de la catégorie du produit (filtrage)"
         '
-        'BDD_TurbotDataSet
+        'APP_ProduitDataGridView
         '
-        Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
-        Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.APP_ProduitDataGridView.AutoGenerateColumns = False
+        Me.APP_ProduitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.APP_ProduitDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Categorie_nom, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.APP_ProduitDataGridView.DataSource = Me.APP_ProduitBindingSource
+        Me.APP_ProduitDataGridView.Location = New System.Drawing.Point(0, 12)
+        Me.APP_ProduitDataGridView.Name = "APP_ProduitDataGridView"
+        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(942, 253)
+        Me.APP_ProduitDataGridView.TabIndex = 2
+        '
+        'Categorie_nom
+        '
+        Me.Categorie_nom.DataPropertyName = "Categorie_nom"
+        Me.Categorie_nom.HeaderText = "Categorie_nom"
+        Me.Categorie_nom.Name = "Categorie_nom"
+        Me.Categorie_nom.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProduitID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ProduitID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProduitID_REMPLACE"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ProduitID_REMPLACE"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CategorieProduitID"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CategorieProduitID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Visible = False
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ProduitNom"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "ProduitNom"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ProduitDescription"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "ProduitDescription"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProduitPrix"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "ProduitPrix"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ProduitStock"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "ProduitStock"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ProduitImage"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "ProduitImage"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Visible = False
         '
         'APP_ProduitBindingSource
         '
         Me.APP_ProduitBindingSource.DataMember = "APP_Produit"
         Me.APP_ProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
+        '
+        'BDD_TurbotDataSet
+        '
+        Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
+        Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'APP_ProduitTableAdapter
         '
@@ -106,170 +175,73 @@ Partial Class FrmProduits
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'APP_ProduitBindingNavigator
+        'APP_CategorieProduitBindingSource
         '
-        Me.APP_ProduitBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.APP_ProduitBindingNavigator.BindingSource = Me.APP_ProduitBindingSource
-        Me.APP_ProduitBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.APP_ProduitBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.APP_ProduitBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.APP_ProduitBindingNavigatorSaveItem})
-        Me.APP_ProduitBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.APP_ProduitBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.APP_ProduitBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.APP_ProduitBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.APP_ProduitBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.APP_ProduitBindingNavigator.Name = "APP_ProduitBindingNavigator"
-        Me.APP_ProduitBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.APP_ProduitBindingNavigator.Size = New System.Drawing.Size(800, 25)
-        Me.APP_ProduitBindingNavigator.TabIndex = 1
-        Me.APP_ProduitBindingNavigator.Text = "BindingNavigator1"
+        Me.APP_CategorieProduitBindingSource.DataMember = "APP_CategorieProduit"
+        Me.APP_CategorieProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
         '
-        'BindingNavigatorSeparator
+        'APP_CategorieProduitTableAdapter
         '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        Me.APP_CategorieProduitTableAdapter.ClearBeforeFill = True
         '
-        'BindingNavigatorPositionItem
+        'Button1
         '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Position actuelle"
+        Me.Button1.Location = New System.Drawing.Point(381, 43)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(115, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Afficher tout"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'BindingNavigatorCountItem
+        'APP_ProduitBindingSource1
         '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Nombre total d'éléments"
+        Me.APP_ProduitBindingSource1.DataMember = "APP_Produit"
+        Me.APP_ProduitBindingSource1.DataSource = Me.BDD_TurbotDataSet
         '
-        'BindingNavigatorSeparator1
+        'APP_ProduitBindingSource2
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
+        Me.APP_ProduitBindingSource2.DataMember = "APP_Produit"
+        Me.APP_ProduitBindingSource2.DataSource = Me.BDD_TurbotDataSet
         '
-        'BindingNavigatorSeparator2
+        'CategorieProduitNomLabel
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
+        CategorieProduitNomLabel.AutoSize = True
+        CategorieProduitNomLabel.Location = New System.Drawing.Point(41, 75)
+        CategorieProduitNomLabel.Name = "CategorieProduitNomLabel"
+        CategorieProduitNomLabel.Size = New System.Drawing.Size(116, 13)
+        CategorieProduitNomLabel.TabIndex = 1
+        CategorieProduitNomLabel.Text = "Categorie Produit Nom:"
         '
-        'ProduitIDLabel
+        'CategorieProduitNomComboBox
         '
-        ProduitIDLabel.AutoSize = True
-        ProduitIDLabel.Location = New System.Drawing.Point(52, 38)
-        ProduitIDLabel.Name = "ProduitIDLabel"
-        ProduitIDLabel.Size = New System.Drawing.Size(57, 13)
-        ProduitIDLabel.TabIndex = 0
-        ProduitIDLabel.Text = "Produit ID:"
-        '
-        'ProduitIDTextBox
-        '
-        Me.ProduitIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_ProduitBindingSource, "ProduitID", True))
-        Me.ProduitIDTextBox.Location = New System.Drawing.Point(115, 35)
-        Me.ProduitIDTextBox.Name = "ProduitIDTextBox"
-        Me.ProduitIDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ProduitIDTextBox.TabIndex = 1
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Ajouter nouveau"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Supprimer"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Placer en premier"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Déplacer vers le haut"
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Déplacer vers le bas"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Placer en dernier"
-        '
-        'APP_ProduitBindingNavigatorSaveItem
-        '
-        Me.APP_ProduitBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.APP_ProduitBindingNavigatorSaveItem.Image = CType(resources.GetObject("APP_ProduitBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.APP_ProduitBindingNavigatorSaveItem.Name = "APP_ProduitBindingNavigatorSaveItem"
-        Me.APP_ProduitBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.APP_ProduitBindingNavigatorSaveItem.Text = "Enregistrer les données"
-        '
-        'ProduitNomLabel
-        '
-        ProduitNomLabel.AutoSize = True
-        ProduitNomLabel.Location = New System.Drawing.Point(57, 66)
-        ProduitNomLabel.Name = "ProduitNomLabel"
-        ProduitNomLabel.Size = New System.Drawing.Size(68, 13)
-        ProduitNomLabel.TabIndex = 2
-        ProduitNomLabel.Text = "Produit Nom:"
-        '
-        'ProduitNomTextBox
-        '
-        Me.ProduitNomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_ProduitBindingSource, "ProduitNom", True))
-        Me.ProduitNomTextBox.Location = New System.Drawing.Point(131, 63)
-        Me.ProduitNomTextBox.Name = "ProduitNomTextBox"
-        Me.ProduitNomTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ProduitNomTextBox.TabIndex = 3
+        Me.CategorieProduitNomComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_CategorieProduitBindingSource, "CategorieProduitNom", True))
+        Me.CategorieProduitNomComboBox.DataSource = Me.APP_CategorieProduitBindingSource
+        Me.CategorieProduitNomComboBox.DisplayMember = "CategorieProduitNom"
+        Me.CategorieProduitNomComboBox.FormattingEnabled = True
+        Me.CategorieProduitNomComboBox.Location = New System.Drawing.Point(163, 72)
+        Me.CategorieProduitNomComboBox.Name = "CategorieProduitNomComboBox"
+        Me.CategorieProduitNomComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.CategorieProduitNomComboBox.TabIndex = 2
+        Me.CategorieProduitNomComboBox.ValueMember = "CategorieProduitNom"
         '
         'FrmProduits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.APP_ProduitBindingNavigator)
+        Me.ClientSize = New System.Drawing.Size(1060, 441)
+        Me.Controls.Add(Me.APP_ProduitDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmProduits"
         Me.Text = "FrmProduits"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_ProduitDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_ProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.APP_ProduitBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.APP_ProduitBindingNavigator.ResumeLayout(False)
-        Me.APP_ProduitBindingNavigator.PerformLayout()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_ProduitBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_ProduitBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -278,19 +250,20 @@ Partial Class FrmProduits
     Friend WithEvents APP_ProduitBindingSource As BindingSource
     Friend WithEvents APP_ProduitTableAdapter As BDD_TurbotDataSetTableAdapters.APP_ProduitTableAdapter
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents APP_ProduitBindingNavigator As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents APP_ProduitBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents ProduitIDTextBox As TextBox
-    Friend WithEvents ProduitNomTextBox As TextBox
+    Friend WithEvents APP_ProduitDataGridView As DataGridView
+    Friend WithEvents APP_CategorieProduitBindingSource As BindingSource
+    Friend WithEvents APP_CategorieProduitTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter
+    Friend WithEvents Categorie_nom As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
+    Friend WithEvents APP_ProduitBindingSource1 As BindingSource
+    Friend WithEvents APP_ProduitBindingSource2 As BindingSource
+    Friend WithEvents CategorieProduitNomComboBox As ComboBox
 End Class

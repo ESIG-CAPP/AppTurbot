@@ -137,6 +137,12 @@
     <Compile Include="FrmConnexion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmProduits.Designer.vb">
+      <DependentUpon>FrmProduits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduits.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmTicket.Designer.vb">
       <DependentUpon>FrmTicket.vb</DependentUpon>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduits.resx">
+      <DependentUpon>FrmProduits.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTicket.resx">
       <DependentUpon>FrmTicket.vb</DependentUpon>
