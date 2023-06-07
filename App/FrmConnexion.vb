@@ -1,5 +1,7 @@
 ﻿Public Class FrmConnexion
 
+    Public Property UserID As Integer
+
     Private Sub FrmConnexion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
@@ -15,8 +17,12 @@
                 Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
                 Dim CheckPassword As Boolean = BCrypt.CheckPassword(efMDP.Text, rqtPassword)
                 If CheckPassword Then
+                    UserID = APP_UtilisateurTableAdapter.rqtGetUserID(efEmail.Text)
+                    Dim FrmAccueil As New FrmAccueil(UserID)
                     FrmAccueil.ShowDialog()
                     Me.Dispose()
+
+
                 Else
                     MsgBox("Votre mot de passe est incorrect", MsgBoxStyle.Exclamation, "Attention !")
                     efMDP.Select()
