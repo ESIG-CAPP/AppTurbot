@@ -110,3 +110,9 @@ J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmProduits.resources
 \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.exe
 \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.xml
 \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.pdb
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.FrmGestionTicket.resources
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.FrmGestionCompte.resources
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\bin\Debug\System.IO.Pipelines.dll
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\bin\Debug\System.Memory.dll
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\bin\Debug\System.Buffers.dll
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.exe.config

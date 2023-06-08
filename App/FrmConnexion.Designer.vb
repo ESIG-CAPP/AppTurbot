@@ -26,19 +26,19 @@ Partial Class FrmConnexion
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.efEmail = New System.Windows.Forms.TextBox()
-        Me.efMDP = New System.Windows.Forms.TextBox()
+        Me.efPassword = New System.Windows.Forms.TextBox()
         Me.btnConnexion = New System.Windows.Forms.Button()
         Me.cbShowPassword = New System.Windows.Forms.CheckBox()
-        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
-        Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
-        Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
+        Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -72,17 +72,17 @@ Partial Class FrmConnexion
         Me.efEmail.Size = New System.Drawing.Size(166, 16)
         Me.efEmail.TabIndex = 2
         '
-        'efMDP
+        'efPassword
         '
-        Me.efMDP.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.efMDP.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.efMDP.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.efMDP.ForeColor = System.Drawing.Color.White
-        Me.efMDP.Location = New System.Drawing.Point(156, 66)
-        Me.efMDP.Name = "efMDP"
-        Me.efMDP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.efMDP.Size = New System.Drawing.Size(166, 16)
-        Me.efMDP.TabIndex = 3
+        Me.efPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.efPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.efPassword.ForeColor = System.Drawing.Color.White
+        Me.efPassword.Location = New System.Drawing.Point(156, 66)
+        Me.efPassword.Name = "efPassword"
+        Me.efPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.efPassword.Size = New System.Drawing.Size(166, 16)
+        Me.efPassword.TabIndex = 3
         '
         'btnConnexion
         '
@@ -108,39 +108,6 @@ Partial Class FrmConnexion
         Me.cbShowPassword.Text = "Afficher le mot de passe"
         Me.cbShowPassword.UseVisualStyleBackColor = True
         '
-        'BDD_TurbotDataSet
-        '
-        Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
-        Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'APP_UtilisateurTableAdapter
-        '
-        Me.APP_UtilisateurTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.APP_AdminRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_AdresseRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_AdresseTableAdapter = Nothing
-        Me.TableAdapterManager.APP_CategorieProduitTableAdapter = Nothing
-        Me.TableAdapterManager.APP_ClientRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_CommandeTableAdapter = Nothing
-        Me.TableAdapterManager.APP_CommandeUtilisateurTableAdapter = Nothing
-        Me.TableAdapterManager.APP_LigneCommandeTableAdapter = Nothing
-        Me.TableAdapterManager.APP_MessageTableAdapter = Nothing
-        Me.TableAdapterManager.APP_ProduitTableAdapter = Nothing
-        Me.TableAdapterManager.APP_RdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_SupportTicketTableAdapter = Nothing
-        Me.TableAdapterManager.APP_TicketTableAdapter = Nothing
-        Me.TableAdapterManager.APP_TokenTableAdapter = Nothing
-        Me.TableAdapterManager.APP_TypeRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurAdminTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurClientTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurSupportTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurTableAdapter = Me.APP_UtilisateurTableAdapter
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
@@ -148,7 +115,7 @@ Partial Class FrmConnexion
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.cbShowPassword)
         Me.GroupBox1.Controls.Add(Me.btnConnexion)
-        Me.GroupBox1.Controls.Add(Me.efMDP)
+        Me.GroupBox1.Controls.Add(Me.efPassword)
         Me.GroupBox1.Controls.Add(Me.efEmail)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -200,6 +167,7 @@ Partial Class FrmConnexion
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnExit.ForeColor = System.Drawing.Color.Black
@@ -210,13 +178,48 @@ Partial Class FrmConnexion
         Me.btnExit.Text = "Quitter"
         Me.btnExit.UseVisualStyleBackColor = False
         '
+        'BDD_TurbotDataSet
+        '
+        Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
+        Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'APP_UtilisateurTableAdapter
+        '
+        Me.APP_UtilisateurTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.APP_AdminRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_AdresseRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_AdresseTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CategorieProduitTableAdapter = Nothing
+        Me.TableAdapterManager.APP_ClientRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CommandeTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CommandeUtilisateurTableAdapter = Nothing
+        Me.TableAdapterManager.APP_LigneCommandeTableAdapter = Nothing
+        Me.TableAdapterManager.APP_MessageTableAdapter = Nothing
+        Me.TableAdapterManager.APP_ProduitTableAdapter = Nothing
+        Me.TableAdapterManager.APP_RdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_SupportTicketTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TicketTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TokenTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TypeRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurAdminTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurClientTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurSupportTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurTableAdapter = Me.APP_UtilisateurTableAdapter
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'FrmConnexion
         '
+        Me.AcceptButton = Me.btnConnexion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImage = Global.App.My.Resources.Resources._3d_technology_geometric_black_background_53876_97124
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnExit)
@@ -225,10 +228,10 @@ Partial Class FrmConnexion
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmConnexion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Connexion"
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Connectez-vous"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -237,7 +240,7 @@ Partial Class FrmConnexion
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents efEmail As TextBox
-    Friend WithEvents efMDP As TextBox
+    Friend WithEvents efPassword As TextBox
     Friend WithEvents btnConnexion As Button
     Friend WithEvents cbShowPassword As CheckBox
     Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet

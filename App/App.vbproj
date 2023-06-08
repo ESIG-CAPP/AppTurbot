@@ -72,6 +72,15 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -137,6 +146,18 @@
     <Compile Include="FrmConnexion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmGestionCompte.Designer.vb">
+      <DependentUpon>FrmGestionCompte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionCompte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionTicket.Designer.vb">
+      <DependentUpon>FrmGestionTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmProduits.Designer.vb">
       <DependentUpon>FrmProduits.vb</DependentUpon>
     </Compile>
@@ -191,6 +212,12 @@
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCompte.resx">
+      <DependentUpon>FrmGestionCompte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionTicket.resx">
+      <DependentUpon>FrmGestionTicket.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProduits.resx">
       <DependentUpon>FrmProduits.vb</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +265,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BDD_Turbot.mdf</DependentUpon>
     </Content>
+    <None Include="packages.config" />
     <None Include="Resources\bg-AppTurbot.jpg" />
     <None Include="Resources\13386029_51932111.jpg" />
     <None Include="Resources\3d-technology-geometric-black-background_53876-97124.jpg" />
