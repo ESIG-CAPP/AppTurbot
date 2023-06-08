@@ -28,9 +28,9 @@ Partial Class FrmUtilisateurs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 366)
+        Me.ClientSize = New System.Drawing.Size(1098, 637)
         Me.ControlBox = False
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmUtilisateurs"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmUtilisateurs"
