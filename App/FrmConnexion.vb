@@ -8,12 +8,11 @@ Public Class FrmConnexion
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
     End Sub
-
-    ' Fonction LogActivity
     Private Sub LogActivity(message As String)
         ' Définir le chemin complet du fichier de journal
         Dim projectFolder As String = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName
         Dim fileName As String = Path.Combine(projectFolder, "logs.txt")
+        MsgBox(fileName)
         Try
             ' Écrire le message de journal dans le fichier
             Using writer As New StreamWriter(fileName, True)
@@ -37,8 +36,7 @@ Public Class FrmConnexion
                     UserID = APP_UtilisateurTableAdapter.rqtGetUserID(efEmail.Text)
                     Dim FrmAccueil As New FrmAccueil()
                     FrmAccueil.UserID = UserID
-                    Dim dateDuJour As Date = Date.Now
-                    LogActivity("L'utilisateur " & efEmail.Text & " s'est connecté à " & dateDuJour.ToString("dd/MM/yyyy HH:mm:ss"))
+                    LogActivity("Utilisateur connecté : " & efEmail.Text)
                     FrmAccueil.Show()
                     Me.Hide()
 
