@@ -611,3 +611,4 @@ values ('9   ', 15, CONVERT(DATE,'09-04-2023', 104), 'n5v5qz5njf9vhv5k5n5q3ktg8m
 insert into APP_TOKEN (tokenid, tokenutilisateurid, tokendateexpiration, tokencode)
 values ('10  ', 14, CONVERT(DATE,'10-04-2023', 104), 'm7s7r5rwt8mktwccr8rwt8mktwccr8r5rwt8mktwccr8rwt8mktwccr8r5rwt8mktwccr8rwt8mktwccr');
 GO
+
