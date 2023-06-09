@@ -116,7 +116,7 @@ Partial Class FrmAccueil
         Me.lblNom.BackColor = System.Drawing.Color.Transparent
         Me.lblNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.lblNom.ForeColor = System.Drawing.Color.White
-        Me.lblNom.Location = New System.Drawing.Point(500, 21)
+        Me.lblNom.Location = New System.Drawing.Point(457, 21)
         Me.lblNom.Name = "lblNom"
         Me.lblNom.Size = New System.Drawing.Size(20, 24)
         Me.lblNom.TabIndex = 4
@@ -128,7 +128,7 @@ Partial Class FrmAccueil
         Me.lblPrenom.BackColor = System.Drawing.Color.Transparent
         Me.lblPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.lblPrenom.ForeColor = System.Drawing.Color.White
-        Me.lblPrenom.Location = New System.Drawing.Point(599, 21)
+        Me.lblPrenom.Location = New System.Drawing.Point(554, 21)
         Me.lblPrenom.Name = "lblPrenom"
         Me.lblPrenom.Size = New System.Drawing.Size(20, 24)
         Me.lblPrenom.TabIndex = 5
