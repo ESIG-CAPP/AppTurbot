@@ -11,42 +11,46 @@ Public Class FrmConnexion
 
     ' Fonction LogActivity
     Private Sub LogActivity(message As String)
+
         ' Définir le chemin complet du fichier de journal
         Dim projectFolder As String = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName
         Dim fileName As String = Path.Combine(projectFolder, "logs.txt")
-        Try
-            ' Écrire le message de journal dans le fichier
-            Using writer As New StreamWriter(fileName, True)
-                writer.WriteLine(DateTime.Now.ToString() & " - " & message)
-            End Using
-        Catch ex As Exception
-            ' Gérer les erreurs lors de l'écriture du fichier
-            MessageBox.Show("Une erreur s'est produite lors de l'enregistrement de l'activité de connexion : " & ex.Message)
-        End Try
     End Sub
 
     Private Sub btnConnexion_Click(sender As Object, e As EventArgs) Handles btnConnexion.Click
+
+        ' Récupération de l'existance de l'utilisateur à partir d'une requête sur le mail
         Dim rqtCheckMail As String = APP_UtilisateurTableAdapter.rqtCheckIfUserExist(efEmail.Text)
         If efEmail.Text = "" Or efPassword.Text = "" Then
             MessageBox.Show("Veuillez saisir vos informations de connexion!")
         Else
+
+            ' Comparaison du mot de passe et récupération des données pour autoriser ou non l'accès
             If rqtCheckMail = 1 Then
                 Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
                 Dim CheckPassword As Boolean = BCrypt.CheckPassword(efPassword.Text, rqtPassword)
                 If CheckPassword Then
                     UserID = APP_UtilisateurTableAdapter.rqtGetUserID(efEmail.Text)
+
+                    ' Création d'une instance sur FrmAccueil permettant de récupérer les données et de les insérer dans le formulaire
                     Dim FrmAccueil As New FrmAccueil()
                     FrmAccueil.UserID = UserID
+
+                    ' Variable permettant de stocker la date actuelle
                     Dim dateDuJour As Date = Date.Now
-                    LogActivity("L'utilisateur " & efEmail.Text & " s'est connecté à " & dateDuJour.ToString("dd/MM/yyyy HH:mm:ss"))
+                    ' Affichage dans le fichier "logs.txt" l'activité de connexion de l'utilisateur
+                    LogActivity("L'utilisateur " & efEmail.Text & " s'est connecté à " & dateDuJour.ToString("dd/MM/yyyy HH:mm:ss")) ' -> formattage de la donnée pour afficher la date et l'heure
                     FrmAccueil.Show()
                     Me.Hide()
-
                 Else
+
+                    ' L'erreur vient quand la comparaison de le mot de passe est faux
                     MsgBox("Votre mot de passe est incorrect", MsgBoxStyle.Exclamation, "Attention !")
                     efPassword.Select()
                 End If
             Else
+
+                ' L'erreur vient quand la comparaison de l'adresse mail est fausse
                 MsgBox("L'adresse mail est invalide !", MsgBoxStyle.Exclamation, "Attention !")
                 efEmail.Select()
             End If
@@ -69,19 +73,4 @@ Public Class FrmConnexion
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
-
-    Private Sub efEmail_Enter(sender As Object, e As EventArgs) Handles efEmail.Enter
-        If efEmail.Text = "Entrez votre adresse e-mail" Then
-            efEmail.Text = ""
-            efEmail.ForeColor = Color.Transparent ' Facultatif : vous pouvez modifier la couleur du texte si vous le souhaitez
-        End If
-    End Sub
-
-    Private Sub efEmail_Leave(sender As Object, e As EventArgs) Handles efEmail.Leave
-        If efEmail.Text = "" Then
-            efEmail.Text = "Entrez votre adresse e-mail"
-            efEmail.ForeColor = Color.White ' Facultatif : vous pouvez restaurer la couleur du texte d'origine si vous avez modifié sa couleur dans l'événement Enter
-        End If
-    End Sub
-
 End Class

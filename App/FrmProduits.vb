@@ -53,4 +53,9 @@
 
         End If
     End Sub
+
+    Private Sub btnGoHome_Click(sender As Object, e As EventArgs) Handles btnGoHome.Click
+        Me.Hide()
+        FrmAccueil.Show()
+    End Sub
 End Class

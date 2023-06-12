@@ -1,6 +1,4 @@
 ﻿Public Class FrmCompte
-
-    Public Property Icone As Icon
     Public Property UserID As Integer
 
     Private Sub FrmCompte_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -8,9 +6,11 @@
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
         Dim FrmConnxion As New FrmConnexion()
         Dim userID As Integer = FrmConnexion.UserID
+
         lblShowName.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID)
         lblShowSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
         lblShowEmail.Text = APP_UtilisateurTableAdapter.rqtGetUserEmail(userID)
+
         lblShowName.TextAlign = ContentAlignment.MiddleRight
         lblShowSurname.TextAlign = ContentAlignment.MiddleRight
     End Sub
@@ -22,11 +22,34 @@
 
     End Sub
 
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+    Private Sub btnGoHome_Click(sender As Object, e As EventArgs) Handles btnGoHome.Click
         Me.Hide()
-        FrmConnexion.Show()
-        FrmConnexion.efEmail.Text = ""
-        FrmConnexion.efPassword.Text = ""
+        FrmAccueil.Show()
     End Sub
 
+    Private Sub btnModifyEmail_Click(sender As Object, e As EventArgs) Handles btnModifyEmail.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
+        FrmGestionCompte.gbSettingsPassword.Enabled = False
+        FrmGestionCompte.gbSettingsPassword.Visible = True
+        FrmGestionCompte.gbSettingsEmail.Visible = True
+        FrmGestionCompte.gbSettingsEmail.Enabled = True
+    End Sub
+
+    Private Sub btnModifyPassword_Click(sender As Object, e As EventArgs) Handles btnModifyPassword.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
+        FrmGestionCompte.gbSettingsEmail.Enabled = False
+        FrmGestionCompte.gbSettingsEmail.Visible = True
+        FrmGestionCompte.gbSettingsPassword.Visible = True
+        FrmGestionCompte.gbSettingsPassword.Enabled = True
+    End Sub
+
+    Private Sub lblShowName_Click(sender As Object, e As EventArgs) Handles lblShowName.Click
+
+    End Sub
+
+    Private Sub lblShowSurname_Click(sender As Object, e As EventArgs) Handles lblShowSurname.Click
+
+    End Sub
 End Class

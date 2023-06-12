@@ -32,12 +32,12 @@ Partial Class FrmCompte
         Me.lblName = New System.Windows.Forms.Label()
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
-        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.btnGoHome = New System.Windows.Forms.Button()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnModifyEmail = New System.Windows.Forms.Button()
-        Me.btnModifyPassword = New System.Windows.Forms.Button()
         Me.btnModifyDelete = New System.Windows.Forms.Button()
+        Me.btnModifyPassword = New System.Windows.Forms.Button()
+        Me.btnModifyEmail = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -54,6 +54,7 @@ Partial Class FrmCompte
         Me.GroupBox1.Controls.Add(Me.lblSurname)
         Me.GroupBox1.Controls.Add(Me.lblName)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(322, 112)
@@ -136,17 +137,17 @@ Partial Class FrmCompte
         '
         Me.APP_UtilisateurTableAdapter.ClearBeforeFill = True
         '
-        'btnLogout
+        'btnGoHome
         '
-        Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnLogout.ForeColor = System.Drawing.Color.Black
-        Me.btnLogout.Location = New System.Drawing.Point(979, 493)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(145, 48)
-        Me.btnLogout.TabIndex = 4
-        Me.btnLogout.Text = "Se déconnecter"
-        Me.btnLogout.UseVisualStyleBackColor = True
+        Me.btnGoHome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGoHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnGoHome.ForeColor = System.Drawing.Color.Black
+        Me.btnGoHome.Location = New System.Drawing.Point(979, 493)
+        Me.btnGoHome.Name = "btnGoHome"
+        Me.btnGoHome.Size = New System.Drawing.Size(145, 48)
+        Me.btnGoHome.TabIndex = 4
+        Me.btnGoHome.Text = "Se déconnecter"
+        Me.btnGoHome.UseVisualStyleBackColor = True
         '
         'TableAdapterManager
         '
@@ -178,34 +179,14 @@ Partial Class FrmCompte
         Me.GroupBox2.Controls.Add(Me.btnModifyDelete)
         Me.GroupBox2.Controls.Add(Me.btnModifyPassword)
         Me.GroupBox2.Controls.Add(Me.btnModifyEmail)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(12, 354)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(226, 187)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Paramètres du compte"
-        '
-        'btnModifyEmail
-        '
-        Me.btnModifyEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnModifyEmail.ForeColor = System.Drawing.Color.Black
-        Me.btnModifyEmail.Location = New System.Drawing.Point(10, 19)
-        Me.btnModifyEmail.Name = "btnModifyEmail"
-        Me.btnModifyEmail.Size = New System.Drawing.Size(208, 48)
-        Me.btnModifyEmail.TabIndex = 6
-        Me.btnModifyEmail.Text = "Modifier l'email"
-        Me.btnModifyEmail.UseVisualStyleBackColor = True
-        '
-        'btnModifyPassword
-        '
-        Me.btnModifyPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnModifyPassword.ForeColor = System.Drawing.Color.Black
-        Me.btnModifyPassword.Location = New System.Drawing.Point(10, 75)
-        Me.btnModifyPassword.Name = "btnModifyPassword"
-        Me.btnModifyPassword.Size = New System.Drawing.Size(208, 48)
-        Me.btnModifyPassword.TabIndex = 7
-        Me.btnModifyPassword.Text = "Modifier le mot de passe"
-        Me.btnModifyPassword.UseVisualStyleBackColor = True
         '
         'btnModifyDelete
         '
@@ -218,15 +199,39 @@ Partial Class FrmCompte
         Me.btnModifyDelete.Text = "Supprimer mon compte"
         Me.btnModifyDelete.UseVisualStyleBackColor = True
         '
+        'btnModifyPassword
+        '
+        Me.btnModifyPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnModifyPassword.ForeColor = System.Drawing.Color.Black
+        Me.btnModifyPassword.Location = New System.Drawing.Point(10, 75)
+        Me.btnModifyPassword.Name = "btnModifyPassword"
+        Me.btnModifyPassword.Size = New System.Drawing.Size(208, 48)
+        Me.btnModifyPassword.TabIndex = 7
+        Me.btnModifyPassword.Text = "Modifier le mot de passe"
+        Me.btnModifyPassword.UseVisualStyleBackColor = True
+        '
+        'btnModifyEmail
+        '
+        Me.btnModifyEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnModifyEmail.ForeColor = System.Drawing.Color.Black
+        Me.btnModifyEmail.Location = New System.Drawing.Point(10, 19)
+        Me.btnModifyEmail.Name = "btnModifyEmail"
+        Me.btnModifyEmail.Size = New System.Drawing.Size(208, 48)
+        Me.btnModifyEmail.TabIndex = 6
+        Me.btnModifyEmail.Text = "Modifier l'email"
+        Me.btnModifyEmail.UseVisualStyleBackColor = True
+        '
         'FrmCompte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1136, 553)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.btnLogout)
+        Me.Controls.Add(Me.btnGoHome)
         Me.Controls.Add(Me.GroupBox1)
+        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCompte"
@@ -262,7 +267,7 @@ Partial Class FrmCompte
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents APP_UtilisateurBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents btnLogout As Button
+    Friend WithEvents btnGoHome As Button
     Friend WithEvents lblShowEmail As Label
     Friend WithEvents Email As Label
     Friend WithEvents GroupBox2 As GroupBox

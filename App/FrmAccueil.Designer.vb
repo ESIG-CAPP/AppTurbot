@@ -116,7 +116,7 @@ Partial Class FrmAccueil
         Me.lblNom.BackColor = System.Drawing.Color.Transparent
         Me.lblNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.lblNom.ForeColor = System.Drawing.Color.White
-        Me.lblNom.Location = New System.Drawing.Point(500, 21)
+        Me.lblNom.Location = New System.Drawing.Point(457, 21)
         Me.lblNom.Name = "lblNom"
         Me.lblNom.Size = New System.Drawing.Size(20, 24)
         Me.lblNom.TabIndex = 4
@@ -128,7 +128,7 @@ Partial Class FrmAccueil
         Me.lblPrenom.BackColor = System.Drawing.Color.Transparent
         Me.lblPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.lblPrenom.ForeColor = System.Drawing.Color.White
-        Me.lblPrenom.Location = New System.Drawing.Point(599, 21)
+        Me.lblPrenom.Location = New System.Drawing.Point(524, 21)
         Me.lblPrenom.Name = "lblPrenom"
         Me.lblPrenom.Size = New System.Drawing.Size(20, 24)
         Me.lblPrenom.TabIndex = 5
@@ -173,6 +173,7 @@ Partial Class FrmAccueil
         Me.gbClient.Controls.Add(Me.btnCompte)
         Me.gbClient.Controls.Add(Me.btnCommandes)
         Me.gbClient.Controls.Add(Me.btnTickets)
+        Me.gbClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.gbClient.ForeColor = System.Drawing.Color.White
         Me.gbClient.Location = New System.Drawing.Point(12, 130)
         Me.gbClient.Name = "gbClient"
@@ -187,6 +188,7 @@ Partial Class FrmAccueil
         Me.gbAdmin.Controls.Add(Me.btnManageOrders)
         Me.gbAdmin.Controls.Add(Me.btnManageUsers)
         Me.gbAdmin.Controls.Add(Me.btnManageProduct)
+        Me.gbAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.gbAdmin.ForeColor = System.Drawing.Color.White
         Me.gbAdmin.Location = New System.Drawing.Point(341, 130)
         Me.gbAdmin.Name = "gbAdmin"
@@ -194,7 +196,6 @@ Partial Class FrmAccueil
         Me.gbAdmin.TabIndex = 7
         Me.gbAdmin.TabStop = False
         Me.gbAdmin.Text = "Espace administrateur"
-        Me.gbAdmin.Visible = False
         '
         'btnManageOrders
         '
@@ -239,6 +240,7 @@ Partial Class FrmAccueil
         '
         Me.gbSupport.BackColor = System.Drawing.Color.Transparent
         Me.gbSupport.Controls.Add(Me.btnManageTickets)
+        Me.gbSupport.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.gbSupport.ForeColor = System.Drawing.Color.White
         Me.gbSupport.Location = New System.Drawing.Point(660, 130)
         Me.gbSupport.Name = "gbSupport"
@@ -246,7 +248,6 @@ Partial Class FrmAccueil
         Me.gbSupport.TabIndex = 8
         Me.gbSupport.TabStop = False
         Me.gbSupport.Text = "Esapce support"
-        Me.gbSupport.Visible = False
         '
         'btnManageTickets
         '
@@ -267,7 +268,7 @@ Partial Class FrmAccueil
         Me.lblLogConnexion.BackColor = System.Drawing.Color.Transparent
         Me.lblLogConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.lblLogConnexion.ForeColor = System.Drawing.Color.White
-        Me.lblLogConnexion.Location = New System.Drawing.Point(657, 427)
+        Me.lblLogConnexion.Location = New System.Drawing.Point(658, 427)
         Me.lblLogConnexion.Name = "lblLogConnexion"
         Me.lblLogConnexion.Size = New System.Drawing.Size(14, 15)
         Me.lblLogConnexion.TabIndex = 9
@@ -280,7 +281,7 @@ Partial Class FrmAccueil
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.App.My.Resources.Resources._3d_technology_geometric_black_background_53876_97124
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(934, 454)
+        Me.ClientSize = New System.Drawing.Size(934, 489)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblLogConnexion)
         Me.Controls.Add(Me.lblNom)

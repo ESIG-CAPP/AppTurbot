@@ -32,11 +32,6 @@ Partial Class FrmProduits
         Me.lblNmbProduits = New System.Windows.Forms.Label()
         Me.btnAfficherTout = New System.Windows.Forms.Button()
         Me.APP_ProduitDataGridView = New System.Windows.Forms.DataGridView()
-        Me.APP_ProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.APP_ProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_ProduitTableAdapter()
-        Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
-        Me.APP_CategorieProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter()
-        Me.APP_ProduitBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Categorie_nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProduitIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProduitIDREMPLACEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,6 +42,12 @@ Partial Class FrmProduits
         Me.ProduitStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProduitImageDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategorienomDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.APP_ProduitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.APP_ProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_ProduitTableAdapter()
+        Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
+        Me.APP_CategorieProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter()
+        Me.APP_ProduitBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnGoHome = New System.Windows.Forms.Button()
         CategorieProduitNomLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,49 +140,6 @@ Partial Class FrmProduits
         Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(574, 253)
         Me.APP_ProduitDataGridView.TabIndex = 2
         '
-        'APP_ProduitBindingSource
-        '
-        Me.APP_ProduitBindingSource.DataMember = "APP_Produit"
-        Me.APP_ProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
-        Me.APP_ProduitBindingSource.Filter = ""
-        '
-        'APP_ProduitTableAdapter
-        '
-        Me.APP_ProduitTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.APP_AdminRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_AdresseRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_AdresseTableAdapter = Nothing
-        Me.TableAdapterManager.APP_CategorieProduitTableAdapter = Nothing
-        Me.TableAdapterManager.APP_ClientRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_CommandeTableAdapter = Nothing
-        Me.TableAdapterManager.APP_CommandeUtilisateurTableAdapter = Nothing
-        Me.TableAdapterManager.APP_LigneCommandeTableAdapter = Nothing
-        Me.TableAdapterManager.APP_MessageTableAdapter = Nothing
-        Me.TableAdapterManager.APP_ProduitTableAdapter = Me.APP_ProduitTableAdapter
-        Me.TableAdapterManager.APP_RdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_SupportTicketTableAdapter = Nothing
-        Me.TableAdapterManager.APP_TicketTableAdapter = Nothing
-        Me.TableAdapterManager.APP_TokenTableAdapter = Nothing
-        Me.TableAdapterManager.APP_TypeRdvTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurAdminTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurClientTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurSupportTableAdapter = Nothing
-        Me.TableAdapterManager.APP_UtilisateurTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'APP_CategorieProduitTableAdapter
-        '
-        Me.APP_CategorieProduitTableAdapter.ClearBeforeFill = True
-        '
-        'APP_ProduitBindingSource2
-        '
-        Me.APP_ProduitBindingSource2.DataMember = "APP_Produit"
-        Me.APP_ProduitBindingSource2.DataSource = Me.BDD_TurbotDataSet
-        '
         'Categorie_nom
         '
         Me.Categorie_nom.DataPropertyName = "Categorie_nom"
@@ -257,11 +215,64 @@ Partial Class FrmProduits
         Me.CategorienomDataGridViewTextBoxColumn.ReadOnly = True
         Me.CategorienomDataGridViewTextBoxColumn.Visible = False
         '
+        'APP_ProduitBindingSource
+        '
+        Me.APP_ProduitBindingSource.DataMember = "APP_Produit"
+        Me.APP_ProduitBindingSource.DataSource = Me.BDD_TurbotDataSet
+        Me.APP_ProduitBindingSource.Filter = ""
+        '
+        'APP_ProduitTableAdapter
+        '
+        Me.APP_ProduitTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.APP_AdminRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_AdresseRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_AdresseTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CategorieProduitTableAdapter = Nothing
+        Me.TableAdapterManager.APP_ClientRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CommandeTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CommandeUtilisateurTableAdapter = Nothing
+        Me.TableAdapterManager.APP_LigneCommandeTableAdapter = Nothing
+        Me.TableAdapterManager.APP_MessageTableAdapter = Nothing
+        Me.TableAdapterManager.APP_ProduitTableAdapter = Me.APP_ProduitTableAdapter
+        Me.TableAdapterManager.APP_RdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_SupportTicketTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TicketTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TokenTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TypeRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurAdminTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurClientTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurSupportTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'APP_CategorieProduitTableAdapter
+        '
+        Me.APP_CategorieProduitTableAdapter.ClearBeforeFill = True
+        '
+        'APP_ProduitBindingSource2
+        '
+        Me.APP_ProduitBindingSource2.DataMember = "APP_Produit"
+        Me.APP_ProduitBindingSource2.DataSource = Me.BDD_TurbotDataSet
+        '
+        'btnGoHome
+        '
+        Me.btnGoHome.Location = New System.Drawing.Point(914, 553)
+        Me.btnGoHome.Name = "btnGoHome"
+        Me.btnGoHome.Size = New System.Drawing.Size(134, 23)
+        Me.btnGoHome.TabIndex = 3
+        Me.btnGoHome.Text = "Revenir à l'accueil"
+        Me.btnGoHome.UseVisualStyleBackColor = True
+        '
         'FrmProduits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1060, 588)
+        Me.Controls.Add(Me.btnGoHome)
         Me.Controls.Add(Me.APP_ProduitDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmProduits"
@@ -300,4 +311,5 @@ Partial Class FrmProduits
     Friend WithEvents ProduitStockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProduitImageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategorienomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnGoHome As Button
 End Class
