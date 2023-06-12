@@ -110,6 +110,18 @@
     <Compile Include="BDD_TurbotDataSet.vb">
       <DependentUpon>BDD_TurbotDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminAccueil.Designer.vb">
+      <DependentUpon>FrmAdminAccueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminAccueil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientAccueil.Designer.vb">
+      <DependentUpon>FrmClientAccueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientAccueil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmClients.Designer.vb">
       <DependentUpon>FrmClients.vb</DependentUpon>
     </Compile>
@@ -164,6 +176,12 @@
     <Compile Include="FrmProduits.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmSupportAccueil.Designer.vb">
+      <DependentUpon>FrmSupportAccueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupportAccueil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmTicket.Designer.vb">
       <DependentUpon>FrmTicket.vb</DependentUpon>
     </Compile>
@@ -194,6 +212,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmAdminAccueil.resx">
+      <DependentUpon>FrmAdminAccueil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClients.resx">
       <DependentUpon>FrmClients.vb</DependentUpon>
     </EmbeddedResource>
