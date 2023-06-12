@@ -3,8 +3,6 @@
 
     Private Sub FrmAccueil_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Dans la méthode FrmAccueil_Load
-        lblNom.TextAlign = ContentAlignment.MiddleLeft
-        lblPrenom.TextAlign = ContentAlignment.MiddleLeft
 
         Dim dateDuJour As Date = Date.Now
         ' Afficher la date et l'heure de la connexion dans le label
@@ -15,8 +13,7 @@
         ' Affichage du message de bienvenue avec le nom et le prénom
         Dim FrmConnexion As FrmConnexion = DirectCast(Application.OpenForms("FrmConnexion"), FrmConnexion)
         Dim userID As Integer = FrmConnexion.UserID
-        lblNom.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID)
-        lblPrenom.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
+        lblNameSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID) & " " & APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
         Dim UserType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
 
         'If UserType = "admin" Then
@@ -129,5 +126,15 @@
         End If
     End Sub
 
+    Private Sub lblNom_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub lblPrenom_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub lblNameSurname_Click(sender As Object, e As EventArgs) Handles lblNameSurname.Click
+
+    End Sub
 End Class

@@ -146,7 +146,7 @@ Partial Class FrmCompte
         Me.btnGoHome.Name = "btnGoHome"
         Me.btnGoHome.Size = New System.Drawing.Size(145, 48)
         Me.btnGoHome.TabIndex = 4
-        Me.btnGoHome.Text = "Se déconnecter"
+        Me.btnGoHome.Text = "Revenir à l'accueil"
         Me.btnGoHome.UseVisualStyleBackColor = True
         '
         'TableAdapterManager

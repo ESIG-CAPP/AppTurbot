@@ -28,8 +28,6 @@ Partial Class FrmAccueil
         Me.btnCompte = New System.Windows.Forms.Button()
         Me.lblBienvenue = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
-        Me.lblNom = New System.Windows.Forms.Label()
-        Me.lblPrenom = New System.Windows.Forms.Label()
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
@@ -41,6 +39,7 @@ Partial Class FrmAccueil
         Me.gbSupport = New System.Windows.Forms.GroupBox()
         Me.btnManageTickets = New System.Windows.Forms.Button()
         Me.lblLogConnexion = New System.Windows.Forms.Label()
+        Me.lblNameSurname = New System.Windows.Forms.Label()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbClient.SuspendLayout()
         Me.gbAdmin.SuspendLayout()
@@ -109,30 +108,6 @@ Partial Class FrmAccueil
         Me.btnLogout.TabIndex = 3
         Me.btnLogout.Text = "Se déconnecter"
         Me.btnLogout.UseVisualStyleBackColor = True
-        '
-        'lblNom
-        '
-        Me.lblNom.AutoSize = True
-        Me.lblNom.BackColor = System.Drawing.Color.Transparent
-        Me.lblNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lblNom.ForeColor = System.Drawing.Color.White
-        Me.lblNom.Location = New System.Drawing.Point(457, 21)
-        Me.lblNom.Name = "lblNom"
-        Me.lblNom.Size = New System.Drawing.Size(20, 24)
-        Me.lblNom.TabIndex = 4
-        Me.lblNom.Text = "?"
-        '
-        'lblPrenom
-        '
-        Me.lblPrenom.AutoSize = True
-        Me.lblPrenom.BackColor = System.Drawing.Color.Transparent
-        Me.lblPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lblPrenom.ForeColor = System.Drawing.Color.White
-        Me.lblPrenom.Location = New System.Drawing.Point(524, 21)
-        Me.lblPrenom.Name = "lblPrenom"
-        Me.lblPrenom.Size = New System.Drawing.Size(20, 24)
-        Me.lblPrenom.TabIndex = 5
-        Me.lblPrenom.Text = "?"
         '
         'BDD_TurbotDataSet
         '
@@ -274,6 +249,18 @@ Partial Class FrmAccueil
         Me.lblLogConnexion.TabIndex = 9
         Me.lblLogConnexion.Text = "?"
         '
+        'lblNameSurname
+        '
+        Me.lblNameSurname.AutoSize = True
+        Me.lblNameSurname.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.lblNameSurname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.lblNameSurname.ForeColor = System.Drawing.Color.White
+        Me.lblNameSurname.Location = New System.Drawing.Point(457, 21)
+        Me.lblNameSurname.Name = "lblNameSurname"
+        Me.lblNameSurname.Size = New System.Drawing.Size(20, 24)
+        Me.lblNameSurname.TabIndex = 10
+        Me.lblNameSurname.Text = "?"
+        '
         'FrmAccueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,9 +270,8 @@ Partial Class FrmAccueil
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(934, 489)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblNameSurname)
         Me.Controls.Add(Me.lblLogConnexion)
-        Me.Controls.Add(Me.lblNom)
-        Me.Controls.Add(Me.lblPrenom)
         Me.Controls.Add(Me.gbSupport)
         Me.Controls.Add(Me.lblBienvenue)
         Me.Controls.Add(Me.gbAdmin)
@@ -310,8 +296,6 @@ Partial Class FrmAccueil
     Friend WithEvents btnTickets As Button
     Friend WithEvents btnLogout As Button
     Friend WithEvents lblBienvenue As Label
-    Friend WithEvents lblNom As Label
-    Friend WithEvents lblPrenom As Label
     Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet
     Friend WithEvents APP_UtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
@@ -323,4 +307,5 @@ Partial Class FrmAccueil
     Friend WithEvents btnManageOrders As Button
     Friend WithEvents btnManageUsers As Button
     Friend WithEvents lblLogConnexion As Label
+    Friend WithEvents lblNameSurname As Label
 End Class
