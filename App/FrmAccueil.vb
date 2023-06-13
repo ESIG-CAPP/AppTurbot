@@ -16,14 +16,16 @@
         lblNameSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID) & " " & APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
         Dim UserType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
 
-        'If UserType = "admin" Then
-        '    gbAdmin.Enabled = True
-        '    gbSupport.Enabled = True
-        '    gbClient.Enabled = True
-        'ElseIf UserType = "support" Then
-        '    gbSupport.Enabled = True
-        '    gbAdmin.Enabled = False
-        'End If
+        If UserType = "admin" Then
+            Hide()
+            FrmAdminAccueil.Show()
+        ElseIf UserType = "support" Then
+            Hide()
+            FrmSupportAccueil.Show()
+        Else
+            Hide()
+            FrmClientAccueil.Show()
+        End If
     End Sub
 
     Private Sub APP_UtilisateurBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -50,23 +52,23 @@
     End Sub
 
 
-    Private Sub btnCompte_Click(sender As Object, e As EventArgs) Handles btnCompte.Click
+    Private Sub btnCompte_Click(sender As Object, e As EventArgs)
         Dim FrmCompte As New FrmCompte()
         FrmCompte.UserID = UserID
         FrmCompte.Show()
         Me.Hide()
     End Sub
 
-    Private Sub btnTickets_Click(sender As Object, e As EventArgs) Handles btnTickets.Click
+    Private Sub btnTickets_Click(sender As Object, e As EventArgs)
         Me.Hide()
         FrmTicket.Show()
     End Sub
-    Private Sub btnCommandes_Click(sender As Object, e As EventArgs) Handles btnCommandes.Click
+    Private Sub btnCommandes_Click(sender As Object, e As EventArgs)
         Me.Hide()
         FrmCommandes.Show()
     End Sub
 
-    Private Sub gbSupport_Enter(sender As Object, e As EventArgs) Handles gbSupport.Enter
+    Private Sub gbSupport_Enter(sender As Object, e As EventArgs)
         Dim FrmConnexion As FrmConnexion = DirectCast(Application.OpenForms("FrmConnexion"), FrmConnexion)
         Dim userID As Integer = FrmConnexion.UserID
         Dim userType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
@@ -77,7 +79,7 @@
         End If
     End Sub
 
-    Private Sub btnManageTickets_Click(sender As Object, e As EventArgs) Handles btnManageTickets.Click
+    Private Sub btnManageTickets_Click(sender As Object, e As EventArgs)
         Dim FrmConnexion As FrmConnexion = DirectCast(Application.OpenForms("FrmConnexion"), FrmConnexion)
         Dim userID As Integer = FrmConnexion.UserID
         Dim userType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
@@ -90,7 +92,7 @@
         End If
     End Sub
 
-    Private Sub btnManageProduct_Click(sender As Object, e As EventArgs) Handles btnManageProduct.Click
+    Private Sub btnManageProduct_Click(sender As Object, e As EventArgs)
         Dim FrmConnexion As FrmConnexion = DirectCast(Application.OpenForms("FrmConnexion"), FrmConnexion)
         Dim userID As Integer = FrmConnexion.UserID
         Dim userType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
@@ -103,7 +105,7 @@
         End If
     End Sub
 
-    Private Sub btnManageOrders_Click(sender As Object, e As EventArgs) Handles btnManageOrders.Click
+    Private Sub btnManageOrders_Click(sender As Object, e As EventArgs)
         Dim FrmConnexion As FrmConnexion = DirectCast(Application.OpenForms("FrmConnexion"), FrmConnexion)
         Dim userID As Integer = FrmConnexion.UserID
         Dim userType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
@@ -115,7 +117,7 @@
 
     End Sub
 
-    Private Sub btnManageUsers_Click(sender As Object, e As EventArgs) Handles btnManageUsers.Click
+    Private Sub btnManageUsers_Click(sender As Object, e As EventArgs)
         Dim FrmConnexion As FrmConnexion = DirectCast(Application.OpenForms("FrmConnexion"), FrmConnexion)
         Dim userID As Integer = FrmConnexion.UserID
         Dim userType As String = APP_UtilisateurTableAdapter.rqtGetUserType(userID)
@@ -124,21 +126,5 @@
             MsgBox("Vous n'avez pas accès car vous n'êtes pas autorisé !")
             Return
         End If
-    End Sub
-
-    Private Sub lblNom_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub lblPrenom_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub lblNameSurname_Click(sender As Object, e As EventArgs) Handles lblNameSurname.Click
-
-    End Sub
-
-    Private Sub lblLogConnexion_Click(sender As Object, e As EventArgs) Handles lblLogConnexion.Click
-
     End Sub
 End Class

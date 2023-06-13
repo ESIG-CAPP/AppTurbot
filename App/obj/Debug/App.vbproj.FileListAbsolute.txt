@@ -116,3 +116,12 @@ J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmProduits.resources
 \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\bin\Debug\System.Memory.dll
 \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\bin\Debug\System.Buffers.dll
 \\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.exe.config
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.exe.config
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmAdminAccueil.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmClientAccueil.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmClients.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmGestionCompte.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmGestionTicket.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmInscription.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmProduits.resources
+C:\Users\itslx\OneDrive\Documents\AppTurbot\App\obj\Debug\App.FrmSupportAccueil.resources

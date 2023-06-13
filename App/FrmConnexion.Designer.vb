@@ -121,7 +121,7 @@ Partial Class FrmConnexion
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(347, 151)
+        Me.GroupBox1.Location = New System.Drawing.Point(157, 128)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(418, 212)
         Me.GroupBox1.TabIndex = 7
@@ -158,7 +158,7 @@ Partial Class FrmConnexion
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(224, 41)
+        Me.Label3.Location = New System.Drawing.Point(138, 36)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(469, 29)
         Me.Label3.TabIndex = 8
@@ -171,7 +171,7 @@ Partial Class FrmConnexion
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnExit.ForeColor = System.Drawing.Color.Black
-        Me.btnExit.Location = New System.Drawing.Point(10, 401)
+        Me.btnExit.Location = New System.Drawing.Point(690, 400)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(98, 38)
         Me.btnExit.TabIndex = 8
