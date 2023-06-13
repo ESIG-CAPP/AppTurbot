@@ -137,4 +137,8 @@
     Private Sub lblNameSurname_Click(sender As Object, e As EventArgs) Handles lblNameSurname.Click
 
     End Sub
+
+    Private Sub lblLogConnexion_Click(sender As Object, e As EventArgs) Handles lblLogConnexion.Click
+
+    End Sub
 End Class
