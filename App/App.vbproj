@@ -221,6 +221,9 @@
     <EmbeddedResource Include="FrmAdminAccueil.resx">
       <DependentUpon>FrmAdminAccueil.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientAccueil.resx">
+      <DependentUpon>FrmClientAccueil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClients.resx">
       <DependentUpon>FrmClients.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProduits.resx">
       <DependentUpon>FrmProduits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupportAccueil.resx">
+      <DependentUpon>FrmSupportAccueil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTicket.resx">
       <DependentUpon>FrmTicket.vb</DependentUpon>

@@ -23,91 +23,11 @@ Partial Class FrmAccueil
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAccueil))
-        Me.btnTickets = New System.Windows.Forms.Button()
-        Me.btnCommandes = New System.Windows.Forms.Button()
-        Me.btnCompte = New System.Windows.Forms.Button()
-        Me.lblBienvenue = New System.Windows.Forms.Label()
-        Me.btnLogout = New System.Windows.Forms.Button()
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
-        Me.gbClient = New System.Windows.Forms.GroupBox()
-        Me.gbAdmin = New System.Windows.Forms.GroupBox()
-        Me.btnManageOrders = New System.Windows.Forms.Button()
-        Me.btnManageUsers = New System.Windows.Forms.Button()
-        Me.btnManageProduct = New System.Windows.Forms.Button()
-        Me.gbSupport = New System.Windows.Forms.GroupBox()
-        Me.btnManageTickets = New System.Windows.Forms.Button()
-        Me.lblLogConnexion = New System.Windows.Forms.Label()
-        Me.lblNameSurname = New System.Windows.Forms.Label()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbClient.SuspendLayout()
-        Me.gbAdmin.SuspendLayout()
-        Me.gbSupport.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnTickets
-        '
-        Me.btnTickets.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTickets.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnTickets.ForeColor = System.Drawing.Color.Black
-        Me.btnTickets.Location = New System.Drawing.Point(7, 122)
-        Me.btnTickets.Name = "btnTickets"
-        Me.btnTickets.Size = New System.Drawing.Size(247, 45)
-        Me.btnTickets.TabIndex = 2
-        Me.btnTickets.Text = "Voir mes tickets"
-        Me.btnTickets.UseVisualStyleBackColor = True
-        '
-        'btnCommandes
-        '
-        Me.btnCommandes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCommandes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnCommandes.ForeColor = System.Drawing.Color.Black
-        Me.btnCommandes.Location = New System.Drawing.Point(7, 71)
-        Me.btnCommandes.Name = "btnCommandes"
-        Me.btnCommandes.Size = New System.Drawing.Size(247, 45)
-        Me.btnCommandes.TabIndex = 1
-        Me.btnCommandes.Text = "Voir mes commandes"
-        Me.btnCommandes.UseVisualStyleBackColor = True
-        '
-        'btnCompte
-        '
-        Me.btnCompte.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCompte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnCompte.ForeColor = System.Drawing.Color.Black
-        Me.btnCompte.Location = New System.Drawing.Point(7, 20)
-        Me.btnCompte.Name = "btnCompte"
-        Me.btnCompte.Size = New System.Drawing.Size(247, 45)
-        Me.btnCompte.TabIndex = 0
-        Me.btnCompte.Text = "Voir mon compte"
-        Me.btnCompte.UseVisualStyleBackColor = True
-        '
-        'lblBienvenue
-        '
-        Me.lblBienvenue.AutoSize = True
-        Me.lblBienvenue.BackColor = System.Drawing.Color.Transparent
-        Me.lblBienvenue.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lblBienvenue.ForeColor = System.Drawing.Color.White
-        Me.lblBienvenue.Location = New System.Drawing.Point(345, 21)
-        Me.lblBienvenue.Name = "lblBienvenue"
-        Me.lblBienvenue.Size = New System.Drawing.Size(106, 24)
-        Me.lblBienvenue.TabIndex = 0
-        Me.lblBienvenue.Text = "Bienvenue,"
-        '
-        'btnLogout
-        '
-        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnLogout.ForeColor = System.Drawing.Color.Black
-        Me.btnLogout.Location = New System.Drawing.Point(399, 394)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(145, 48)
-        Me.btnLogout.TabIndex = 3
-        Me.btnLogout.Text = "Se déconnecter"
-        Me.btnLogout.UseVisualStyleBackColor = True
         '
         'BDD_TurbotDataSet
         '
@@ -142,125 +62,6 @@ Partial Class FrmAccueil
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'gbClient
-        '
-        Me.gbClient.BackColor = System.Drawing.Color.Transparent
-        Me.gbClient.Controls.Add(Me.btnCompte)
-        Me.gbClient.Controls.Add(Me.btnCommandes)
-        Me.gbClient.Controls.Add(Me.btnTickets)
-        Me.gbClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.gbClient.ForeColor = System.Drawing.Color.White
-        Me.gbClient.Location = New System.Drawing.Point(12, 130)
-        Me.gbClient.Name = "gbClient"
-        Me.gbClient.Size = New System.Drawing.Size(262, 180)
-        Me.gbClient.TabIndex = 6
-        Me.gbClient.TabStop = False
-        Me.gbClient.Text = "Espace client"
-        '
-        'gbAdmin
-        '
-        Me.gbAdmin.BackColor = System.Drawing.Color.Transparent
-        Me.gbAdmin.Controls.Add(Me.btnManageOrders)
-        Me.gbAdmin.Controls.Add(Me.btnManageUsers)
-        Me.gbAdmin.Controls.Add(Me.btnManageProduct)
-        Me.gbAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.gbAdmin.ForeColor = System.Drawing.Color.White
-        Me.gbAdmin.Location = New System.Drawing.Point(341, 130)
-        Me.gbAdmin.Name = "gbAdmin"
-        Me.gbAdmin.Size = New System.Drawing.Size(262, 180)
-        Me.gbAdmin.TabIndex = 7
-        Me.gbAdmin.TabStop = False
-        Me.gbAdmin.Text = "Espace administrateur"
-        '
-        'btnManageOrders
-        '
-        Me.btnManageOrders.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnManageOrders.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnManageOrders.ForeColor = System.Drawing.Color.Black
-        Me.btnManageOrders.Location = New System.Drawing.Point(8, 122)
-        Me.btnManageOrders.Name = "btnManageOrders"
-        Me.btnManageOrders.Size = New System.Drawing.Size(247, 45)
-        Me.btnManageOrders.TabIndex = 2
-        Me.btnManageOrders.Text = "Gestion des commandes"
-        Me.btnManageOrders.UseVisualStyleBackColor = True
-        '
-        'btnManageUsers
-        '
-        Me.btnManageUsers.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnManageUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnManageUsers.ForeColor = System.Drawing.Color.Black
-        Me.btnManageUsers.Location = New System.Drawing.Point(8, 71)
-        Me.btnManageUsers.Name = "btnManageUsers"
-        Me.btnManageUsers.Size = New System.Drawing.Size(247, 45)
-        Me.btnManageUsers.TabIndex = 1
-        Me.btnManageUsers.Text = "Gestion des utilisateurs"
-        Me.btnManageUsers.UseVisualStyleBackColor = True
-        '
-        'btnManageProduct
-        '
-        Me.btnManageProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnManageProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnManageProduct.ForeColor = System.Drawing.Color.Black
-        Me.btnManageProduct.Location = New System.Drawing.Point(7, 20)
-        Me.btnManageProduct.Name = "btnManageProduct"
-        Me.btnManageProduct.Size = New System.Drawing.Size(247, 45)
-        Me.btnManageProduct.TabIndex = 0
-        Me.btnManageProduct.Text = "Gestion des produits"
-        Me.btnManageProduct.UseVisualStyleBackColor = True
-        '
-        'gbSupport
-        '
-        Me.gbSupport.BackColor = System.Drawing.Color.Transparent
-        Me.gbSupport.Controls.Add(Me.btnManageTickets)
-        Me.gbSupport.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.gbSupport.ForeColor = System.Drawing.Color.White
-        Me.gbSupport.Location = New System.Drawing.Point(660, 130)
-        Me.gbSupport.Name = "gbSupport"
-        Me.gbSupport.Size = New System.Drawing.Size(262, 180)
-        Me.gbSupport.TabIndex = 8
-        Me.gbSupport.TabStop = False
-        Me.gbSupport.Text = "Esapce support"
-        '
-        'btnManageTickets
-        '
-        Me.btnManageTickets.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnManageTickets.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnManageTickets.ForeColor = System.Drawing.Color.Black
-        Me.btnManageTickets.Location = New System.Drawing.Point(7, 20)
-        Me.btnManageTickets.Name = "btnManageTickets"
-        Me.btnManageTickets.Size = New System.Drawing.Size(247, 45)
-        Me.btnManageTickets.TabIndex = 0
-        Me.btnManageTickets.Text = "Gestion des tickets"
-        Me.btnManageTickets.UseVisualStyleBackColor = True
-        '
-        'lblLogConnexion
-        '
-        Me.lblLogConnexion.AutoSize = True
-        Me.lblLogConnexion.BackColor = System.Drawing.Color.Transparent
-        Me.lblLogConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblLogConnexion.ForeColor = System.Drawing.Color.White
-        Me.lblLogConnexion.Location = New System.Drawing.Point(658, 427)
-        Me.lblLogConnexion.Name = "lblLogConnexion"
-        Me.lblLogConnexion.Size = New System.Drawing.Size(14, 15)
-        Me.lblLogConnexion.TabIndex = 9
-        Me.lblLogConnexion.Text = "?"
-        '
-        'lblNameSurname
-        '
-        Me.lblNameSurname.AutoSize = True
-        Me.lblNameSurname.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.lblNameSurname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lblNameSurname.ForeColor = System.Drawing.Color.White
-        Me.lblNameSurname.Location = New System.Drawing.Point(457, 21)
-        Me.lblNameSurname.Name = "lblNameSurname"
-        Me.lblNameSurname.Size = New System.Drawing.Size(20, 24)
-        Me.lblNameSurname.TabIndex = 10
-        Me.lblNameSurname.Text = "?"
-        '
         'FrmAccueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -270,13 +71,6 @@ Partial Class FrmAccueil
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(934, 489)
         Me.ControlBox = False
-        Me.Controls.Add(Me.lblNameSurname)
-        Me.Controls.Add(Me.lblLogConnexion)
-        Me.Controls.Add(Me.gbSupport)
-        Me.Controls.Add(Me.lblBienvenue)
-        Me.Controls.Add(Me.gbAdmin)
-        Me.Controls.Add(Me.gbClient)
-        Me.Controls.Add(Me.btnLogout)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -284,28 +78,10 @@ Partial Class FrmAccueil
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Accueil"
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbClient.ResumeLayout(False)
-        Me.gbAdmin.ResumeLayout(False)
-        Me.gbSupport.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnCommandes As Button
-    Friend WithEvents btnCompte As Button
-    Friend WithEvents btnTickets As Button
-    Friend WithEvents btnLogout As Button
-    Friend WithEvents lblBienvenue As Label
     Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet
     Friend WithEvents APP_UtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents gbClient As GroupBox
-    Friend WithEvents gbAdmin As GroupBox
-    Friend WithEvents btnManageProduct As Button
-    Friend WithEvents gbSupport As GroupBox
-    Friend WithEvents btnManageTickets As Button
-    Friend WithEvents btnManageOrders As Button
-    Friend WithEvents btnManageUsers As Button
-    Friend WithEvents lblLogConnexion As Label
-    Friend WithEvents lblNameSurname As Label
 End Class

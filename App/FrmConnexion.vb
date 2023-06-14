@@ -9,9 +9,19 @@ Public Class FrmConnexion
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
     End Sub
 
+    Public Function FncCheckUserType(userType As String) As Boolean
+        If userType = "admin" Then
+            FrmAdminAccueil.Show()
+        ElseIf userType = "support" Then
+            FrmSupportAccueil.Show()
+        Else
+            FrmClientAccueil.Show()
+        End If
+    End Function
+
+
     ' Fonction LogActivity
     Private Sub LogActivity(message As String)
-
         ' Définir le chemin complet du fichier de journal
         Dim projectFolder As String = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName
         Dim fileName As String = Path.Combine(projectFolder, "logs.txt")
@@ -40,7 +50,7 @@ Public Class FrmConnexion
                     Dim dateDuJour As Date = Date.Now
                     ' Affichage dans le fichier "logs.txt" l'activité de connexion de l'utilisateur
                     LogActivity("L'utilisateur " & efEmail.Text & " s'est connecté à " & dateDuJour.ToString("dd/MM/yyyy HH:mm:ss")) ' -> formattage de la donnée pour afficher la date et l'heure
-                    FrmAccueil.Show()
+                    FncCheckUserType(APP_UtilisateurTableAdapter.rqtGetUserType(UserID))
                     Me.Hide()
                 Else
 
