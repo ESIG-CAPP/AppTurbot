@@ -1,13 +1,10 @@
 ﻿Public Class FrmSupportAccueil
     Private Sub FrmSupportAccueil_Load(sender As Object, e As EventArgs) Handles Me.Load
-        TrUpdateLog.Interval = 60000 ' Définit l'intervalle de la minuterie à 1 minute (60000 millisecondes)
+        TrUpdateLog.Interval = 1000 ' Définit l'intervalle de la minuterie à 1 minute (60000 millisecondes)
         TrUpdateLog.Start() ' Démarre la minuterie
 
         Dim FrmConnxion As New FrmConnexion()
         Dim userID As Integer = FrmConnexion.UserID
-
-        Dim dateDuJour As Date = Date.Now
-        lblLogConnexion.Text = "Vous vous êtes connecté le : " & dateDuJour.ToString("dd/MM/yyyy") & " à " & dateDuJour.ToString("HH:mm:ss")
 
         lblShowName.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID)
         lblShowSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
@@ -15,6 +12,11 @@
 
         lblShowName.TextAlign = ContentAlignment.MiddleRight
         lblShowSurname.TextAlign = ContentAlignment.MiddleRight
+    End Sub
+
+    Private Sub TrUpdateLog_Tick(sender As Object, e As EventArgs) Handles TrUpdateLog.Tick
+        Dim dateDuJour As Date = Date.Now
+        lblTime.Text = "Il est " & dateDuJour.ToString("HH:mm:ss")
     End Sub
     Private Sub btnModifyEmail_Click(sender As Object, e As EventArgs)
         Me.Hide()
@@ -44,5 +46,6 @@
 
         'Afficher le formulaire de démarrage
         FrmConnexion.Show()
+        Me.Hide()
     End Sub
 End Class

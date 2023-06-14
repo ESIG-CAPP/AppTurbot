@@ -20,6 +20,8 @@ Public Class FrmGestionCompte
         Me.TableAdapterManager.UpdateAll(Me.BDD_TurbotDataSet)
     End Sub
 
+
+    ' Fonction permettant de vérifier s'il est "admin" ou "support" pour accéder à des options
     Private Sub btnGoCompte_Click(sender As Object, e As EventArgs) Handles btnGoCompte.Click
         Me.Hide()
         FrmCompte.Show()
@@ -81,7 +83,6 @@ Public Class FrmGestionCompte
     Private Sub btnUpdateAccount_Click(sender As Object, e As EventArgs) Handles btnUpdateAccount.Click
         Dim cmd As New SqlCommand()
         cmd.Connection = MyCon
-
         Try
             If efNewName.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(UserID) Or efNewSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(UserID) Then
                 MsgBox("Le nom ou le prénom sont le même. Merci d'en choisir un autre.", MsgBoxStyle.Exclamation, "Mise à jour impossible du nom")
@@ -95,9 +96,6 @@ Public Class FrmGestionCompte
                 cmd.ExecuteNonQuery()
                 MyCon.Close()
                 MsgBox("Vos données ont été mis à jour !", MsgBoxStyle.Information, "Mise à jour réussie")
-
-                efNewName.Text = FrmCompte.lblShowName.Text
-                efNewSurname.Text = FrmCompte.lblShowSurname.Text
 
                 efNewName.Text = ""
                 efNewSurname.Text = ""

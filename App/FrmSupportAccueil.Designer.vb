@@ -23,7 +23,6 @@ Partial Class FrmSupportAccueil
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.lblLogConnexion = New System.Windows.Forms.Label()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
@@ -44,23 +43,12 @@ Partial Class FrmSupportAccueil
         Me.btnModifyPassword = New System.Windows.Forms.Button()
         Me.btnModifyEmail = New System.Windows.Forms.Button()
         Me.TrUpdateLog = New System.Windows.Forms.Timer(Me.components)
+        Me.lblTime = New System.Windows.Forms.Label()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.gbSupport.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'lblLogConnexion
-        '
-        Me.lblLogConnexion.AutoSize = True
-        Me.lblLogConnexion.BackColor = System.Drawing.Color.Transparent
-        Me.lblLogConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblLogConnexion.ForeColor = System.Drawing.Color.White
-        Me.lblLogConnexion.Location = New System.Drawing.Point(10, 123)
-        Me.lblLogConnexion.Name = "lblLogConnexion"
-        Me.lblLogConnexion.Size = New System.Drawing.Size(14, 15)
-        Me.lblLogConnexion.TabIndex = 30
-        Me.lblLogConnexion.Text = "?"
         '
         'TableAdapterManager
         '
@@ -292,15 +280,27 @@ Partial Class FrmSupportAccueil
         Me.btnModifyEmail.Text = "Modifier l'email"
         Me.btnModifyEmail.UseVisualStyleBackColor = True
         '
+        'lblTime
+        '
+        Me.lblTime.AutoSize = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lblTime.ForeColor = System.Drawing.Color.White
+        Me.lblTime.Location = New System.Drawing.Point(9, 12)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(16, 17)
+        Me.lblTime.TabIndex = 35
+        Me.lblTime.Text = "?"
+        '
         'FrmSupportAccueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(879, 439)
+        Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.gbSupport)
-        Me.Controls.Add(Me.lblLogConnexion)
         Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.lblNameSurname)
         Me.Controls.Add(Me.lblBienvenue)
@@ -316,8 +316,6 @@ Partial Class FrmSupportAccueil
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblLogConnexion As Label
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
     Friend WithEvents APP_UtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter
     Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet
@@ -338,4 +336,5 @@ Partial Class FrmSupportAccueil
     Friend WithEvents btnModifyPassword As Button
     Friend WithEvents btnModifyEmail As Button
     Friend WithEvents TrUpdateLog As Timer
+    Friend WithEvents lblTime As Label
 End Class

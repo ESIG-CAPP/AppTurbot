@@ -2,14 +2,11 @@
     Private Sub FrmAdminAccueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
-        TrUpdateLog.Interval = 60000 ' Définit l'intervalle de la minuterie à 1 minute (60000 millisecondes)
+        TrUpdateLog.Interval = 1000 ' Définit l'intervalle de la minuterie à 1 minute (60000 millisecondes)
         TrUpdateLog.Start() ' Démarre la minuterie
 
         Dim FrmConnxion As New FrmConnexion()
         Dim userID As Integer = FrmConnexion.UserID
-
-        Dim dateDuJour As Date = Date.Now
-        lblLogConnexion.Text = "Vous vous êtes connecté le : " & dateDuJour.ToString("dd/MM/yyyy") & " à " & dateDuJour.ToString("HH:mm:ss")
 
         lblShowName.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID)
         lblShowSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
@@ -21,7 +18,7 @@
 
     Private Sub TrUpdateLog_Tick(sender As Object, e As EventArgs) Handles TrUpdateLog.Tick
         Dim dateDuJour As Date = Date.Now
-        lblLogConnexion.Text = "Dernière connexion : " & dateDuJour.ToString("dd/MM/yyyy HH:mm:ss")
+        lblTime.Text = "Il est " & dateDuJour.ToString("HH:mm:ss")
     End Sub
 
     Private Sub APP_UtilisateurBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -49,8 +46,22 @@
         FrmConnexion.efEmail.Text = ""
         FrmConnexion.efPassword.Text = ""
         FrmConnexion.efEmail.Select()
-
-        'Afficher le formulaire de démarrage
         FrmConnexion.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnModifyEmail_Click(sender As Object, e As EventArgs) Handles btnModifyEmail.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
+    End Sub
+
+    Private Sub btnModifyPassword_Click(sender As Object, e As EventArgs) Handles btnModifyPassword.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
     End Sub
 End Class

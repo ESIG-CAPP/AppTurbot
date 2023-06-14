@@ -24,7 +24,6 @@ Partial Class FrmAdminAccueil
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.lblNameSurname = New System.Windows.Forms.Label()
-        Me.lblLogConnexion = New System.Windows.Forms.Label()
         Me.lblBienvenue = New System.Windows.Forms.Label()
         Me.gbAdmin = New System.Windows.Forms.GroupBox()
         Me.btnManageOrders = New System.Windows.Forms.Button()
@@ -42,9 +41,15 @@ Partial Class FrmAdminAccueil
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnModifyPassword = New System.Windows.Forms.Button()
+        Me.btnModifyEmail = New System.Windows.Forms.Button()
+        Me.lblTime = New System.Windows.Forms.Label()
         Me.gbAdmin.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblNameSurname
@@ -58,18 +63,6 @@ Partial Class FrmAdminAccueil
         Me.lblNameSurname.Size = New System.Drawing.Size(20, 24)
         Me.lblNameSurname.TabIndex = 17
         Me.lblNameSurname.Text = "?"
-        '
-        'lblLogConnexion
-        '
-        Me.lblLogConnexion.AutoSize = True
-        Me.lblLogConnexion.BackColor = System.Drawing.Color.Transparent
-        Me.lblLogConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblLogConnexion.ForeColor = System.Drawing.Color.White
-        Me.lblLogConnexion.Location = New System.Drawing.Point(9, 159)
-        Me.lblLogConnexion.Name = "lblLogConnexion"
-        Me.lblLogConnexion.Size = New System.Drawing.Size(14, 15)
-        Me.lblLogConnexion.TabIndex = 16
-        Me.lblLogConnexion.Text = "?"
         '
         'lblBienvenue
         '
@@ -93,7 +86,7 @@ Partial Class FrmAdminAccueil
         Me.gbAdmin.ForeColor = System.Drawing.Color.White
         Me.gbAdmin.Location = New System.Drawing.Point(12, 266)
         Me.gbAdmin.Name = "gbAdmin"
-        Me.gbAdmin.Size = New System.Drawing.Size(312, 180)
+        Me.gbAdmin.Size = New System.Drawing.Size(267, 180)
         Me.gbAdmin.TabIndex = 14
         Me.gbAdmin.TabStop = False
         Me.gbAdmin.Text = "Espace administrateur"
@@ -106,7 +99,7 @@ Partial Class FrmAdminAccueil
         Me.btnManageOrders.ForeColor = System.Drawing.Color.Black
         Me.btnManageOrders.Location = New System.Drawing.Point(8, 122)
         Me.btnManageOrders.Name = "btnManageOrders"
-        Me.btnManageOrders.Size = New System.Drawing.Size(297, 45)
+        Me.btnManageOrders.Size = New System.Drawing.Size(252, 45)
         Me.btnManageOrders.TabIndex = 2
         Me.btnManageOrders.Text = "Gestion des commandes"
         Me.btnManageOrders.UseVisualStyleBackColor = True
@@ -119,7 +112,7 @@ Partial Class FrmAdminAccueil
         Me.btnManageUsers.ForeColor = System.Drawing.Color.Black
         Me.btnManageUsers.Location = New System.Drawing.Point(8, 71)
         Me.btnManageUsers.Name = "btnManageUsers"
-        Me.btnManageUsers.Size = New System.Drawing.Size(297, 45)
+        Me.btnManageUsers.Size = New System.Drawing.Size(252, 45)
         Me.btnManageUsers.TabIndex = 1
         Me.btnManageUsers.Text = "Gestion des utilisateurs"
         Me.btnManageUsers.UseVisualStyleBackColor = True
@@ -132,7 +125,7 @@ Partial Class FrmAdminAccueil
         Me.btnManageProduct.ForeColor = System.Drawing.Color.Black
         Me.btnManageProduct.Location = New System.Drawing.Point(7, 20)
         Me.btnManageProduct.Name = "btnManageProduct"
-        Me.btnManageProduct.Size = New System.Drawing.Size(297, 45)
+        Me.btnManageProduct.Size = New System.Drawing.Size(252, 45)
         Me.btnManageProduct.TabIndex = 0
         Me.btnManageProduct.Text = "Gestion des produits"
         Me.btnManageProduct.UseVisualStyleBackColor = True
@@ -150,6 +143,8 @@ Partial Class FrmAdminAccueil
         '
         'TrUpdateLog
         '
+        Me.TrUpdateLog.Enabled = True
+        Me.TrUpdateLog.Interval = 1000
         '
         'GroupBox1
         '
@@ -267,15 +262,81 @@ Partial Class FrmAdminAccueil
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnDelete)
+        Me.GroupBox2.Controls.Add(Me.btnModifyPassword)
+        Me.GroupBox2.Controls.Add(Me.btnModifyEmail)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
+        Me.GroupBox2.Location = New System.Drawing.Point(305, 266)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(267, 180)
+        Me.GroupBox2.TabIndex = 33
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Paramètres du compte"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnDelete.ForeColor = System.Drawing.Color.Black
+        Me.btnDelete.Location = New System.Drawing.Point(10, 122)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(249, 45)
+        Me.btnDelete.TabIndex = 8
+        Me.btnDelete.Text = "Supprimer mon compte"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnModifyPassword
+        '
+        Me.btnModifyPassword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModifyPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnModifyPassword.ForeColor = System.Drawing.Color.Black
+        Me.btnModifyPassword.Location = New System.Drawing.Point(10, 71)
+        Me.btnModifyPassword.Name = "btnModifyPassword"
+        Me.btnModifyPassword.Size = New System.Drawing.Size(249, 45)
+        Me.btnModifyPassword.TabIndex = 7
+        Me.btnModifyPassword.Text = "Modifier le mot de passe"
+        Me.btnModifyPassword.UseVisualStyleBackColor = True
+        '
+        'btnModifyEmail
+        '
+        Me.btnModifyEmail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModifyEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.btnModifyEmail.ForeColor = System.Drawing.Color.Black
+        Me.btnModifyEmail.Location = New System.Drawing.Point(10, 20)
+        Me.btnModifyEmail.Name = "btnModifyEmail"
+        Me.btnModifyEmail.Size = New System.Drawing.Size(249, 45)
+        Me.btnModifyEmail.TabIndex = 6
+        Me.btnModifyEmail.Text = "Modifier l'email"
+        Me.btnModifyEmail.UseVisualStyleBackColor = True
+        '
+        'lblTime
+        '
+        Me.lblTime.AutoSize = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lblTime.ForeColor = System.Drawing.Color.White
+        Me.lblTime.Location = New System.Drawing.Point(9, 193)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(16, 17)
+        Me.lblTime.TabIndex = 34
+        Me.lblTime.Text = "?"
+        '
         'FrmAdminAccueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(842, 458)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblNameSurname)
-        Me.Controls.Add(Me.lblLogConnexion)
         Me.Controls.Add(Me.lblBienvenue)
         Me.Controls.Add(Me.gbAdmin)
         Me.Controls.Add(Me.btnLogout)
@@ -285,13 +346,13 @@ Partial Class FrmAdminAccueil
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents lblNameSurname As Label
-    Friend WithEvents lblLogConnexion As Label
     Friend WithEvents lblBienvenue As Label
     Friend WithEvents gbAdmin As GroupBox
     Friend WithEvents btnManageOrders As Button
@@ -323,4 +384,9 @@ Partial Class FrmAdminAccueil
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents APP_UtilisateurBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnModifyPassword As Button
+    Friend WithEvents btnModifyEmail As Button
+    Friend WithEvents lblTime As Label
 End Class

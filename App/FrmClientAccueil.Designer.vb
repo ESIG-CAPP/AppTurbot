@@ -44,8 +44,8 @@ Partial Class FrmClientAccueil
         Me.btnModifyDelete = New System.Windows.Forms.Button()
         Me.btnModifyPassword = New System.Windows.Forms.Button()
         Me.btnModifyEmail = New System.Windows.Forms.Button()
-        Me.lblLogConnexion = New System.Windows.Forms.Label()
         Me.TrUpdateLog = New System.Windows.Forms.Timer(Me.components)
+        Me.lblTime = New System.Windows.Forms.Label()
         Me.gbClient.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -312,17 +312,17 @@ Partial Class FrmClientAccueil
         Me.btnModifyEmail.Text = "Modifier l'email"
         Me.btnModifyEmail.UseVisualStyleBackColor = True
         '
-        'lblLogConnexion
+        'lblTime
         '
-        Me.lblLogConnexion.AutoSize = True
-        Me.lblLogConnexion.BackColor = System.Drawing.Color.Transparent
-        Me.lblLogConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblLogConnexion.ForeColor = System.Drawing.Color.White
-        Me.lblLogConnexion.Location = New System.Drawing.Point(9, 137)
-        Me.lblLogConnexion.Name = "lblLogConnexion"
-        Me.lblLogConnexion.Size = New System.Drawing.Size(14, 15)
-        Me.lblLogConnexion.TabIndex = 23
-        Me.lblLogConnexion.Text = "?"
+        Me.lblTime.AutoSize = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lblTime.ForeColor = System.Drawing.Color.White
+        Me.lblTime.Location = New System.Drawing.Point(12, 9)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(16, 17)
+        Me.lblTime.TabIndex = 35
+        Me.lblTime.Text = "?"
         '
         'FrmClientAccueil
         '
@@ -330,7 +330,7 @@ Partial Class FrmClientAccueil
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(868, 448)
-        Me.Controls.Add(Me.lblLogConnexion)
+        Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnLogout)
@@ -370,6 +370,6 @@ Partial Class FrmClientAccueil
     Friend WithEvents btnModifyDelete As Button
     Friend WithEvents btnModifyPassword As Button
     Friend WithEvents btnModifyEmail As Button
-    Friend WithEvents lblLogConnexion As Label
     Friend WithEvents TrUpdateLog As Timer
+    Friend WithEvents lblTime As Label
 End Class
