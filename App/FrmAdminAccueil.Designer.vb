@@ -321,7 +321,7 @@ Partial Class FrmAdminAccueil
         Me.lblTime.BackColor = System.Drawing.Color.Transparent
         Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.lblTime.ForeColor = System.Drawing.Color.White
-        Me.lblTime.Location = New System.Drawing.Point(9, 193)
+        Me.lblTime.Location = New System.Drawing.Point(9, 12)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(16, 17)
         Me.lblTime.TabIndex = 34

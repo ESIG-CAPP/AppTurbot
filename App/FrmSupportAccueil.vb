@@ -6,8 +6,7 @@
         Dim FrmConnxion As New FrmConnexion()
         Dim userID As Integer = FrmConnexion.UserID
 
-        lblShowName.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID)
-        lblShowSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
+        lblNameSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID) & " " & APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
         lblShowEmail.Text = APP_UtilisateurTableAdapter.rqtGetUserEmail(userID)
 
         lblShowName.TextAlign = ContentAlignment.MiddleRight
