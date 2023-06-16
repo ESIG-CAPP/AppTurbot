@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmProduits
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmProduits
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim CategorieProduitNomLabel As System.Windows.Forms.Label
@@ -32,8 +32,8 @@ Partial Class FrmProduits
         Me.lblNmbProduits = New System.Windows.Forms.Label()
         Me.btnAfficherTout = New System.Windows.Forms.Button()
         Me.APP_ProduitDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Categorie_nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProduitIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Categorie_nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProduitIDREMPLACEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategorieProduitIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProduitNomDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,6 +48,7 @@ Partial Class FrmProduits
         Me.APP_CategorieProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter()
         Me.APP_ProduitBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnGoHome = New System.Windows.Forms.Button()
+        Me.ApP_LigneCommandeTableAdapter1 = New App.BDD_TurbotDataSetTableAdapters.APP_LigneCommandeTableAdapter()
         CategorieProduitNomLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,20 +133,13 @@ Partial Class FrmProduits
         Me.APP_ProduitDataGridView.AllowUserToDeleteRows = False
         Me.APP_ProduitDataGridView.AutoGenerateColumns = False
         Me.APP_ProduitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.APP_ProduitDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Categorie_nom, Me.ProduitIDDataGridViewTextBoxColumn, Me.ProduitIDREMPLACEDataGridViewTextBoxColumn, Me.CategorieProduitIDDataGridViewTextBoxColumn, Me.ProduitNomDataGridViewTextBoxColumn, Me.ProduitDescriptionDataGridViewTextBoxColumn, Me.ProduitPrixDataGridViewTextBoxColumn, Me.ProduitStockDataGridViewTextBoxColumn, Me.ProduitImageDataGridViewTextBoxColumn, Me.CategorienomDataGridViewTextBoxColumn})
+        Me.APP_ProduitDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProduitIDDataGridViewTextBoxColumn, Me.Categorie_nom, Me.ProduitIDREMPLACEDataGridViewTextBoxColumn, Me.CategorieProduitIDDataGridViewTextBoxColumn, Me.ProduitNomDataGridViewTextBoxColumn, Me.ProduitDescriptionDataGridViewTextBoxColumn, Me.ProduitPrixDataGridViewTextBoxColumn, Me.ProduitStockDataGridViewTextBoxColumn, Me.ProduitImageDataGridViewTextBoxColumn, Me.CategorienomDataGridViewTextBoxColumn})
         Me.APP_ProduitDataGridView.DataSource = Me.APP_ProduitBindingSource
         Me.APP_ProduitDataGridView.Location = New System.Drawing.Point(12, 12)
         Me.APP_ProduitDataGridView.Name = "APP_ProduitDataGridView"
         Me.APP_ProduitDataGridView.ReadOnly = True
-        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(574, 253)
+        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(711, 230)
         Me.APP_ProduitDataGridView.TabIndex = 2
-        '
-        'Categorie_nom
-        '
-        Me.Categorie_nom.DataPropertyName = "Categorie_nom"
-        Me.Categorie_nom.HeaderText = "Categorie_nom"
-        Me.Categorie_nom.Name = "Categorie_nom"
-        Me.Categorie_nom.ReadOnly = True
         '
         'ProduitIDDataGridViewTextBoxColumn
         '
@@ -153,7 +147,13 @@ Partial Class FrmProduits
         Me.ProduitIDDataGridViewTextBoxColumn.HeaderText = "ProduitID"
         Me.ProduitIDDataGridViewTextBoxColumn.Name = "ProduitIDDataGridViewTextBoxColumn"
         Me.ProduitIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProduitIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'Categorie_nom
+        '
+        Me.Categorie_nom.DataPropertyName = "Categorie_nom"
+        Me.Categorie_nom.HeaderText = "Categorie_nom"
+        Me.Categorie_nom.Name = "Categorie_nom"
+        Me.Categorie_nom.ReadOnly = True
         '
         'ProduitIDREMPLACEDataGridViewTextBoxColumn
         '
@@ -260,18 +260,22 @@ Partial Class FrmProduits
         '
         'btnGoHome
         '
-        Me.btnGoHome.Location = New System.Drawing.Point(914, 553)
+        Me.btnGoHome.Location = New System.Drawing.Point(626, 553)
         Me.btnGoHome.Name = "btnGoHome"
         Me.btnGoHome.Size = New System.Drawing.Size(134, 23)
         Me.btnGoHome.TabIndex = 3
         Me.btnGoHome.Text = "Revenir à l'accueil"
         Me.btnGoHome.UseVisualStyleBackColor = True
         '
+        'ApP_LigneCommandeTableAdapter1
+        '
+        Me.ApP_LigneCommandeTableAdapter1.ClearBeforeFill = True
+        '
         'FrmProduits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1060, 588)
+        Me.ClientSize = New System.Drawing.Size(795, 588)
         Me.Controls.Add(Me.btnGoHome)
         Me.Controls.Add(Me.APP_ProduitDataGridView)
         Me.Controls.Add(Me.GroupBox1)
@@ -301,8 +305,10 @@ Partial Class FrmProduits
     Friend WithEvents txtNmbProduits As TextBox
     Friend WithEvents lblNmbProduits As Label
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents Categorie_nom As DataGridViewTextBoxColumn
+    Friend WithEvents btnGoHome As Button
+    Friend WithEvents ApP_LigneCommandeTableAdapter1 As BDD_TurbotDataSetTableAdapters.APP_LigneCommandeTableAdapter
     Friend WithEvents ProduitIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Categorie_nom As DataGridViewTextBoxColumn
     Friend WithEvents ProduitIDREMPLACEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategorieProduitIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProduitNomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -311,5 +317,4 @@ Partial Class FrmProduits
     Friend WithEvents ProduitStockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProduitImageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategorienomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnGoHome As Button
 End Class

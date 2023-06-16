@@ -11479,7 +11479,7 @@ Namespace BDD_TurbotDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT CommandeID, CommandeDate, CommandeEtat, CommandeMethodePaiement, CommandeD"& _ 
-                "ateLimitePaiement FROM dbo.APP_Commande"
+                "ateLimitePaiement FROM APP_Commande"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -12139,11 +12139,16 @@ Namespace BDD_TurbotDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CommandeID, ProduitID, LigneCommandeQuantite FROM dbo.APP_LigneCommande"
+            Me._commandCollection(0).CommandText = "SELECT CommandeID, ProduitID, LigneCommandeQuantite FROM APP_LigneCommande"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT COUNT(*) FROM APP_LigneCommande where ProduitID = @idProduit"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idProduit", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 4, 0, "ProduitID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12276,6 +12281,33 @@ Namespace BDD_TurbotDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal LigneCommandeQuantite As Decimal, ByVal Original_CommandeID As Decimal, ByVal Original_ProduitID As Decimal, ByVal Original_LigneCommandeQuantite As Decimal) As Integer
             Return Me.Update(Original_CommandeID, Original_ProduitID, LigneCommandeQuantite, Original_CommandeID, Original_ProduitID, Original_LigneCommandeQuantite)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function CompterProduit(ByVal idProduit As Decimal) As Global.System.Nullable(Of Integer)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(idProduit,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Integer)()
+            Else
+                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
         End Function
     End Class
     
@@ -12900,7 +12932,7 @@ Namespace BDD_TurbotDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ProduitID, ProduitID_REMPLACE, CategorieProduitID, ProduitNom, ProduitDesc"& _ 
-                "ription, ProduitPrix, ProduitStock, ProduitImage FROM dbo.APP_Produit"
+                "ription, ProduitPrix, ProduitStock, ProduitImage FROM APP_Produit"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

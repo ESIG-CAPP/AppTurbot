@@ -56,6 +56,19 @@
 
     Private Sub btnGoHome_Click(sender As Object, e As EventArgs) Handles btnGoHome.Click
         Me.Hide()
-        FrmAccueil.Show()
+        FrmAdminAccueil.Show()
+    End Sub
+
+    Private Sub APP_ProduitDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles APP_ProduitDataGridView.CellClick
+        Dim NmbProduits As Integer = ApP_LigneCommandeTableAdapter1.CompterProduit(APP_ProduitDataGridView.Rows(e.RowIndex).Cells(0).Value)
+        If NmbProduits <= 0 Then
+            MessageBox.Show("Pas encore vendu", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
+
+        ElseIf NmbProduits = 1 Then
+            MessageBox.Show(NmbProduits & " produit vendu", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
+
+        Else
+            MessageBox.Show(NmbProduits & " produits vendus", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
+        End If
     End Sub
 End Class
