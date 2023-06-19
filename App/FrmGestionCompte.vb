@@ -20,11 +20,21 @@ Public Class FrmGestionCompte
         Me.TableAdapterManager.UpdateAll(Me.BDD_TurbotDataSet)
     End Sub
 
+    Public Function FncCheckUserType(userType As String) As Boolean
+        If userType = "admin" Then
+            FrmAdminAccueil.Show()
+        ElseIf userType = "support" Then
+            FrmSupportAccueil.Show()
+        Else
+            FrmClientAccueil.Show()
+        End If
+    End Function
+
 
     ' Fonction permettant de vérifier s'il est "admin" ou "support" pour accéder à des options
     Private Sub btnGoCompte_Click(sender As Object, e As EventArgs) Handles btnGoCompte.Click
         Me.Hide()
-        FrmCompte.Show()
+        FncCheckUserType(APP_UtilisateurTableAdapter.rqtGetUserType(UserID))
     End Sub
 
     Private Sub btnUpdateEmail_Click(sender As Object, e As EventArgs) Handles btnUpdateEmail.Click

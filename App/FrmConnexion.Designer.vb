@@ -37,6 +37,8 @@ Partial Class FrmConnexion
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
+        Me.lkResetPassword = New System.Windows.Forms.LinkLabel()
+        Me.lkNewClient = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -90,7 +92,7 @@ Partial Class FrmConnexion
         Me.btnConnexion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnConnexion.ForeColor = System.Drawing.Color.Black
-        Me.btnConnexion.Location = New System.Drawing.Point(156, 139)
+        Me.btnConnexion.Location = New System.Drawing.Point(127, 232)
         Me.btnConnexion.Name = "btnConnexion"
         Me.btnConnexion.Size = New System.Drawing.Size(166, 38)
         Me.btnConnexion.TabIndex = 4
@@ -111,6 +113,8 @@ Partial Class FrmConnexion
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.lkNewClient)
+        Me.GroupBox1.Controls.Add(Me.lkResetPassword)
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.cbShowPassword)
@@ -123,7 +127,7 @@ Partial Class FrmConnexion
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(157, 128)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(418, 212)
+        Me.GroupBox1.Size = New System.Drawing.Size(418, 294)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestion d'accès"
@@ -211,6 +215,28 @@ Partial Class FrmConnexion
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'lkResetPassword
+        '
+        Me.lkResetPassword.AutoSize = True
+        Me.lkResetPassword.LinkColor = System.Drawing.Color.White
+        Me.lkResetPassword.Location = New System.Drawing.Point(49, 166)
+        Me.lkResetPassword.Name = "lkResetPassword"
+        Me.lkResetPassword.Size = New System.Drawing.Size(147, 17)
+        Me.lkResetPassword.TabIndex = 9
+        Me.lkResetPassword.TabStop = True
+        Me.lkResetPassword.Text = "Mot de passe oublié ?"
+        '
+        'lkNewClient
+        '
+        Me.lkNewClient.AutoSize = True
+        Me.lkNewClient.LinkColor = System.Drawing.Color.White
+        Me.lkNewClient.Location = New System.Drawing.Point(257, 166)
+        Me.lkNewClient.Name = "lkNewClient"
+        Me.lkNewClient.Size = New System.Drawing.Size(102, 17)
+        Me.lkNewClient.TabIndex = 10
+        Me.lkNewClient.TabStop = True
+        Me.lkNewClient.Text = "Nouveau client"
+        '
         'FrmConnexion
         '
         Me.AcceptButton = Me.btnConnexion
@@ -251,4 +277,6 @@ Partial Class FrmConnexion
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btnExit As Button
+    Friend WithEvents lkNewClient As LinkLabel
+    Friend WithEvents lkResetPassword As LinkLabel
 End Class

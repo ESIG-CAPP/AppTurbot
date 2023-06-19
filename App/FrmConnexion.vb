@@ -34,7 +34,6 @@ Public Class FrmConnexion
         If efEmail.Text = "" Or efPassword.Text = "" Then
             MessageBox.Show("Veuillez saisir vos informations de connexion!")
         Else
-
             ' Comparaison du mot de passe et récupération des données pour autoriser ou non l'accès
             If rqtCheckMail = 1 Then
                 Dim rqtPassword As String = APP_UtilisateurTableAdapter.rqtGetPassword(efEmail.Text)
@@ -56,12 +55,13 @@ Public Class FrmConnexion
 
                     ' L'erreur vient quand la comparaison de le mot de passe est faux
                     MsgBox("Votre mot de passe est incorrect", MsgBoxStyle.Exclamation, "Attention !")
+                    efPassword.Text = ""
                     efPassword.Select()
                 End If
             Else
-
                 ' L'erreur vient quand la comparaison de l'adresse mail est fausse
                 MsgBox("L'adresse mail est invalide !", MsgBoxStyle.Exclamation, "Attention !")
+                efEmail.Text = ""
                 efEmail.Select()
             End If
         End If
@@ -82,5 +82,14 @@ Public Class FrmConnexion
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
+    End Sub
+
+    Private Sub lkNewClient_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkNewClient.LinkClicked
+        Me.Hide()
+        FrmReinitialisation.Show()
+    End Sub
+
+    Private Sub lkResetPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkResetPassword.LinkClicked
+
     End Sub
 End Class

@@ -280,6 +280,9 @@ Partial Class FrmSupportAccueil
         Me.btnModifyEmail.Text = "Modifier l'email"
         Me.btnModifyEmail.UseVisualStyleBackColor = True
         '
+        'TrUpdateLog
+        '
+        '
         'lblTime
         '
         Me.lblTime.AutoSize = True
@@ -306,6 +309,7 @@ Partial Class FrmSupportAccueil
         Me.Controls.Add(Me.lblBienvenue)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmSupportAccueil"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmSupportAccueil"
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

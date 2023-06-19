@@ -312,6 +312,9 @@ Partial Class FrmClientAccueil
         Me.btnModifyEmail.Text = "Modifier l'email"
         Me.btnModifyEmail.UseVisualStyleBackColor = True
         '
+        'TrUpdateLog
+        '
+        '
         'lblTime
         '
         Me.lblTime.AutoSize = True
@@ -338,6 +341,7 @@ Partial Class FrmClientAccueil
         Me.Controls.Add(Me.lblBienvenue)
         Me.Controls.Add(Me.gbClient)
         Me.Name = "FrmClientAccueil"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmClientAccueil"
         Me.gbClient.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)

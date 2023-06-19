@@ -25,6 +25,7 @@ Partial Class FrmInscription
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmInscription))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.gbInfoPersonal = New System.Windows.Forms.GroupBox()
+        Me.btnRegister = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
@@ -50,9 +51,12 @@ Partial Class FrmInscription
         Me.rbSelectSupport = New System.Windows.Forms.RadioButton()
         Me.rbSelectAdmin = New System.Windows.Forms.RadioButton()
         Me.gbSelectType = New System.Windows.Forms.GroupBox()
-        Me.btnRegister = New System.Windows.Forms.Button()
+        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
+        Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.gbInfoPersonal.SuspendLayout()
         Me.gbSelectType.SuspendLayout()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -98,6 +102,17 @@ Partial Class FrmInscription
         Me.gbInfoPersonal.TabIndex = 1
         Me.gbInfoPersonal.TabStop = False
         Me.gbInfoPersonal.Text = "Informations personnelles"
+        '
+        'btnRegister
+        '
+        Me.btnRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btnRegister.ForeColor = System.Drawing.Color.Black
+        Me.btnRegister.Location = New System.Drawing.Point(225, 416)
+        Me.btnRegister.Name = "btnRegister"
+        Me.btnRegister.Size = New System.Drawing.Size(128, 32)
+        Me.btnRegister.TabIndex = 7
+        Me.btnRegister.Text = "S'inscrire"
+        Me.btnRegister.UseVisualStyleBackColor = True
         '
         'TextBox8
         '
@@ -306,6 +321,7 @@ Partial Class FrmInscription
         'rbSelectAdmin
         '
         Me.rbSelectAdmin.AutoSize = True
+        Me.rbSelectAdmin.Enabled = False
         Me.rbSelectAdmin.Location = New System.Drawing.Point(50, 80)
         Me.rbSelectAdmin.Name = "rbSelectAdmin"
         Me.rbSelectAdmin.Size = New System.Drawing.Size(117, 21)
@@ -328,23 +344,45 @@ Partial Class FrmInscription
         Me.gbSelectType.TabStop = False
         Me.gbSelectType.Text = "Choix du compte"
         '
-        'btnRegister
+        'BDD_TurbotDataSet
         '
-        Me.btnRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btnRegister.ForeColor = System.Drawing.Color.Black
-        Me.btnRegister.Location = New System.Drawing.Point(225, 416)
-        Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Size = New System.Drawing.Size(128, 32)
-        Me.btnRegister.TabIndex = 7
-        Me.btnRegister.Text = "S'inscrire"
-        Me.btnRegister.UseVisualStyleBackColor = True
+        Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
+        Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'APP_UtilisateurTableAdapter
+        '
+        Me.APP_UtilisateurTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.APP_AdminRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_AdresseRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_AdresseTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CategorieProduitTableAdapter = Nothing
+        Me.TableAdapterManager.APP_ClientRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CommandeTableAdapter = Nothing
+        Me.TableAdapterManager.APP_CommandeUtilisateurTableAdapter = Nothing
+        Me.TableAdapterManager.APP_LigneCommandeTableAdapter = Nothing
+        Me.TableAdapterManager.APP_MessageTableAdapter = Nothing
+        Me.TableAdapterManager.APP_ProduitTableAdapter = Nothing
+        Me.TableAdapterManager.APP_RdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_SupportTicketTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TicketTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TokenTableAdapter = Nothing
+        Me.TableAdapterManager.APP_TypeRdvTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurAdminTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurClientTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurSupportTableAdapter = Nothing
+        Me.TableAdapterManager.APP_UtilisateurTableAdapter = Me.APP_UtilisateurTableAdapter
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'FrmInscription
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(912, 635)
+        Me.ClientSize = New System.Drawing.Size(920, 535)
         Me.ControlBox = False
         Me.Controls.Add(Me.gbSelectType)
         Me.Controls.Add(Me.gbInfoPersonal)
@@ -358,6 +396,7 @@ Partial Class FrmInscription
         Me.gbInfoPersonal.PerformLayout()
         Me.gbSelectType.ResumeLayout(False)
         Me.gbSelectType.PerformLayout()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -391,4 +430,7 @@ Partial Class FrmInscription
     Private WithEvents TextBox7 As TextBox
     Private WithEvents TextBox6 As TextBox
     Private WithEvents TextBox5 As TextBox
+    Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet
+    Friend WithEvents APP_UtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter
+    Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
 End Class
