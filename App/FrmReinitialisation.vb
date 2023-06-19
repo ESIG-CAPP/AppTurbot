@@ -33,7 +33,7 @@ Public Class FrmReinitialisation
                 MsgBox("L'email saisi existe bien !")
                 Dim newPassword As String = "password1234"
                 MsgBox("Nouveau mot de passe : " & newPassword)
-                cmd.CommandText = "INSERT INTO (UtilisateurPassword) VALUES (@newPassword)"
+                cmd.CommandText = "INSERT INTO APP_Utilisateur (UtilisateurPassword) VALUES (@newPassword)"
                 cmd.Parameters.AddWithValue("@newPassword", newPassword)
             Else
 

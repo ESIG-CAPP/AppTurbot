@@ -11,8 +11,8 @@
         lblShowEmail.Text = APP_UtilisateurTableAdapter.rqtGetUserEmail(userID)
         lblNameSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID) & " " & APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
 
-        lblShowName.TextAlign = ContentAlignment.MiddleRight
-        lblShowSurname.TextAlign = ContentAlignment.MiddleRight
+        lblShowName.Text = APP_UtilisateurTableAdapter.rqtGetUserNom(userID)
+        lblShowSurname.Text = APP_UtilisateurTableAdapter.rqtGetUserPrenom(userID)
     End Sub
 
     Private Sub TrUpdateLog_Tick(sender As Object, e As EventArgs) Handles TrUpdateLog.Tick

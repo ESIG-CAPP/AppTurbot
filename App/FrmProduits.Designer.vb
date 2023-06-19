@@ -46,7 +46,6 @@ Partial Class FrmProduits
         Me.APP_ProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_ProduitTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.APP_CategorieProduitTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter()
-        Me.APP_ProduitBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnGoHome = New System.Windows.Forms.Button()
         Me.ApP_LigneCommandeTableAdapter1 = New App.BDD_TurbotDataSetTableAdapters.APP_LigneCommandeTableAdapter()
         CategorieProduitNomLabel = New System.Windows.Forms.Label()
@@ -55,7 +54,6 @@ Partial Class FrmProduits
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_ProduitDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_ProduitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.APP_ProduitBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CategorieProduitNomLabel
@@ -253,11 +251,6 @@ Partial Class FrmProduits
         '
         Me.APP_CategorieProduitTableAdapter.ClearBeforeFill = True
         '
-        'APP_ProduitBindingSource2
-        '
-        Me.APP_ProduitBindingSource2.DataMember = "APP_Produit"
-        Me.APP_ProduitBindingSource2.DataSource = Me.BDD_TurbotDataSet
-        '
         'btnGoHome
         '
         Me.btnGoHome.Location = New System.Drawing.Point(626, 553)
@@ -287,7 +280,6 @@ Partial Class FrmProduits
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_ProduitDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_ProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.APP_ProduitBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -301,7 +293,6 @@ Partial Class FrmProduits
     Friend WithEvents APP_CategorieProduitBindingSource As BindingSource
     Friend WithEvents APP_CategorieProduitTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CategorieProduitTableAdapter
     Friend WithEvents btnAfficherTout As Button
-    Friend WithEvents APP_ProduitBindingSource2 As BindingSource
     Friend WithEvents txtNmbProduits As TextBox
     Friend WithEvents lblNmbProduits As Label
     Friend WithEvents ListBox1 As ListBox

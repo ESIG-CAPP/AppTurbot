@@ -27,6 +27,8 @@ Public Class FrmInscription
                 MsgBox("Accès refusé. Vous ne diposez pas des priviligès nécessaires.", MsgBoxStyle.Exclamation, "Attention !")
             Else
                 rbSelectAdmin.Enabled = True
+                cmd.CommandText = "INSERT INTO APP_Utilisateur (UtilisteurID, et..) VALUES (@UserID, ec...)"
+                cmd.Parameters.AddWithValue("@UserID", APP_UtilisateurTableAdapter.rqtGetUserID(UserID) + 1)
             End If
 
         Catch ex As Exception

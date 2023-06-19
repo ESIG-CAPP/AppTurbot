@@ -182,6 +182,12 @@
     <Compile Include="FrmProduits.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmReinitialisation.Designer.vb">
+      <DependentUpon>FrmReinitialisation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReinitialisation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmSupportAccueil.Designer.vb">
       <DependentUpon>FrmSupportAccueil.vb</DependentUpon>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProduits.resx">
       <DependentUpon>FrmProduits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReinitialisation.resx">
+      <DependentUpon>FrmReinitialisation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupportAccueil.resx">
       <DependentUpon>FrmSupportAccueil.vb</DependentUpon>
