@@ -71,4 +71,6 @@
             MessageBox.Show(NmbProduits & " produits vendus", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
         End If
     End Sub
+
+
 End Class

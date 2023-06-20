@@ -205,3 +205,4 @@ J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmInscription.resources
 J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmReinitialisation.resources
 J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmSupportAccueil.resources
 J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmClientTicket.resources
+\\nasedu01.ge-pedago.etat-ge.ch\USR\__ELV\LOIC.AGST\Documents\AppTurbot\App\obj\Debug\App.FrmClientTicket.resources
