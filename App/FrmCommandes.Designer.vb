@@ -53,6 +53,8 @@ Partial Class FrmCommandes
         Me.APP_CommandeTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.APP_CommandeUtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeUtilisateurTableAdapter()
+        Me.APP_UtilisateurClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.APP_UtilisateurClientTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurClientTableAdapter()
         lblCommandeDateLimitePaiement = New System.Windows.Forms.Label()
         lblCommandeEtat = New System.Windows.Forms.Label()
         lblCommandeDate = New System.Windows.Forms.Label()
@@ -65,6 +67,7 @@ Partial Class FrmCommandes
         CType(Me.APP_CommandeUtilisateurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_CommandeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_UtilisateurClientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblCommandeDateLimitePaiement
@@ -156,7 +159,7 @@ Partial Class FrmCommandes
         Me.GroupBox1.Controls.Add(lblCommandeDateLimitePaiement)
         Me.GroupBox1.Location = New System.Drawing.Point(42, 262)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(607, 256)
+        Me.GroupBox1.Size = New System.Drawing.Size(806, 265)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Créer une commande"
@@ -202,6 +205,7 @@ Partial Class FrmCommandes
         '
         'efCommandeID
         '
+        Me.efCommandeID.Enabled = False
         Me.efCommandeID.Location = New System.Drawing.Point(171, 90)
         Me.efCommandeID.Name = "efCommandeID"
         Me.efCommandeID.Size = New System.Drawing.Size(100, 20)
@@ -314,6 +318,15 @@ Partial Class FrmCommandes
         '
         Me.APP_CommandeUtilisateurTableAdapter.ClearBeforeFill = True
         '
+        'APP_UtilisateurClientBindingSource
+        '
+        Me.APP_UtilisateurClientBindingSource.DataMember = "APP_UtilisateurClient"
+        Me.APP_UtilisateurClientBindingSource.DataSource = Me.BDD_TurbotDataSet
+        '
+        'APP_UtilisateurClientTableAdapter
+        '
+        Me.APP_UtilisateurClientTableAdapter.ClearBeforeFill = True
+        '
         'FrmCommandes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,6 +344,7 @@ Partial Class FrmCommandes
         CType(Me.APP_CommandeUtilisateurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_CommandeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_UtilisateurClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -357,4 +371,6 @@ Partial Class FrmCommandes
     Friend WithEvents efCommandeID As TextBox
     Friend WithEvents lbMoyenPaiement As ListBox
     Friend WithEvents lbEtatCommande As ListBox
+    Friend WithEvents APP_UtilisateurClientBindingSource As BindingSource
+    Friend WithEvents APP_UtilisateurClientTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurClientTableAdapter
 End Class

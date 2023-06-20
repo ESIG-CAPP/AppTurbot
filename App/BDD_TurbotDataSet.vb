@@ -22,9 +22,17 @@
 End Class
 
 Namespace BDD_TurbotDataSetTableAdapters
+    Partial Public Class APP_CommandeTableAdapter
+    End Class
+
     Partial Public Class APP_CommandeUtilisateurTableAdapter
     End Class
 
     Partial Public Class APP_UtilisateurTableAdapter
+    End Class
+End Namespace
+
+Namespace BDD_TurbotDataSetTableAdapters
+    Partial Public Class APP_CommandeUtilisateurTableAdapter
     End Class
 End Namespace

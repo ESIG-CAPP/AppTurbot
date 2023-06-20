@@ -11,10 +11,16 @@ Public Class FrmCommandes
     End Sub
 
     Private Sub FrmCommandes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_UtilisateurClient'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+        Me.APP_UtilisateurClientTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_UtilisateurClient)
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_CommandeUtilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_CommandeUtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_CommandeUtilisateur)
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Commande'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_CommandeTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Commande)
+
+        efCommandeID.Text = APP_CommandeTableAdapter.rqtNmbCommande() + 1
+
+
 
 
     End Sub
@@ -25,9 +31,26 @@ Public Class FrmCommandes
 
     Private Function IsOrderDataValid() As Boolean
         ' Verify that CustomerID is present.  
-        If UtilisateurIDTextBox.Text <> APP_CommandeUtilisateurTableAdapter.rqtcheckUserID(UserID) Then
+        If UtilisateurIDTextBox.Text = "" Then
+            MessageBox.Show("Entrez un client")
+            Return False
+
+        ElseIf APP_UtilisateurClientTableAdapter.rqtUserClientCheck(UtilisateurIDTextBox.Text) = 0 Then
             MessageBox.Show("Entrez un client existant")
             Return False
+
+        ElseIf dtpCommandeDateLimite.Value < dtpCommandeDate.Value Then
+            MessageBox.Show("La date limite ne peut pas être antérieur à la date de commande")
+            Return False
+
+        ElseIf lbEtatCommande.SelectedIndex = -1 Then
+            MessageBox.Show("Selectionnez un état de commande")
+            Return False
+
+        ElseIf lbMoyenPaiement.SelectedIndex = -1 Then
+            MessageBox.Show("Selectionnez un moyen de paiement")
+            Return False
+
         Else
             Return True
         End If
@@ -36,15 +59,9 @@ Public Class FrmCommandes
     Private Sub btnPasserCommande_Click(sender As Object, e As EventArgs) Handles btnPasserCommande.Click
         Try
             If IsOrderDataValid() Then
-                Dim MyCon As New SqlConnection(My.Settings.BDD_TurbotConnectionString)
-                Dim cmd As New SqlCommand()
-                cmd.Connection = MyCon
-                cmd.CommandText = "INSERT INTO APP_CommandeUtilisateur (CommandeID,CommandeDate,CommandeEtat,CommandeMoyenPaiement,CommandeDateLimite) VALUES (@CommandeID,@CommandeDate, @CommandeEtat, @CommandeMoyenPaiement, @CommandeDateLimite)"
-                cmd.Parameters.AddWithValue("@CommandeID", efCommandeID.Text)
-                cmd.Parameters.AddWithValue("@CommandeDate", dtpCommandeDate.Value)
-                cmd.Parameters.AddWithValue("@CommandeEtat", lbEtatCommande.SelectedValue)
-                cmd.Parameters.AddWithValue("@CommandeMoyenPaiement", lbMoyenPaiement.SelectedValue)
-                cmd.Parameters.AddWithValue("@CommandeDateLimite", dtpCommandeDateLimite.Value)
+                APP_CommandeTableAdapter.rqtInsertCommande(efCommandeID.Text, dtpCommandeDate.Value, lbEtatCommande.SelectedValue, lbMoyenPaiement.SelectedValue, dtpCommandeDateLimite.Value)
+                MessageBox.Show("Votre commande a été passée !")
+                ClearForm()
             End If
         Catch ex As Exception
             MsgBox("Update excepted ", MsgBoxStyle.Critical, "Attention !")
@@ -55,7 +72,7 @@ Public Class FrmCommandes
         UtilisateurIDTextBox.Clear()
         dtpCommandeDate.Value = DateTime.Now
         dtpCommandeDateLimite.Value = DateTime.Now
-        efCommandeID.Clear()
+        efCommandeID.Text = APP_CommandeTableAdapter.rqtNmbCommande() + 1
         lbEtatCommande.ClearSelected()
         lbMoyenPaiement.ClearSelected()
     End Sub
