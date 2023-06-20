@@ -64,7 +64,7 @@ Public Class FrmCommandes
                 ClearForm()
             End If
         Catch ex As Exception
-            MsgBox("Update excepted ", MsgBoxStyle.Critical, "Attention !")
+            MsgBox("Erreur " & ex.Message, MsgBoxStyle.Critical, "Attention !")
         End Try
     End Sub
 
@@ -76,4 +76,5 @@ Public Class FrmCommandes
         lbEtatCommande.ClearSelected()
         lbMoyenPaiement.ClearSelected()
     End Sub
+
 End Class
