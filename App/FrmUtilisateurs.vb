@@ -19,14 +19,39 @@ Public Class FrmUtilisateurs
         Me.APP_AdresseTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Adresse)
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
-        efTOTALUtilisateur.Text = APP_UtilisateurDataGridView.Rows.Count
-        efNmbClient.Text = APP_UtilisateurClientDataGridView.Rows.Count
-        efNmbAdmin.Text = APP_UtilisateurAdminDataGridView.Rows.Count
-        efNmbSupport.Text = APP_UtilisateurSupportDataGridView.Rows.Count
 
 
+        tbSumUsers.Text = APP_UtilisateurDataGridView.Rows.Count
+        tbSumClient.Text = APP_UtilisateurClientDataGridView.Rows.Count
+        tbSumAdmin.Text = APP_UtilisateurAdminDataGridView.Rows.Count
+        tbSumSupport.Text = APP_UtilisateurSupportDataGridView.Rows.Count
     End Sub
 
+    Private Sub rbFilterAdmin_CheckedChanged(sender As Object, e As EventArgs) Handles rbFilterAdmin.CheckedChanged
+        rbFilterSupport.Checked = False
+        rbFilterClient.Checked = False
 
+        APP_UtilisateurBindingSource.Filter = "UtilisateurType = 'admin'"
+    End Sub
 
+    Private Sub rbFilterClient_CheckedChanged(sender As Object, e As EventArgs) Handles rbFilterClient.CheckedChanged
+        rbFilterSupport.Checked = False
+        rbFilterAdmin.Checked = False
+
+        APP_UtilisateurBindingSource.Filter = "UtilisateurType = 'client'"
+    End Sub
+
+    Private Sub rbFilterSupport_CheckedChanged(sender As Object, e As EventArgs) Handles rbFilterSupport.CheckedChanged
+        rbFilterAdmin.Checked = False
+        rbFilterClient.Checked = False
+
+        APP_UtilisateurBindingSource.Filter = "UtilisateurType = 'support'"
+    End Sub
+
+    Private Sub btnResetFilter_Click(sender As Object, e As EventArgs) Handles btnResetFilter.Click
+        rbFilterAdmin.Checked = False
+        rbFilterClient.Checked = False
+        rbFilterSupport.Checked = False
+        APP_UtilisateurBindingSource.Filter = ""
+    End Sub
 End Class

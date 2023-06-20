@@ -73,7 +73,7 @@ Partial Class FrmCommandes
         'lblCommandeDateLimitePaiement
         '
         lblCommandeDateLimitePaiement.AutoSize = True
-        lblCommandeDateLimitePaiement.Location = New System.Drawing.Point(25, 221)
+        lblCommandeDateLimitePaiement.Location = New System.Drawing.Point(452, 129)
         lblCommandeDateLimitePaiement.Name = "lblCommandeDateLimitePaiement"
         lblCommandeDateLimitePaiement.Size = New System.Drawing.Size(60, 13)
         lblCommandeDateLimitePaiement.TabIndex = 9
@@ -82,7 +82,7 @@ Partial Class FrmCommandes
         'lblCommandeEtat
         '
         lblCommandeEtat.AutoSize = True
-        lblCommandeEtat.Location = New System.Drawing.Point(25, 165)
+        lblCommandeEtat.Location = New System.Drawing.Point(452, 57)
         lblCommandeEtat.Name = "lblCommandeEtat"
         lblCommandeEtat.Size = New System.Drawing.Size(107, 13)
         lblCommandeEtat.TabIndex = 10
@@ -109,7 +109,7 @@ Partial Class FrmCommandes
         'lblCommandeMethodePaiement
         '
         lblCommandeMethodePaiement.AutoSize = True
-        lblCommandeMethodePaiement.Location = New System.Drawing.Point(25, 196)
+        lblCommandeMethodePaiement.Location = New System.Drawing.Point(452, 90)
         lblCommandeMethodePaiement.Name = "lblCommandeMethodePaiement"
         lblCommandeMethodePaiement.Size = New System.Drawing.Size(101, 13)
         lblCommandeMethodePaiement.TabIndex = 14
@@ -134,7 +134,8 @@ Partial Class FrmCommandes
         '
         'btnaccueil
         '
-        Me.btnaccueil.Location = New System.Drawing.Point(861, 545)
+        Me.btnaccueil.ForeColor = System.Drawing.Color.Black
+        Me.btnaccueil.Location = New System.Drawing.Point(690, 222)
         Me.btnaccueil.Name = "btnaccueil"
         Me.btnaccueil.Size = New System.Drawing.Size(148, 36)
         Me.btnaccueil.TabIndex = 2
@@ -144,6 +145,7 @@ Partial Class FrmCommandes
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(UtilisateurIDLabel)
+        Me.GroupBox1.Controls.Add(Me.btnaccueil)
         Me.GroupBox1.Controls.Add(Me.lbMoyenPaiement)
         Me.GroupBox1.Controls.Add(Me.UtilisateurIDTextBox)
         Me.GroupBox1.Controls.Add(Me.lbEtatCommande)
@@ -157,9 +159,11 @@ Partial Class FrmCommandes
         Me.GroupBox1.Controls.Add(lblCommandeDate)
         Me.GroupBox1.Controls.Add(lblCommandeEtat)
         Me.GroupBox1.Controls.Add(lblCommandeDateLimitePaiement)
-        Me.GroupBox1.Location = New System.Drawing.Point(42, 262)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 232)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(806, 265)
+        Me.GroupBox1.Size = New System.Drawing.Size(844, 265)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Créer une commande"
@@ -168,14 +172,14 @@ Partial Class FrmCommandes
         '
         Me.lbMoyenPaiement.FormattingEnabled = True
         Me.lbMoyenPaiement.Items.AddRange(New Object() {"PayPal", "carte de créedit", "chèque", "virement bancaire"})
-        Me.lbMoyenPaiement.Location = New System.Drawing.Point(171, 196)
+        Me.lbMoyenPaiement.Location = New System.Drawing.Point(618, 91)
         Me.lbMoyenPaiement.Name = "lbMoyenPaiement"
         Me.lbMoyenPaiement.Size = New System.Drawing.Size(200, 17)
         Me.lbMoyenPaiement.TabIndex = 20
         '
         'UtilisateurIDTextBox
         '
-        Me.UtilisateurIDTextBox.Location = New System.Drawing.Point(171, 54)
+        Me.UtilisateurIDTextBox.Location = New System.Drawing.Point(191, 54)
         Me.UtilisateurIDTextBox.Name = "UtilisateurIDTextBox"
         Me.UtilisateurIDTextBox.Size = New System.Drawing.Size(100, 20)
         Me.UtilisateurIDTextBox.TabIndex = 1
@@ -184,21 +188,21 @@ Partial Class FrmCommandes
         '
         Me.lbEtatCommande.FormattingEnabled = True
         Me.lbEtatCommande.Items.AddRange(New Object() {"terminée", "en attente", "en cours de traitement"})
-        Me.lbEtatCommande.Location = New System.Drawing.Point(171, 165)
+        Me.lbEtatCommande.Location = New System.Drawing.Point(618, 58)
         Me.lbEtatCommande.Name = "lbEtatCommande"
         Me.lbEtatCommande.Size = New System.Drawing.Size(200, 17)
         Me.lbEtatCommande.TabIndex = 5
         '
         'dtpCommandeDateLimite
         '
-        Me.dtpCommandeDateLimite.Location = New System.Drawing.Point(171, 221)
+        Me.dtpCommandeDateLimite.Location = New System.Drawing.Point(618, 124)
         Me.dtpCommandeDateLimite.Name = "dtpCommandeDateLimite"
         Me.dtpCommandeDateLimite.Size = New System.Drawing.Size(200, 20)
         Me.dtpCommandeDateLimite.TabIndex = 19
         '
         'dtpCommandeDate
         '
-        Me.dtpCommandeDate.Location = New System.Drawing.Point(171, 123)
+        Me.dtpCommandeDate.Location = New System.Drawing.Point(191, 124)
         Me.dtpCommandeDate.Name = "dtpCommandeDate"
         Me.dtpCommandeDate.Size = New System.Drawing.Size(200, 20)
         Me.dtpCommandeDate.TabIndex = 16
@@ -206,16 +210,17 @@ Partial Class FrmCommandes
         'efCommandeID
         '
         Me.efCommandeID.Enabled = False
-        Me.efCommandeID.Location = New System.Drawing.Point(171, 90)
+        Me.efCommandeID.Location = New System.Drawing.Point(191, 89)
         Me.efCommandeID.Name = "efCommandeID"
         Me.efCommandeID.Size = New System.Drawing.Size(100, 20)
         Me.efCommandeID.TabIndex = 15
         '
         'btnPasserCommande
         '
-        Me.btnPasserCommande.Location = New System.Drawing.Point(472, 222)
+        Me.btnPasserCommande.ForeColor = System.Drawing.Color.Black
+        Me.btnPasserCommande.Location = New System.Drawing.Point(6, 222)
         Me.btnPasserCommande.Name = "btnPasserCommande"
-        Me.btnPasserCommande.Size = New System.Drawing.Size(123, 23)
+        Me.btnPasserCommande.Size = New System.Drawing.Size(220, 37)
         Me.btnPasserCommande.TabIndex = 14
         Me.btnPasserCommande.Text = "Passer une commande"
         Me.btnPasserCommande.UseVisualStyleBackColor = True
@@ -223,13 +228,15 @@ Partial Class FrmCommandes
         'APP_CommandeDataGridView
         '
         Me.APP_CommandeDataGridView.AllowUserToAddRows = False
+        Me.APP_CommandeDataGridView.AllowUserToDeleteRows = False
         Me.APP_CommandeDataGridView.AutoGenerateColumns = False
         Me.APP_CommandeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.APP_CommandeDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UtilisateurID, Me.CommandeID, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.APP_CommandeDataGridView.DataSource = Me.APP_CommandeBindingSource
-        Me.APP_CommandeDataGridView.Location = New System.Drawing.Point(103, 25)
+        Me.APP_CommandeDataGridView.Location = New System.Drawing.Point(12, 12)
         Me.APP_CommandeDataGridView.Name = "APP_CommandeDataGridView"
-        Me.APP_CommandeDataGridView.Size = New System.Drawing.Size(651, 197)
+        Me.APP_CommandeDataGridView.ReadOnly = True
+        Me.APP_CommandeDataGridView.Size = New System.Drawing.Size(844, 197)
         Me.APP_CommandeDataGridView.TabIndex = 3
         '
         'APP_CommandeBindingSource
@@ -291,50 +298,61 @@ Partial Class FrmCommandes
         'UtilisateurID
         '
         Me.UtilisateurID.DataPropertyName = "UtilisateurID"
-        Me.UtilisateurID.HeaderText = "UtilisateurID"
+        Me.UtilisateurID.HeaderText = "N° Utilisateur"
         Me.UtilisateurID.Name = "UtilisateurID"
+        Me.UtilisateurID.ReadOnly = True
         '
         'CommandeID
         '
         Me.CommandeID.DataPropertyName = "CommandeID"
-        Me.CommandeID.HeaderText = "CommandeID"
+        Me.CommandeID.HeaderText = "N° Commande"
         Me.CommandeID.Name = "CommandeID"
+        Me.CommandeID.ReadOnly = True
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "CommandeDate"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "CommandeDate"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Date de la commande"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 150
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "CommandeEtat"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "CommandeEtat"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "État de la commande"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 150
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "CommandeMethodePaiement"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "CommandeMethodePaiement"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Méthode de paiement"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 150
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "CommandeDateLimitePaiement"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "CommandeDateLimitePaiement"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Date limite de paiement"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 150
         '
         'FrmCommandes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1049, 615)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(873, 516)
+        Me.ControlBox = False
         Me.Controls.Add(Me.APP_CommandeDataGridView)
-        Me.Controls.Add(Me.btnaccueil)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmCommandes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmCommandes"
+        Me.Text = "Liste des commandes"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.APP_CommandeDataGridView, System.ComponentModel.ISupportInitialize).EndInit()

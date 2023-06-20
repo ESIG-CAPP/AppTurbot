@@ -122,7 +122,7 @@ Partial Class FrmGestionTicket
         '
         'btnRevenirAccueil
         '
-        Me.btnRevenirAccueil.Location = New System.Drawing.Point(546, 334)
+        Me.btnRevenirAccueil.Location = New System.Drawing.Point(419, 334)
         Me.btnRevenirAccueil.Name = "btnRevenirAccueil"
         Me.btnRevenirAccueil.Size = New System.Drawing.Size(138, 38)
         Me.btnRevenirAccueil.TabIndex = 5
@@ -133,7 +133,8 @@ Partial Class FrmGestionTicket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(740, 384)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(579, 384)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnRevenirAccueil)
         Me.Controls.Add(Me.APP_TicketDataGridView)

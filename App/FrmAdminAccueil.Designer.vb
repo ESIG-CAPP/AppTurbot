@@ -342,6 +342,7 @@ Partial Class FrmAdminAccueil
         Me.Controls.Add(Me.btnLogout)
         Me.Name = "FrmAdminAccueil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Accueil de l'administrateur"
         Me.gbAdmin.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -342,7 +342,7 @@ Partial Class FrmClientAccueil
         Me.Controls.Add(Me.gbClient)
         Me.Name = "FrmClientAccueil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmClientAccueil"
+        Me.Text = "Accueil du client"
         Me.gbClient.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

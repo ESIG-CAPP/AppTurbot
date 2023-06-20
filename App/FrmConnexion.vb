@@ -86,6 +86,7 @@ Public Class FrmConnexion
     End Sub
 
     Private Sub lkResetPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkResetPassword.LinkClicked
-
+        Me.Hide()
+        FrmReinitialisation.Show()
     End Sub
 End Class

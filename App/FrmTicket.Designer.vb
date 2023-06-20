@@ -32,12 +32,10 @@ Partial Class FrmTicket
         Me.APP_UtilisateurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NomPrenom = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.APP_MessageDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_MessageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_UtilisateurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,33 +111,12 @@ Partial Class FrmTicket
         Me.APP_MessageDataGridView.AllowUserToAddRows = False
         Me.APP_MessageDataGridView.AutoGenerateColumns = False
         Me.APP_MessageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.APP_MessageDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NomPrenom, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.APP_MessageDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NomPrenom, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.APP_MessageDataGridView.DataSource = Me.APP_MessageBindingSource
         Me.APP_MessageDataGridView.Location = New System.Drawing.Point(12, 12)
         Me.APP_MessageDataGridView.Name = "APP_MessageDataGridView"
         Me.APP_MessageDataGridView.Size = New System.Drawing.Size(645, 364)
         Me.APP_MessageDataGridView.TabIndex = 3
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "UtilisateurID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "UtilisateurID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "TicketID"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "TicketID"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "MessageID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "MessageID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
         '
         'DataGridViewTextBoxColumn4
         '
@@ -148,33 +125,39 @@ Partial Class FrmTicket
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.Width = 500
         '
-        'DataGridViewTextBoxColumn6
+        'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "PrenomUtilisateur"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Prenom"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Visible = False
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "MessageID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "MessageID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
         '
-        'DataGridViewTextBoxColumn5
+        'DataGridViewTextBoxColumn2
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "NomUtilisateur"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Nom"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Visible = False
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "TicketID"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "TicketID"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "UtilisateurID"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "UtilisateurID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
         'FrmTicket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(786, 467)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(673, 453)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnRevenirAccueil)
         Me.Controls.Add(Me.APP_MessageDataGridView)
         Me.Name = "FrmTicket"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmTicket"
+        Me.Text = "Tickets"
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_MessageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_UtilisateurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

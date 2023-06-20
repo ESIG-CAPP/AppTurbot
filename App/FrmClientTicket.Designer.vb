@@ -84,7 +84,7 @@ Partial Class FrmClientTicket
         Me.APP_TicketDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.APP_TicketDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.APP_TicketDataGridView.DataSource = Me.APP_TicketBindingSource
-        Me.APP_TicketDataGridView.Location = New System.Drawing.Point(57, 21)
+        Me.APP_TicketDataGridView.Location = New System.Drawing.Point(12, 12)
         Me.APP_TicketDataGridView.Name = "APP_TicketDataGridView"
         Me.APP_TicketDataGridView.Size = New System.Drawing.Size(571, 209)
         Me.APP_TicketDataGridView.TabIndex = 1
@@ -121,7 +121,7 @@ Partial Class FrmClientTicket
         '
         'btnRevenirAccueil
         '
-        Me.btnRevenirAccueil.Location = New System.Drawing.Point(634, 386)
+        Me.btnRevenirAccueil.Location = New System.Drawing.Point(458, 258)
         Me.btnRevenirAccueil.Name = "btnRevenirAccueil"
         Me.btnRevenirAccueil.Size = New System.Drawing.Size(125, 41)
         Me.btnRevenirAccueil.TabIndex = 2
@@ -132,11 +132,12 @@ Partial Class FrmClientTicket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(612, 316)
         Me.Controls.Add(Me.btnRevenirAccueil)
         Me.Controls.Add(Me.APP_TicketDataGridView)
         Me.Name = "FrmClientTicket"
-        Me.Text = "FrmClientTicket"
+        Me.Text = "Informations du ticket"
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_TicketBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_TicketDataGridView, System.ComponentModel.ISupportInitialize).EndInit()

@@ -26,28 +26,11 @@
 
     Private Sub btnAfficherTout_Click(sender As Object, e As EventArgs) Handles btnAfficherTout.Click
         APP_ProduitBindingSource.Filter = ""
-        'If btnAfficherTout.Enabled Then
         txtNmbProduits.Text = APP_ProduitDataGridView.Rows.Count
-
-        'End If
     End Sub
-
-    'Private Sub CategorieProduitNomComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategorieProduitNomComboBox.SelectedIndexChanged
-    '    If CategorieProduitNomComboBox.SelectedIndex <> -1 Then
-    '        MessageBox.Show("La catégorie sélectionnée est " & CategorieProduitNomComboBox.SelectedValue)
-    '        'APP_ProduitBindingSource.Filter = "Categorie_nom = '" & CategorieProduitNomComboBox.SelectedValue & "'"
-    '        'txtNmbProduits.Text = APP_ProduitDataGridView.Rows.Count
-    '        APP_ProduitBindingSource.Filter = "Categorie_nom = '" & TextBox1.Text & "'"
-    '        txtNmbProduits.Text = APP_ProduitDataGridView.Rows.Count
-
-    '    End If
-    'End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         If ListBox1.SelectedIndex <> -1 Then
-            'MessageBox.Show("La catégorie sélectionnée est " & ListBox1.SelectedValue)
-            'APP_ProduitBindingSource.Filter = "Categorie_nom = '" & CategorieProduitNomComboBox.SelectedValue & "'"
-            'txtNmbProduits.Text = APP_ProduitDataGridView.Rows.Count
             APP_ProduitBindingSource.Filter = "Categorie_nom = '" & ListBox1.SelectedValue & "'"
             txtNmbProduits.Text = APP_ProduitDataGridView.Rows.Count
 
@@ -63,10 +46,8 @@
         Dim NmbProduits As Integer = ApP_LigneCommandeTableAdapter1.CompterProduit(APP_ProduitDataGridView.Rows(e.RowIndex).Cells(0).Value)
         If NmbProduits <= 0 Then
             MessageBox.Show("Pas encore vendu", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
-
         ElseIf NmbProduits = 1 Then
             MessageBox.Show(NmbProduits & " produit vendu", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
-
         Else
             MessageBox.Show(NmbProduits & " produits vendus", APP_ProduitDataGridView.Rows(e.RowIndex).Cells(4).Value.ToString())
         End If

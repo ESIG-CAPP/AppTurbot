@@ -258,7 +258,7 @@ Partial Class FrmGestionCompte
         '
         Me.btnGoCompte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.btnGoCompte.ForeColor = System.Drawing.Color.Black
-        Me.btnGoCompte.Location = New System.Drawing.Point(975, 423)
+        Me.btnGoCompte.Location = New System.Drawing.Point(978, 280)
         Me.btnGoCompte.Name = "btnGoCompte"
         Me.btnGoCompte.Size = New System.Drawing.Size(182, 35)
         Me.btnGoCompte.TabIndex = 8
@@ -356,7 +356,7 @@ Partial Class FrmGestionCompte
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1169, 470)
+        Me.ClientSize = New System.Drawing.Size(1169, 327)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnGoCompte)
         Me.Controls.Add(Me.gbSettingsPassword)
@@ -364,7 +364,7 @@ Partial Class FrmGestionCompte
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmGestionCompte"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmGestionCompte"
+        Me.Text = "Gestion des informations du compte"
         Me.gbSettingsEmail.ResumeLayout(False)
         Me.gbSettingsEmail.PerformLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()

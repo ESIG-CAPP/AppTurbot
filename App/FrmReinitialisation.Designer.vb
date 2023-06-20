@@ -43,7 +43,7 @@ Partial Class FrmReinitialisation
         Me.gbResetPassword.Controls.Add(Me.lblResetEmailTitle)
         Me.gbResetPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.gbResetPassword.ForeColor = System.Drawing.Color.White
-        Me.gbResetPassword.Location = New System.Drawing.Point(85, 34)
+        Me.gbResetPassword.Location = New System.Drawing.Point(14, 34)
         Me.gbResetPassword.Name = "gbResetPassword"
         Me.gbResetPassword.Size = New System.Drawing.Size(736, 183)
         Me.gbResetPassword.TabIndex = 0
@@ -124,7 +124,7 @@ Partial Class FrmReinitialisation
         '
         'btnQuitter
         '
-        Me.btnQuitter.Location = New System.Drawing.Point(798, 239)
+        Me.btnQuitter.Location = New System.Drawing.Point(665, 239)
         Me.btnQuitter.Name = "btnQuitter"
         Me.btnQuitter.Size = New System.Drawing.Size(85, 33)
         Me.btnQuitter.TabIndex = 1
@@ -136,12 +136,13 @@ Partial Class FrmReinitialisation
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(895, 284)
+        Me.ClientSize = New System.Drawing.Size(774, 284)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnQuitter)
         Me.Controls.Add(Me.gbResetPassword)
         Me.Name = "FrmReinitialisation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmReinitialisation"
+        Me.Text = "Réinitialisation du mot de passe"
         Me.gbResetPassword.ResumeLayout(False)
         Me.gbResetPassword.PerformLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()

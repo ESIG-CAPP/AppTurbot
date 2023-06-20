@@ -3,13 +3,13 @@
 Public Class FrmInscription
     Public Property UserID As Integer
 
-    Public Function FncCheckUserType(userType As String) As Boolean
-        If userType = "admin" Then
-            FrmAdminAccueil.Show()
-        ElseIf userType = "support" Then
-            FrmSupportAccueil.Show()
-        Else
-            FrmClientAccueil.Show()
+    Private Function CheckedTypeUser()
+        If rbSelectAdmin.Checked Then
+            Return "admin"
+        ElseIf rbSelectSupport.Checked Then
+            Return "support"
+        ElseIf rbSelectClient.Checked Then
+            Return "client"
         End If
     End Function
 
@@ -19,25 +19,32 @@ Public Class FrmInscription
         cmd.Connection = MyCon
 
         Try
-            If FncCheckUserType(APP_UtilisateurTableAdapter.rqtGetUserType(UserID)) = "client" Then
-                rbSelectAdmin.Enabled = False
-                MsgBox("Accès refusé. Vous ne diposez pas des priviligès nécessaires.", MsgBoxStyle.Exclamation, "Attention !")
-            ElseIf FncCheckUserType(APP_UtilisateurTableAdapter.rqtGetUserType(UserID)) = "support" Then
-                rbSelectAdmin.Enabled = False
-                MsgBox("Accès refusé. Vous ne diposez pas des priviligès nécessaires.", MsgBoxStyle.Exclamation, "Attention !")
-            Else
-                rbSelectAdmin.Enabled = True
-                cmd.CommandText = "INSERT INTO APP_Utilisateur (UtilisteurID, et..) VALUES (@UserID, ec...)"
-                cmd.Parameters.AddWithValue("@UserID", APP_UtilisateurTableAdapter.rqtGetUserID(UserID) + 1)
-            End If
+            ' Cryptage du mot de passe
+            Dim hashedPassword = BCrypt.HashPassword(efPasswordRegister.Text)
 
+            ' Dim UserID As Integer = APP_UtilisateurTableAdapter.rqtNmbUtilisateur() + 1
+
+            cmd.CommandText = "INSERT INTO APP_Utilisateur (UtilisateurID, UtilisateurNom, UtilisateurPrenom, UtilisateurEmail, UtilisateurSexe, UtilisateurPassword, UtilisateurType)
+                               VALUES (@UtilisateurNom, @UtilisateurPrenom, @UtilisateurEmail, @UtilisateurSexe, @UtilisateurPassword, @UtilisateurType)"
+
+            cmd.Parameters.AddWithValue("@UtilisateurID", UserID)
+            cmd.Parameters.AddWithValue("@UtilisateurNom", efNameRegister.Text)
+            cmd.Parameters.AddWithValue("@UtilisateurPrenom", efSurnameRegister.Text)
+            cmd.Parameters.AddWithValue("@UtilisateurEmail", efEmailRegister.Text)
+            cmd.Parameters.AddWithValue("@UtilisateurSexe", efSexeRegister.Text)
+            cmd.Parameters.AddWithValue("@UtilisateurPassword", hashedPassword)
+            cmd.Parameters.AddWithValue("@UtilisateurType", CheckedTypeUser())
+
+            MyCon.Open()
+            cmd.ExecuteNonQuery()
+            MyCon.Close()
+            MsgBox("L'insription a été effectuée avec succès !", MsgBoxStyle.Information)
         Catch ex As Exception
-
+            MsgBox("Erreur : " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub FrmInscription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
-
     End Sub
 End Class

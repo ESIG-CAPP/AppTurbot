@@ -310,7 +310,7 @@ Partial Class FrmSupportAccueil
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmSupportAccueil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmSupportAccueil"
+        Me.Text = "Accueil du support"
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

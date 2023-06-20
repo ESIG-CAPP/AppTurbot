@@ -116,45 +116,45 @@ Partial Class FrmClients
         AdresseRueULabel.AutoSize = True
         AdresseRueULabel.Location = New System.Drawing.Point(333, 140)
         AdresseRueULabel.Name = "AdresseRueULabel"
-        AdresseRueULabel.Size = New System.Drawing.Size(74, 13)
+        AdresseRueULabel.Size = New System.Drawing.Size(27, 13)
         AdresseRueULabel.TabIndex = 7
-        AdresseRueULabel.Text = "Adresse Rue :"
+        AdresseRueULabel.Text = "Rue"
         '
         'AdresseCPULabel
         '
         AdresseCPULabel.AutoSize = True
         AdresseCPULabel.Location = New System.Drawing.Point(333, 167)
         AdresseCPULabel.Name = "AdresseCPULabel"
-        AdresseCPULabel.Size = New System.Drawing.Size(65, 13)
+        AdresseCPULabel.Size = New System.Drawing.Size(54, 13)
         AdresseCPULabel.TabIndex = 9
-        AdresseCPULabel.Text = "Adresse CP:"
+        AdresseCPULabel.Text = "CP / NPA"
         '
         'AdresseVilleULabel
         '
         AdresseVilleULabel.AutoSize = True
         AdresseVilleULabel.Location = New System.Drawing.Point(334, 213)
         AdresseVilleULabel.Name = "AdresseVilleULabel"
-        AdresseVilleULabel.Size = New System.Drawing.Size(73, 13)
+        AdresseVilleULabel.Size = New System.Drawing.Size(26, 13)
         AdresseVilleULabel.TabIndex = 11
-        AdresseVilleULabel.Text = "Adresse Ville :"
+        AdresseVilleULabel.Text = "Ville"
         '
         'AdressePaysULabel
         '
         AdressePaysULabel.AutoSize = True
         AdressePaysULabel.Location = New System.Drawing.Point(333, 243)
         AdressePaysULabel.Name = "AdressePaysULabel"
-        AdressePaysULabel.Size = New System.Drawing.Size(77, 13)
+        AdressePaysULabel.Size = New System.Drawing.Size(30, 13)
         AdressePaysULabel.TabIndex = 13
-        AdressePaysULabel.Text = "Adresse Pays :"
+        AdressePaysULabel.Text = "Pays"
         '
         'NmbCommandeLabel
         '
         NmbCommandeLabel.AutoSize = True
         NmbCommandeLabel.Location = New System.Drawing.Point(333, 275)
         NmbCommandeLabel.Name = "NmbCommandeLabel"
-        NmbCommandeLabel.Size = New System.Drawing.Size(88, 13)
+        NmbCommandeLabel.Size = New System.Drawing.Size(88, 26)
         NmbCommandeLabel.TabIndex = 15
-        NmbCommandeLabel.Text = "Nmb Commande:"
+        NmbCommandeLabel.Text = "Commandes total" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "effectuées"
         '
         'GroupBox1
         '
@@ -175,6 +175,7 @@ Partial Class FrmClients
         Me.GroupBox1.Controls.Add(UtilisateurNomLabel)
         Me.GroupBox1.Controls.Add(Me.UtilisateurNomTextBox)
         Me.GroupBox1.Controls.Add(Me.APP_UtilisateurListBox)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(29, 46)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(687, 334)
@@ -185,9 +186,9 @@ Partial Class FrmClients
         'NmbCommandeTextBox
         '
         Me.NmbCommandeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "NmbCommande", True))
-        Me.NmbCommandeTextBox.Location = New System.Drawing.Point(432, 272)
+        Me.NmbCommandeTextBox.Location = New System.Drawing.Point(432, 281)
         Me.NmbCommandeTextBox.Name = "NmbCommandeTextBox"
-        Me.NmbCommandeTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NmbCommandeTextBox.Size = New System.Drawing.Size(147, 20)
         Me.NmbCommandeTextBox.TabIndex = 16
         '
         'APP_UtilisateurBindingSource1
@@ -220,41 +221,41 @@ Partial Class FrmClients
         'AdresseCPUTextBox
         '
         Me.AdresseCPUTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "AdresseCPU", True))
-        Me.AdresseCPUTextBox.Location = New System.Drawing.Point(423, 164)
+        Me.AdresseCPUTextBox.Location = New System.Drawing.Point(431, 164)
         Me.AdresseCPUTextBox.Name = "AdresseCPUTextBox"
-        Me.AdresseCPUTextBox.Size = New System.Drawing.Size(177, 20)
+        Me.AdresseCPUTextBox.Size = New System.Drawing.Size(149, 20)
         Me.AdresseCPUTextBox.TabIndex = 10
         '
         'AdresseRueUTextBox
         '
         Me.AdresseRueUTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "AdresseRueU", True))
-        Me.AdresseRueUTextBox.Location = New System.Drawing.Point(423, 133)
+        Me.AdresseRueUTextBox.Location = New System.Drawing.Point(431, 137)
         Me.AdresseRueUTextBox.Name = "AdresseRueUTextBox"
-        Me.AdresseRueUTextBox.Size = New System.Drawing.Size(148, 20)
+        Me.AdresseRueUTextBox.Size = New System.Drawing.Size(149, 20)
         Me.AdresseRueUTextBox.TabIndex = 8
         '
         'UtilisateurEmailTextBox
         '
         Me.UtilisateurEmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "UtilisateurEmail", True))
-        Me.UtilisateurEmailTextBox.Location = New System.Drawing.Point(423, 104)
+        Me.UtilisateurEmailTextBox.Location = New System.Drawing.Point(431, 108)
         Me.UtilisateurEmailTextBox.Name = "UtilisateurEmailTextBox"
-        Me.UtilisateurEmailTextBox.Size = New System.Drawing.Size(148, 20)
+        Me.UtilisateurEmailTextBox.Size = New System.Drawing.Size(149, 20)
         Me.UtilisateurEmailTextBox.TabIndex = 6
         '
         'UtilisateurPrenomTextBox
         '
         Me.UtilisateurPrenomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "UtilisateurPrenom", True))
-        Me.UtilisateurPrenomTextBox.Location = New System.Drawing.Point(423, 64)
+        Me.UtilisateurPrenomTextBox.Location = New System.Drawing.Point(431, 68)
         Me.UtilisateurPrenomTextBox.Name = "UtilisateurPrenomTextBox"
-        Me.UtilisateurPrenomTextBox.Size = New System.Drawing.Size(148, 20)
+        Me.UtilisateurPrenomTextBox.Size = New System.Drawing.Size(149, 20)
         Me.UtilisateurPrenomTextBox.TabIndex = 4
         '
         'UtilisateurNomTextBox
         '
         Me.UtilisateurNomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "UtilisateurNom", True))
-        Me.UtilisateurNomTextBox.Location = New System.Drawing.Point(423, 25)
+        Me.UtilisateurNomTextBox.Location = New System.Drawing.Point(431, 29)
         Me.UtilisateurNomTextBox.Name = "UtilisateurNomTextBox"
-        Me.UtilisateurNomTextBox.Size = New System.Drawing.Size(148, 20)
+        Me.UtilisateurNomTextBox.Size = New System.Drawing.Size(149, 20)
         Me.UtilisateurNomTextBox.TabIndex = 2
         '
         'APP_UtilisateurListBox
@@ -270,7 +271,7 @@ Partial Class FrmClients
         '
         'btnFermer
         '
-        Me.btnFermer.Location = New System.Drawing.Point(624, 402)
+        Me.btnFermer.Location = New System.Drawing.Point(585, 400)
         Me.btnFermer.Name = "btnFermer"
         Me.btnFermer.Size = New System.Drawing.Size(131, 32)
         Me.btnFermer.TabIndex = 1
@@ -319,7 +320,7 @@ Partial Class FrmClients
         Me.APP_UtilisateurBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.APP_UtilisateurBindingNavigator.Name = "APP_UtilisateurBindingNavigator"
         Me.APP_UtilisateurBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.APP_UtilisateurBindingNavigator.Size = New System.Drawing.Size(800, 25)
+        Me.APP_UtilisateurBindingNavigator.Size = New System.Drawing.Size(738, 25)
         Me.APP_UtilisateurBindingNavigator.TabIndex = 2
         Me.APP_UtilisateurBindingNavigator.Text = "BindingNavigator1"
         '
@@ -375,7 +376,6 @@ Partial Class FrmClients
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -448,7 +448,8 @@ Partial Class FrmClients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 470)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(738, 448)
         Me.Controls.Add(Me.APP_UtilisateurBindingNavigator)
         Me.Controls.Add(Me.btnFermer)
         Me.Controls.Add(Me.GroupBox1)

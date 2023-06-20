@@ -32,14 +32,11 @@ Partial Class FrmInscription
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.efConfirmationRegister = New System.Windows.Forms.TextBox()
         Me.efPasswordRegister = New System.Windows.Forms.TextBox()
         Me.efSexeRegister = New System.Windows.Forms.TextBox()
         Me.efTelRegister = New System.Windows.Forms.TextBox()
         Me.efEmailRegister = New System.Windows.Forms.TextBox()
         Me.efSurnameRegister = New System.Windows.Forms.TextBox()
-        Me.lblConfirmationPasswordTitle = New System.Windows.Forms.Label()
         Me.lblPasswordTitle = New System.Windows.Forms.Label()
         Me.lblSexTitle = New System.Windows.Forms.Label()
         Me.lblTelTitle = New System.Windows.Forms.Label()
@@ -79,14 +76,11 @@ Partial Class FrmInscription
         Me.gbInfoPersonal.Controls.Add(Me.TextBox5)
         Me.gbInfoPersonal.Controls.Add(Me.TextBox3)
         Me.gbInfoPersonal.Controls.Add(Me.TextBox2)
-        Me.gbInfoPersonal.Controls.Add(Me.TextBox1)
-        Me.gbInfoPersonal.Controls.Add(Me.efConfirmationRegister)
         Me.gbInfoPersonal.Controls.Add(Me.efPasswordRegister)
         Me.gbInfoPersonal.Controls.Add(Me.efSexeRegister)
         Me.gbInfoPersonal.Controls.Add(Me.efTelRegister)
         Me.gbInfoPersonal.Controls.Add(Me.efEmailRegister)
         Me.gbInfoPersonal.Controls.Add(Me.efSurnameRegister)
-        Me.gbInfoPersonal.Controls.Add(Me.lblConfirmationPasswordTitle)
         Me.gbInfoPersonal.Controls.Add(Me.lblPasswordTitle)
         Me.gbInfoPersonal.Controls.Add(Me.lblSexTitle)
         Me.gbInfoPersonal.Controls.Add(Me.lblTelTitle)
@@ -116,6 +110,7 @@ Partial Class FrmInscription
         '
         'TextBox8
         '
+        Me.TextBox8.ForeColor = System.Drawing.Color.White
         Me.TextBox8.Location = New System.Drawing.Point(318, 46)
         Me.TextBox8.Multiline = True
         Me.TextBox8.Name = "TextBox8"
@@ -124,6 +119,7 @@ Partial Class FrmInscription
         '
         'TextBox7
         '
+        Me.TextBox7.ForeColor = System.Drawing.Color.White
         Me.TextBox7.Location = New System.Drawing.Point(318, 72)
         Me.TextBox7.Multiline = True
         Me.TextBox7.Name = "TextBox7"
@@ -132,6 +128,7 @@ Partial Class FrmInscription
         '
         'TextBox6
         '
+        Me.TextBox6.ForeColor = System.Drawing.Color.White
         Me.TextBox6.Location = New System.Drawing.Point(318, 137)
         Me.TextBox6.Multiline = True
         Me.TextBox6.Name = "TextBox6"
@@ -140,6 +137,7 @@ Partial Class FrmInscription
         '
         'TextBox5
         '
+        Me.TextBox5.ForeColor = System.Drawing.Color.White
         Me.TextBox5.Location = New System.Drawing.Point(318, 166)
         Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
@@ -148,6 +146,7 @@ Partial Class FrmInscription
         '
         'TextBox3
         '
+        Me.TextBox3.ForeColor = System.Drawing.Color.White
         Me.TextBox3.Location = New System.Drawing.Point(318, 245)
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
@@ -156,33 +155,18 @@ Partial Class FrmInscription
         '
         'TextBox2
         '
+        Me.TextBox2.ForeColor = System.Drawing.Color.White
         Me.TextBox2.Location = New System.Drawing.Point(318, 192)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(232, 1)
         Me.TextBox2.TabIndex = 16
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(318, 276)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(232, 1)
-        Me.TextBox1.TabIndex = 14
-        '
-        'efConfirmationRegister
-        '
-        Me.efConfirmationRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.efConfirmationRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.efConfirmationRegister.Location = New System.Drawing.Point(318, 256)
-        Me.efConfirmationRegister.Name = "efConfirmationRegister"
-        Me.efConfirmationRegister.Size = New System.Drawing.Size(232, 17)
-        Me.efConfirmationRegister.TabIndex = 13
-        '
         'efPasswordRegister
         '
         Me.efPasswordRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.efPasswordRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efPasswordRegister.ForeColor = System.Drawing.Color.White
         Me.efPasswordRegister.Location = New System.Drawing.Point(318, 226)
         Me.efPasswordRegister.Name = "efPasswordRegister"
         Me.efPasswordRegister.Size = New System.Drawing.Size(232, 17)
@@ -192,6 +176,7 @@ Partial Class FrmInscription
         '
         Me.efSexeRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.efSexeRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efSexeRegister.ForeColor = System.Drawing.Color.White
         Me.efSexeRegister.Location = New System.Drawing.Point(318, 174)
         Me.efSexeRegister.Name = "efSexeRegister"
         Me.efSexeRegister.Size = New System.Drawing.Size(232, 17)
@@ -201,6 +186,7 @@ Partial Class FrmInscription
         '
         Me.efTelRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.efTelRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efTelRegister.ForeColor = System.Drawing.Color.White
         Me.efTelRegister.Location = New System.Drawing.Point(318, 147)
         Me.efTelRegister.Name = "efTelRegister"
         Me.efTelRegister.Size = New System.Drawing.Size(232, 17)
@@ -210,6 +196,7 @@ Partial Class FrmInscription
         '
         Me.efEmailRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.efEmailRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efEmailRegister.ForeColor = System.Drawing.Color.White
         Me.efEmailRegister.Location = New System.Drawing.Point(318, 118)
         Me.efEmailRegister.Name = "efEmailRegister"
         Me.efEmailRegister.Size = New System.Drawing.Size(232, 17)
@@ -219,19 +206,11 @@ Partial Class FrmInscription
         '
         Me.efSurnameRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.efSurnameRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efSurnameRegister.ForeColor = System.Drawing.Color.White
         Me.efSurnameRegister.Location = New System.Drawing.Point(318, 53)
         Me.efSurnameRegister.Name = "efSurnameRegister"
         Me.efSurnameRegister.Size = New System.Drawing.Size(232, 17)
         Me.efSurnameRegister.TabIndex = 8
-        '
-        'lblConfirmationPasswordTitle
-        '
-        Me.lblConfirmationPasswordTitle.AutoSize = True
-        Me.lblConfirmationPasswordTitle.Location = New System.Drawing.Point(24, 260)
-        Me.lblConfirmationPasswordTitle.Name = "lblConfirmationPasswordTitle"
-        Me.lblConfirmationPasswordTitle.Size = New System.Drawing.Size(207, 18)
-        Me.lblConfirmationPasswordTitle.TabIndex = 7
-        Me.lblConfirmationPasswordTitle.Text = "Confirmation du mot de passe"
         '
         'lblPasswordTitle
         '
@@ -273,6 +252,7 @@ Partial Class FrmInscription
         '
         Me.efNameRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.efNameRegister.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.efNameRegister.ForeColor = System.Drawing.Color.White
         Me.efNameRegister.Location = New System.Drawing.Point(318, 27)
         Me.efNameRegister.Name = "efNameRegister"
         Me.efNameRegister.Size = New System.Drawing.Size(232, 17)
@@ -321,7 +301,6 @@ Partial Class FrmInscription
         'rbSelectAdmin
         '
         Me.rbSelectAdmin.AutoSize = True
-        Me.rbSelectAdmin.Enabled = False
         Me.rbSelectAdmin.Location = New System.Drawing.Point(50, 80)
         Me.rbSelectAdmin.Name = "rbSelectAdmin"
         Me.rbSelectAdmin.Size = New System.Drawing.Size(117, 21)
@@ -337,7 +316,7 @@ Partial Class FrmInscription
         Me.gbSelectType.Controls.Add(Me.rbSelectClient)
         Me.gbSelectType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.gbSelectType.ForeColor = System.Drawing.Color.White
-        Me.gbSelectType.Location = New System.Drawing.Point(76, 199)
+        Me.gbSelectType.Location = New System.Drawing.Point(95, 189)
         Me.gbSelectType.Name = "gbSelectType"
         Me.gbSelectType.Size = New System.Drawing.Size(190, 119)
         Me.gbSelectType.TabIndex = 6
@@ -391,7 +370,7 @@ Partial Class FrmInscription
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmInscription"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Inscription"
+        Me.Text = "Inscription d'un nouveau compte"
         Me.gbInfoPersonal.ResumeLayout(False)
         Me.gbInfoPersonal.PerformLayout()
         Me.gbSelectType.ResumeLayout(False)
@@ -416,15 +395,12 @@ Partial Class FrmInscription
     Friend WithEvents lblTelTitle As Label
     Friend WithEvents lblEmailTitle As Label
     Friend WithEvents efNameRegister As TextBox
-    Friend WithEvents efConfirmationRegister As TextBox
     Friend WithEvents efPasswordRegister As TextBox
     Friend WithEvents efSexeRegister As TextBox
     Friend WithEvents efTelRegister As TextBox
     Friend WithEvents efEmailRegister As TextBox
     Friend WithEvents efSurnameRegister As TextBox
-    Friend WithEvents lblConfirmationPasswordTitle As Label
     Private WithEvents TextBox2 As TextBox
-    Private WithEvents TextBox1 As TextBox
     Private WithEvents TextBox3 As TextBox
     Private WithEvents TextBox8 As TextBox
     Private WithEvents TextBox7 As TextBox

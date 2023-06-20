@@ -59,32 +59,34 @@ Partial Class FrmProduits
         'CategorieProduitNomLabel
         '
         CategorieProduitNomLabel.AutoSize = True
-        CategorieProduitNomLabel.Location = New System.Drawing.Point(16, 43)
+        CategorieProduitNomLabel.Location = New System.Drawing.Point(9, 38)
         CategorieProduitNomLabel.Name = "CategorieProduitNomLabel"
-        CategorieProduitNomLabel.Size = New System.Drawing.Size(116, 13)
+        CategorieProduitNomLabel.Size = New System.Drawing.Size(101, 13)
         CategorieProduitNomLabel.TabIndex = 1
-        CategorieProduitNomLabel.Text = "Categorie Produit Nom:"
+        CategorieProduitNomLabel.Text = "Liste des catégories"
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnGoHome)
         Me.GroupBox1.Controls.Add(Me.ListBox1)
         Me.GroupBox1.Controls.Add(Me.txtNmbProduits)
         Me.GroupBox1.Controls.Add(Me.lblNmbProduits)
         Me.GroupBox1.Controls.Add(CategorieProduitNomLabel)
         Me.GroupBox1.Controls.Add(Me.btnAfficherTout)
-        Me.GroupBox1.Location = New System.Drawing.Point(28, 284)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 284)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(535, 292)
+        Me.GroupBox1.Size = New System.Drawing.Size(645, 292)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Choix de la catégorie du produit (filtrage)"
+        Me.GroupBox1.Text = "Informations des produits"
         '
         'ListBox1
         '
         Me.ListBox1.DataSource = Me.APP_CategorieProduitBindingSource
         Me.ListBox1.DisplayMember = "CategorieProduitNom"
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(138, 38)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 64)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(146, 147)
         Me.ListBox1.TabIndex = 5
@@ -102,7 +104,7 @@ Partial Class FrmProduits
         '
         'txtNmbProduits
         '
-        Me.txtNmbProduits.Location = New System.Drawing.Point(138, 245)
+        Me.txtNmbProduits.Location = New System.Drawing.Point(262, 64)
         Me.txtNmbProduits.Name = "txtNmbProduits"
         Me.txtNmbProduits.Size = New System.Drawing.Size(146, 20)
         Me.txtNmbProduits.TabIndex = 4
@@ -110,7 +112,7 @@ Partial Class FrmProduits
         'lblNmbProduits
         '
         Me.lblNmbProduits.AutoSize = True
-        Me.lblNmbProduits.Location = New System.Drawing.Point(6, 252)
+        Me.lblNmbProduits.Location = New System.Drawing.Point(259, 38)
         Me.lblNmbProduits.Name = "lblNmbProduits"
         Me.lblNmbProduits.Size = New System.Drawing.Size(108, 13)
         Me.lblNmbProduits.TabIndex = 3
@@ -118,9 +120,10 @@ Partial Class FrmProduits
         '
         'btnAfficherTout
         '
-        Me.btnAfficherTout.Location = New System.Drawing.Point(371, 243)
+        Me.btnAfficherTout.ForeColor = System.Drawing.Color.Black
+        Me.btnAfficherTout.Location = New System.Drawing.Point(262, 107)
         Me.btnAfficherTout.Name = "btnAfficherTout"
-        Me.btnAfficherTout.Size = New System.Drawing.Size(115, 23)
+        Me.btnAfficherTout.Size = New System.Drawing.Size(146, 23)
         Me.btnAfficherTout.TabIndex = 0
         Me.btnAfficherTout.Text = "Afficher tout"
         Me.btnAfficherTout.UseVisualStyleBackColor = True
@@ -136,7 +139,7 @@ Partial Class FrmProduits
         Me.APP_ProduitDataGridView.Location = New System.Drawing.Point(12, 12)
         Me.APP_ProduitDataGridView.Name = "APP_ProduitDataGridView"
         Me.APP_ProduitDataGridView.ReadOnly = True
-        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(711, 230)
+        Me.APP_ProduitDataGridView.Size = New System.Drawing.Size(645, 230)
         Me.APP_ProduitDataGridView.TabIndex = 2
         '
         'ProduitIDDataGridViewTextBoxColumn
@@ -253,7 +256,8 @@ Partial Class FrmProduits
         '
         'btnGoHome
         '
-        Me.btnGoHome.Location = New System.Drawing.Point(620, 536)
+        Me.btnGoHome.ForeColor = System.Drawing.Color.Black
+        Me.btnGoHome.Location = New System.Drawing.Point(499, 246)
         Me.btnGoHome.Name = "btnGoHome"
         Me.btnGoHome.Size = New System.Drawing.Size(140, 40)
         Me.btnGoHome.TabIndex = 3
@@ -268,12 +272,14 @@ Partial Class FrmProduits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(795, 588)
-        Me.Controls.Add(Me.btnGoHome)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(673, 588)
+        Me.ControlBox = False
         Me.Controls.Add(Me.APP_ProduitDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmProduits"
-        Me.Text = "FrmProduits"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Liste des produits"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.APP_CategorieProduitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

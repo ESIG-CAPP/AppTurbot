@@ -23,32 +23,47 @@ Public Class FrmReinitialisation
     End Function
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        Dim checkefMail As String = APP_UtilisateurTableAdapter.rqtCheckIfUserExist(efEmail.Text)
         Dim MyCon As New SqlConnection(My.Settings.BDD_TurbotConnectionString)
         Dim cmd As New SqlCommand()
         cmd.Connection = MyCon
 
         Try
-            If checkefMail = True Then
-                MsgBox("L'email saisi existe bien !")
+            Dim usersExist As Double
+            If Double.TryParse(APP_UtilisateurTableAdapter.rqtCheckIfUserExist(efEmail.Text), usersExist) Then
+                MsgBox("Mail correct !")
                 Dim newPassword As String = "password1234"
-                MsgBox("Nouveau mot de passe : " & newPassword)
-                cmd.CommandText = "INSERT INTO APP_Utilisateur (UtilisateurPassword) VALUES (@newPassword)"
-                cmd.Parameters.AddWithValue("@newPassword", newPassword)
-            Else
 
-                MsgBox("L'email saisi n'existe pas !")
+                ' Cryptage du nouveau mot de passe
+                Dim hashedPassword As String = BCrypt.HashPassword(newPassword)
+
+                ' Mise à jour du mot de passe dans la base de données avec une commande UPDATE
+                cmd.CommandText = "UPDATE APP_Utilisateur SET UtilisateurPassword = @newPassword WHERE UtilisateurEmail = @currentEmail"
+                cmd.Parameters.AddWithValue("@newPassword", hashedPassword)
+                cmd.Parameters.AddWithValue("@currentEmail", efEmail.Text)
+
+                ' Ouverture de la connexion
+                MyCon.Open()
+
+                ' Exécuter la commande pour mettre à jour la base de données
+                cmd.ExecuteNonQuery()
+
+                ' Fermeture de la connexion
+                MyCon.Close()
+
+                MsgBox("Le mot de passe a été réinitialisé avec succès.")
+            Else
+                MsgBox("Mail erroné ! Veuillez saisir un mail correct")
                 efEmail.Text = ""
                 efEmail.Select()
-
             End If
         Catch ex As Exception
-            MsgBox("Update excepted ", MsgBoxStyle.Critical, "Attention !")
+            MsgBox("Une erreur s'est produite lors de la réinitialisation du mot de passe : " & ex.Message, MsgBoxStyle.Critical, "Attention !")
         End Try
 
     End Sub
 
     Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click
-        Application.Exit()
+        Me.Hide()
+        FrmConnexion.Show()
     End Sub
 End Class
