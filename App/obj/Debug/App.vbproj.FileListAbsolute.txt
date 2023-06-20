@@ -193,3 +193,15 @@ J:\Github\AppTurbot\App\obj\Debug\App.FrmReinitialisation.resources
 J:\Github\AppTurbot\App\obj\Debug\App.FrmSupportAccueil.resources
 J:\Github\AppTurbot\App\obj\Debug\App.FrmTicket.resources
 J:\Github\AppTurbot\App\obj\Debug\App.FrmUtilisateurs.resources
+J:\Documents\CAPP\AppTurbot\App\bin\Debug\System.IO.Pipelines.dll
+J:\Documents\CAPP\AppTurbot\App\bin\Debug\System.Memory.dll
+J:\Documents\CAPP\AppTurbot\App\bin\Debug\System.Buffers.dll
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.exe.config
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmAdminAccueil.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmClientAccueil.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmGestionCompte.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmGestionTicket.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmInscription.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmReinitialisation.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmSupportAccueil.resources
+J:\Documents\CAPP\AppTurbot\App\obj\Debug\App.FrmClientTicket.resources

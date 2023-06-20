@@ -30,12 +30,13 @@ Partial Class FrmClients
         Dim AdresseCPULabel As System.Windows.Forms.Label
         Dim AdresseVilleULabel As System.Windows.Forms.Label
         Dim AdressePaysULabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmClients))
         Dim NmbCommandeLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmClients))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.AdressePaysUTextBox = New System.Windows.Forms.TextBox()
+        Me.NmbCommandeTextBox = New System.Windows.Forms.TextBox()
         Me.APP_UtilisateurBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.AdressePaysUTextBox = New System.Windows.Forms.TextBox()
         Me.AdresseVilleUTextBox = New System.Windows.Forms.TextBox()
         Me.AdresseCPUTextBox = New System.Windows.Forms.TextBox()
         Me.AdresseRueUTextBox = New System.Windows.Forms.TextBox()
@@ -65,7 +66,6 @@ Partial Class FrmClients
         Me.APP_CommandeUtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeUtilisateurTableAdapter()
         Me.APP_CommandeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_CommandeTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeTableAdapter()
-        Me.NmbCommandeTextBox = New System.Windows.Forms.TextBox()
         UtilisateurNomLabel = New System.Windows.Forms.Label()
         UtilisateurPrenomLabel = New System.Windows.Forms.Label()
         UtilisateurEmailLabel = New System.Windows.Forms.Label()
@@ -147,6 +147,15 @@ Partial Class FrmClients
         AdressePaysULabel.TabIndex = 13
         AdressePaysULabel.Text = "Adresse Pays :"
         '
+        'NmbCommandeLabel
+        '
+        NmbCommandeLabel.AutoSize = True
+        NmbCommandeLabel.Location = New System.Drawing.Point(333, 275)
+        NmbCommandeLabel.Name = "NmbCommandeLabel"
+        NmbCommandeLabel.Size = New System.Drawing.Size(88, 13)
+        NmbCommandeLabel.TabIndex = 15
+        NmbCommandeLabel.Text = "Nmb Commande:"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(NmbCommandeLabel)
@@ -173,13 +182,13 @@ Partial Class FrmClients
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Clients"
         '
-        'AdressePaysUTextBox
+        'NmbCommandeTextBox
         '
-        Me.AdressePaysUTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "AdressePaysU", True))
-        Me.AdressePaysUTextBox.Location = New System.Drawing.Point(432, 240)
-        Me.AdressePaysUTextBox.Name = "AdressePaysUTextBox"
-        Me.AdressePaysUTextBox.Size = New System.Drawing.Size(148, 20)
-        Me.AdressePaysUTextBox.TabIndex = 14
+        Me.NmbCommandeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "NmbCommande", True))
+        Me.NmbCommandeTextBox.Location = New System.Drawing.Point(432, 272)
+        Me.NmbCommandeTextBox.Name = "NmbCommandeTextBox"
+        Me.NmbCommandeTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NmbCommandeTextBox.TabIndex = 16
         '
         'APP_UtilisateurBindingSource1
         '
@@ -191,6 +200,14 @@ Partial Class FrmClients
         '
         Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
         Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AdressePaysUTextBox
+        '
+        Me.AdressePaysUTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "AdressePaysU", True))
+        Me.AdressePaysUTextBox.Location = New System.Drawing.Point(432, 240)
+        Me.AdressePaysUTextBox.Name = "AdressePaysUTextBox"
+        Me.AdressePaysUTextBox.Size = New System.Drawing.Size(148, 20)
+        Me.AdressePaysUTextBox.TabIndex = 14
         '
         'AdresseVilleUTextBox
         '
@@ -257,7 +274,7 @@ Partial Class FrmClients
         Me.btnFermer.Name = "btnFermer"
         Me.btnFermer.Size = New System.Drawing.Size(131, 32)
         Me.btnFermer.TabIndex = 1
-        Me.btnFermer.Text = "Fermer"
+        Me.btnFermer.Text = "Revenir à l'accueil"
         Me.btnFermer.UseVisualStyleBackColor = True
         '
         'APP_UtilisateurTableAdapter
@@ -426,23 +443,6 @@ Partial Class FrmClients
         'APP_CommandeTableAdapter
         '
         Me.APP_CommandeTableAdapter.ClearBeforeFill = True
-        '
-        'NmbCommandeLabel
-        '
-        NmbCommandeLabel.AutoSize = True
-        NmbCommandeLabel.Location = New System.Drawing.Point(333, 275)
-        NmbCommandeLabel.Name = "NmbCommandeLabel"
-        NmbCommandeLabel.Size = New System.Drawing.Size(88, 13)
-        NmbCommandeLabel.TabIndex = 15
-        NmbCommandeLabel.Text = "Nmb Commande:"
-        '
-        'NmbCommandeTextBox
-        '
-        Me.NmbCommandeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.APP_UtilisateurBindingSource1, "NmbCommande", True))
-        Me.NmbCommandeTextBox.Location = New System.Drawing.Point(432, 272)
-        Me.NmbCommandeTextBox.Name = "NmbCommandeTextBox"
-        Me.NmbCommandeTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.NmbCommandeTextBox.TabIndex = 16
         '
         'FrmClients
         '

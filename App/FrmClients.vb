@@ -1,6 +1,6 @@
 ﻿Public Class FrmClients
     Private Sub btnFermer_Click(sender As Object, e As EventArgs) Handles btnFermer.Click
-        Dispose()
+        FrmClientAccueil.Show()
     End Sub
 
     Private Sub APP_UtilisateurBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles APP_UtilisateurBindingNavigatorSaveItem.Click

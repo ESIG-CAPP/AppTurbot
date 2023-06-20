@@ -1,4 +1,9 @@
 ﻿Partial Class BDD_TurbotDataSet
+    Partial Public Class APP_MessageDataTable
+
+
+    End Class
+
     Partial Public Class APP_CommandeUtilisateurDataTable
         Private Sub APP_CommandeUtilisateurDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
 

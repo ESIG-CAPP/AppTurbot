@@ -253,9 +253,9 @@ Partial Class FrmProduits
         '
         'btnGoHome
         '
-        Me.btnGoHome.Location = New System.Drawing.Point(626, 553)
+        Me.btnGoHome.Location = New System.Drawing.Point(620, 536)
         Me.btnGoHome.Name = "btnGoHome"
-        Me.btnGoHome.Size = New System.Drawing.Size(134, 23)
+        Me.btnGoHome.Size = New System.Drawing.Size(140, 40)
         Me.btnGoHome.TabIndex = 3
         Me.btnGoHome.Text = "Revenir à l'accueil"
         Me.btnGoHome.UseVisualStyleBackColor = True

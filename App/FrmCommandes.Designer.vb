@@ -40,21 +40,21 @@ Partial Class FrmCommandes
         Me.dtpCommandeDate = New System.Windows.Forms.DateTimePicker()
         Me.efCommandeID = New System.Windows.Forms.TextBox()
         Me.btnPasserCommande = New System.Windows.Forms.Button()
-        Me.APP_CommandeUtilisateurDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.APP_CommandeUtilisateurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.APP_CommandeDataGridView = New System.Windows.Forms.DataGridView()
         Me.APP_CommandeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
+        Me.APP_CommandeUtilisateurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_CommandeTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.APP_CommandeUtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_CommandeUtilisateurTableAdapter()
         Me.APP_UtilisateurClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APP_UtilisateurClientTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurClientTableAdapter()
+        Me.UtilisateurID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CommandeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         lblCommandeDateLimitePaiement = New System.Windows.Forms.Label()
         lblCommandeEtat = New System.Windows.Forms.Label()
         lblCommandeDate = New System.Windows.Forms.Label()
@@ -63,10 +63,10 @@ Partial Class FrmCommandes
         UtilisateurIDLabel = New System.Windows.Forms.Label()
         CommandeIDLabel1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.APP_CommandeUtilisateurDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.APP_CommandeUtilisateurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_CommandeDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_CommandeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.APP_CommandeUtilisateurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_UtilisateurClientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -220,71 +220,32 @@ Partial Class FrmCommandes
         Me.btnPasserCommande.Text = "Passer une commande"
         Me.btnPasserCommande.UseVisualStyleBackColor = True
         '
-        'APP_CommandeUtilisateurDataGridView
+        'APP_CommandeDataGridView
         '
-        Me.APP_CommandeUtilisateurDataGridView.AutoGenerateColumns = False
-        Me.APP_CommandeUtilisateurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.APP_CommandeUtilisateurDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.APP_CommandeUtilisateurDataGridView.DataSource = Me.APP_CommandeUtilisateurBindingSource
-        Me.APP_CommandeUtilisateurDataGridView.Location = New System.Drawing.Point(217, 12)
-        Me.APP_CommandeUtilisateurDataGridView.Name = "APP_CommandeUtilisateurDataGridView"
-        Me.APP_CommandeUtilisateurDataGridView.Size = New System.Drawing.Size(648, 190)
-        Me.APP_CommandeUtilisateurDataGridView.TabIndex = 4
+        Me.APP_CommandeDataGridView.AllowUserToAddRows = False
+        Me.APP_CommandeDataGridView.AutoGenerateColumns = False
+        Me.APP_CommandeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.APP_CommandeDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UtilisateurID, Me.CommandeID, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.APP_CommandeDataGridView.DataSource = Me.APP_CommandeBindingSource
+        Me.APP_CommandeDataGridView.Location = New System.Drawing.Point(103, 25)
+        Me.APP_CommandeDataGridView.Name = "APP_CommandeDataGridView"
+        Me.APP_CommandeDataGridView.Size = New System.Drawing.Size(651, 197)
+        Me.APP_CommandeDataGridView.TabIndex = 3
         '
-        'DataGridViewTextBoxColumn1
+        'APP_CommandeBindingSource
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "UtilisateurID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "UtilisateurID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CommandeID"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "CommandeID"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CommandeDate"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "CommandeDate"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "CommandeEtat"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "CommandeEtat"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "CommandeMoyenPaiement"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "CommandeMoyenPaiement"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "CommandeDateLimite"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "CommandeDateLimite"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'APP_CommandeUtilisateurBindingSource
-        '
-        Me.APP_CommandeUtilisateurBindingSource.DataMember = "APP_CommandeUtilisateur"
-        Me.APP_CommandeUtilisateurBindingSource.DataSource = Me.BDD_TurbotDataSet
+        Me.APP_CommandeBindingSource.DataMember = "APP_Commande"
+        Me.APP_CommandeBindingSource.DataSource = Me.BDD_TurbotDataSet
         '
         'BDD_TurbotDataSet
         '
         Me.BDD_TurbotDataSet.DataSetName = "BDD_TurbotDataSet"
         Me.BDD_TurbotDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'APP_CommandeBindingSource
+        'APP_CommandeUtilisateurBindingSource
         '
-        Me.APP_CommandeBindingSource.DataMember = "APP_Commande"
-        Me.APP_CommandeBindingSource.DataSource = Me.BDD_TurbotDataSet
+        Me.APP_CommandeUtilisateurBindingSource.DataMember = "APP_CommandeUtilisateur"
+        Me.APP_CommandeUtilisateurBindingSource.DataSource = Me.BDD_TurbotDataSet
         '
         'APP_CommandeTableAdapter
         '
@@ -327,12 +288,48 @@ Partial Class FrmCommandes
         '
         Me.APP_UtilisateurClientTableAdapter.ClearBeforeFill = True
         '
+        'UtilisateurID
+        '
+        Me.UtilisateurID.DataPropertyName = "UtilisateurID"
+        Me.UtilisateurID.HeaderText = "UtilisateurID"
+        Me.UtilisateurID.Name = "UtilisateurID"
+        '
+        'CommandeID
+        '
+        Me.CommandeID.DataPropertyName = "CommandeID"
+        Me.CommandeID.HeaderText = "CommandeID"
+        Me.CommandeID.Name = "CommandeID"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CommandeDate"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "CommandeDate"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "CommandeEtat"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CommandeEtat"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "CommandeMethodePaiement"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "CommandeMethodePaiement"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "CommandeDateLimitePaiement"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "CommandeDateLimitePaiement"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
         'FrmCommandes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1049, 615)
-        Me.Controls.Add(Me.APP_CommandeUtilisateurDataGridView)
+        Me.Controls.Add(Me.APP_CommandeDataGridView)
         Me.Controls.Add(Me.btnaccueil)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmCommandes"
@@ -340,16 +337,15 @@ Partial Class FrmCommandes
         Me.Text = "FrmCommandes"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.APP_CommandeUtilisateurDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.APP_CommandeUtilisateurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_CommandeDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_CommandeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.APP_CommandeUtilisateurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.APP_UtilisateurClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet
-    Friend WithEvents APP_CommandeBindingSource As BindingSource
     Friend WithEvents APP_CommandeTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CommandeTableAdapter
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
@@ -359,13 +355,6 @@ Partial Class FrmCommandes
     Friend WithEvents APP_CommandeUtilisateurBindingSource As BindingSource
     Friend WithEvents APP_CommandeUtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_CommandeUtilisateurTableAdapter
     Friend WithEvents UtilisateurIDTextBox As TextBox
-    Friend WithEvents APP_CommandeUtilisateurDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents dtpCommandeDateLimite As DateTimePicker
     Friend WithEvents dtpCommandeDate As DateTimePicker
     Friend WithEvents efCommandeID As TextBox
@@ -373,4 +362,12 @@ Partial Class FrmCommandes
     Friend WithEvents lbEtatCommande As ListBox
     Friend WithEvents APP_UtilisateurClientBindingSource As BindingSource
     Friend WithEvents APP_UtilisateurClientTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurClientTableAdapter
+    Friend WithEvents APP_CommandeBindingSource As BindingSource
+    Friend WithEvents APP_CommandeDataGridView As DataGridView
+    Friend WithEvents UtilisateurID As DataGridViewTextBoxColumn
+    Friend WithEvents CommandeID As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
 End Class

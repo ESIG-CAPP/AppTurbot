@@ -20,13 +20,13 @@ Public Class FrmCommandes
 
         efCommandeID.Text = APP_CommandeTableAdapter.rqtNmbCommande() + 1
 
-
+        InsertUserID()
 
 
     End Sub
 
     Private Sub btnaccueil_Click(sender As Object, e As EventArgs) Handles btnaccueil.Click
-        FrmAdminAccueil.Dispose()
+        FrmAdminAccueil.Show()
     End Sub
 
     Private Function IsOrderDataValid() As Boolean
@@ -39,7 +39,7 @@ Public Class FrmCommandes
             MessageBox.Show("Entrez un client existant")
             Return False
 
-        ElseIf dtpCommandeDateLimite.Value < dtpCommandeDate.Value Then
+        ElseIf dtpCommandeDateLimite.Value <= dtpCommandeDate.Value Then
             MessageBox.Show("La date limite ne peut pas être antérieur à la date de commande")
             Return False
 
@@ -59,7 +59,8 @@ Public Class FrmCommandes
     Private Sub btnPasserCommande_Click(sender As Object, e As EventArgs) Handles btnPasserCommande.Click
         Try
             If IsOrderDataValid() Then
-                APP_CommandeTableAdapter.rqtInsertCommande(efCommandeID.Text, dtpCommandeDate.Value, lbEtatCommande.SelectedValue, lbMoyenPaiement.SelectedValue, dtpCommandeDateLimite.Value)
+                APP_CommandeTableAdapter.rqtInsertCommande(efCommandeID.Text, dtpCommandeDate.Value, lbEtatCommande.SelectedItem, lbMoyenPaiement.SelectedItem, dtpCommandeDateLimite.Value)
+                APP_CommandeUtilisateurTableAdapter.rqtAddCommandeUtilisateur(UtilisateurIDTextBox.Text, efCommandeID.Text)
                 MessageBox.Show("Votre commande a été passée !")
                 ClearForm()
             End If
@@ -75,6 +76,15 @@ Public Class FrmCommandes
         efCommandeID.Text = APP_CommandeTableAdapter.rqtNmbCommande() + 1
         lbEtatCommande.ClearSelected()
         lbMoyenPaiement.ClearSelected()
+    End Sub
+
+    Private Sub InsertUserID()
+        For Each ligne As DataGridViewRow In APP_CommandeDataGridView.Rows
+            Dim celluleUtilisateurID As DataGridViewCell = ligne.Cells("UtilisateurID")
+            Dim celluleCommandeID As DataGridViewCell = ligne.Cells("CommandeID")
+            Dim commandeID As Integer = Convert.ToInt32(celluleCommandeID.Value)
+            celluleUtilisateurID.Value = APP_CommandeUtilisateurTableAdapter.rqtGetUtilisateurID(commandeID)
+        Next
     End Sub
 
 End Class

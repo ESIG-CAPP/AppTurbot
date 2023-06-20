@@ -41,10 +41,6 @@ Public Class FrmConnexion
                 If CheckPassword Then
                     UserID = APP_UtilisateurTableAdapter.rqtGetUserID(efEmail.Text)
 
-                    ' Création d'une instance sur FrmAccueil permettant de récupérer les données et de les insérer dans le formulaire
-                    Dim FrmAccueil As New FrmAccueil()
-                    FrmAccueil.UserID = UserID
-
                     ' Variable permettant de stocker la date actuelle
                     Dim dateDuJour As Date = Date.Now
                     ' Affichage dans le fichier "logs.txt" l'activité de connexion de l'utilisateur

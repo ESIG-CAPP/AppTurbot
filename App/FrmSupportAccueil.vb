@@ -47,4 +47,8 @@
         FrmConnexion.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnManageTickets_Click(sender As Object, e As EventArgs) Handles btnManageTickets.Click
+        FrmGestionTicket.Show()
+    End Sub
 End Class
