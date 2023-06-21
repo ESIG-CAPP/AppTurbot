@@ -24,8 +24,6 @@ Partial Class FrmClientAccueil
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gbClient = New System.Windows.Forms.GroupBox()
-        Me.btnCompte = New System.Windows.Forms.Button()
-        Me.btnCommandes = New System.Windows.Forms.Button()
         Me.btnTickets = New System.Windows.Forms.Button()
         Me.lblNameSurname = New System.Windows.Forms.Label()
         Me.lblBienvenue = New System.Windows.Forms.Label()
@@ -41,7 +39,6 @@ Partial Class FrmClientAccueil
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnModifyDelete = New System.Windows.Forms.Button()
         Me.btnModifyPassword = New System.Windows.Forms.Button()
         Me.btnModifyEmail = New System.Windows.Forms.Button()
         Me.TrUpdateLog = New System.Windows.Forms.Timer(Me.components)
@@ -55,8 +52,6 @@ Partial Class FrmClientAccueil
         'gbClient
         '
         Me.gbClient.BackColor = System.Drawing.Color.Transparent
-        Me.gbClient.Controls.Add(Me.btnCompte)
-        Me.gbClient.Controls.Add(Me.btnCommandes)
         Me.gbClient.Controls.Add(Me.btnTickets)
         Me.gbClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.gbClient.ForeColor = System.Drawing.Color.White
@@ -67,39 +62,13 @@ Partial Class FrmClientAccueil
         Me.gbClient.TabStop = False
         Me.gbClient.Text = "Espace client"
         '
-        'btnCompte
-        '
-        Me.btnCompte.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCompte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnCompte.ForeColor = System.Drawing.Color.Black
-        Me.btnCompte.Location = New System.Drawing.Point(7, 20)
-        Me.btnCompte.Name = "btnCompte"
-        Me.btnCompte.Size = New System.Drawing.Size(252, 45)
-        Me.btnCompte.TabIndex = 0
-        Me.btnCompte.Text = "Voir mon compte"
-        Me.btnCompte.UseVisualStyleBackColor = True
-        '
-        'btnCommandes
-        '
-        Me.btnCommandes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCommandes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnCommandes.ForeColor = System.Drawing.Color.Black
-        Me.btnCommandes.Location = New System.Drawing.Point(7, 71)
-        Me.btnCommandes.Name = "btnCommandes"
-        Me.btnCommandes.Size = New System.Drawing.Size(252, 45)
-        Me.btnCommandes.TabIndex = 1
-        Me.btnCommandes.Text = "Voir mes commandes"
-        Me.btnCommandes.UseVisualStyleBackColor = True
-        '
         'btnTickets
         '
         Me.btnTickets.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnTickets.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.btnTickets.ForeColor = System.Drawing.Color.Black
-        Me.btnTickets.Location = New System.Drawing.Point(7, 122)
+        Me.btnTickets.Location = New System.Drawing.Point(7, 22)
         Me.btnTickets.Name = "btnTickets"
         Me.btnTickets.Size = New System.Drawing.Size(252, 45)
         Me.btnTickets.TabIndex = 2
@@ -261,7 +230,6 @@ Partial Class FrmClientAccueil
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btnModifyDelete)
         Me.GroupBox2.Controls.Add(Me.btnModifyPassword)
         Me.GroupBox2.Controls.Add(Me.btnModifyEmail)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -272,19 +240,6 @@ Partial Class FrmClientAccueil
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Paramètres du compte"
-        '
-        'btnModifyDelete
-        '
-        Me.btnModifyDelete.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModifyDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnModifyDelete.ForeColor = System.Drawing.Color.Black
-        Me.btnModifyDelete.Location = New System.Drawing.Point(10, 122)
-        Me.btnModifyDelete.Name = "btnModifyDelete"
-        Me.btnModifyDelete.Size = New System.Drawing.Size(249, 45)
-        Me.btnModifyDelete.TabIndex = 8
-        Me.btnModifyDelete.Text = "Supprimer mon compte"
-        Me.btnModifyDelete.UseVisualStyleBackColor = True
         '
         'btnModifyPassword
         '
@@ -354,8 +309,6 @@ Partial Class FrmClientAccueil
     End Sub
 
     Friend WithEvents gbClient As GroupBox
-    Friend WithEvents btnCompte As Button
-    Friend WithEvents btnCommandes As Button
     Friend WithEvents btnTickets As Button
     Friend WithEvents lblNameSurname As Label
     Friend WithEvents lblBienvenue As Label
@@ -371,7 +324,6 @@ Partial Class FrmClientAccueil
     Friend WithEvents APP_UtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents btnModifyDelete As Button
     Friend WithEvents btnModifyPassword As Button
     Friend WithEvents btnModifyEmail As Button
     Friend WithEvents TrUpdateLog As Timer

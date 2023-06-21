@@ -36,8 +36,9 @@
         FrmGestionCompte.gbSettingsPassword.Visible = True
         FrmGestionCompte.gbSettingsPassword.Enabled = True
     End Sub
-    Private Sub btnModifyDelete_Click(sender As Object, e As EventArgs) Handles btnModifyDelete.Click
-
+    Private Sub btnModifyDelete_Click(sender As Object, e As EventArgs)
+        Me.Hide()
+        FrmGestionCompte.Show()
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
@@ -51,5 +52,19 @@
 
     Private Sub btnTickets_Click(sender As Object, e As EventArgs) Handles btnTickets.Click
         FrmClientTicket.Show()
+    End Sub
+
+    Private Sub btnModifyEmail_Click_1(sender As Object, e As EventArgs) Handles btnModifyEmail.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
+    End Sub
+
+    Private Sub btnModifyPassword_Click_1(sender As Object, e As EventArgs) Handles btnModifyPassword.Click
+        Me.Hide()
+        FrmGestionCompte.Show()
+    End Sub
+
+    Private Sub btnCommandes_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

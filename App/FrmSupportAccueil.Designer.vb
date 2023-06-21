@@ -39,7 +39,6 @@ Partial Class FrmSupportAccueil
         Me.gbSupport = New System.Windows.Forms.GroupBox()
         Me.btnManageTickets = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnModifyDelete = New System.Windows.Forms.Button()
         Me.btnModifyPassword = New System.Windows.Forms.Button()
         Me.btnModifyEmail = New System.Windows.Forms.Button()
         Me.TrUpdateLog = New System.Windows.Forms.Timer(Me.components)
@@ -229,7 +228,6 @@ Partial Class FrmSupportAccueil
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btnModifyDelete)
         Me.GroupBox2.Controls.Add(Me.btnModifyPassword)
         Me.GroupBox2.Controls.Add(Me.btnModifyEmail)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -240,19 +238,6 @@ Partial Class FrmSupportAccueil
         Me.GroupBox2.TabIndex = 32
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Paramètres du compte"
-        '
-        'btnModifyDelete
-        '
-        Me.btnModifyDelete.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModifyDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnModifyDelete.ForeColor = System.Drawing.Color.Black
-        Me.btnModifyDelete.Location = New System.Drawing.Point(10, 122)
-        Me.btnModifyDelete.Name = "btnModifyDelete"
-        Me.btnModifyDelete.Size = New System.Drawing.Size(249, 45)
-        Me.btnModifyDelete.TabIndex = 8
-        Me.btnModifyDelete.Text = "Supprimer mon compte"
-        Me.btnModifyDelete.UseVisualStyleBackColor = True
         '
         'btnModifyPassword
         '
@@ -336,7 +321,6 @@ Partial Class FrmSupportAccueil
     Friend WithEvents gbSupport As GroupBox
     Friend WithEvents btnManageTickets As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents btnModifyDelete As Button
     Friend WithEvents btnModifyPassword As Button
     Friend WithEvents btnModifyEmail As Button
     Friend WithEvents TrUpdateLog As Timer

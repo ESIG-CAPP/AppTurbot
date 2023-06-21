@@ -20,6 +20,7 @@
     End Sub
 
     Private Sub btnRevenirAccueil_Click(sender As Object, e As EventArgs) Handles btnRevenirAccueil.Click
+        Me.Hide()
         FrmClientAccueil.Show()
     End Sub
 End Class

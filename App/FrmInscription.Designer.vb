@@ -51,6 +51,7 @@ Partial Class FrmInscription
         Me.BDD_TurbotDataSet = New App.BDD_TurbotDataSet()
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
+        Me.cancel = New System.Windows.Forms.Button()
         Me.gbInfoPersonal.SuspendLayout()
         Me.gbSelectType.SuspendLayout()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +70,7 @@ Partial Class FrmInscription
         '
         'gbInfoPersonal
         '
+        Me.gbInfoPersonal.Controls.Add(Me.cancel)
         Me.gbInfoPersonal.Controls.Add(Me.btnRegister)
         Me.gbInfoPersonal.Controls.Add(Me.TextBox8)
         Me.gbInfoPersonal.Controls.Add(Me.TextBox7)
@@ -101,7 +103,7 @@ Partial Class FrmInscription
         '
         Me.btnRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnRegister.ForeColor = System.Drawing.Color.Black
-        Me.btnRegister.Location = New System.Drawing.Point(225, 416)
+        Me.btnRegister.Location = New System.Drawing.Point(309, 416)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(128, 32)
         Me.btnRegister.TabIndex = 7
@@ -356,6 +358,17 @@ Partial Class FrmInscription
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = App.BDD_TurbotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'cancel
+        '
+        Me.cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.cancel.ForeColor = System.Drawing.Color.Black
+        Me.cancel.Location = New System.Drawing.Point(175, 416)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(128, 32)
+        Me.cancel.TabIndex = 24
+        Me.cancel.Text = "Annuler"
+        Me.cancel.UseVisualStyleBackColor = True
+        '
         'FrmInscription
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -409,4 +422,5 @@ Partial Class FrmInscription
     Friend WithEvents BDD_TurbotDataSet As BDD_TurbotDataSet
     Friend WithEvents APP_UtilisateurTableAdapter As BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter
     Friend WithEvents TableAdapterManager As BDD_TurbotDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents cancel As Button
 End Class

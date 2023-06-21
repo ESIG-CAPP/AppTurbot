@@ -54,4 +54,9 @@ Public Class FrmUtilisateurs
         rbFilterSupport.Checked = False
         APP_UtilisateurBindingSource.Filter = ""
     End Sub
+
+    Private Sub btnRevenirAccueil_Click(sender As Object, e As EventArgs) Handles btnRevenirAccueil.Click
+        Me.Hide()
+        FrmAdminAccueil.Show()
+    End Sub
 End Class

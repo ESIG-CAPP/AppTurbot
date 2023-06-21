@@ -23,6 +23,6 @@
     End Sub
 
     Private Sub btnRevenirAccueil_Click(sender As Object, e As EventArgs) Handles btnRevenirAccueil.Click
-        Me.Close()
+        Me.Dispose()
     End Sub
 End Class

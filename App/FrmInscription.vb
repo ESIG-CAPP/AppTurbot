@@ -47,4 +47,13 @@ Public Class FrmInscription
         'TODO: cette ligne de code charge les données dans la table 'BDD_TurbotDataSet.APP_Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.APP_UtilisateurTableAdapter.Fill(Me.BDD_TurbotDataSet.APP_Utilisateur)
     End Sub
+
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        Me.Hide()
+        FrmConnexion.Show()
+    End Sub
+
+    Private Sub gbInfoPersonal_Enter(sender As Object, e As EventArgs) Handles gbInfoPersonal.Enter
+
+    End Sub
 End Class

@@ -42,7 +42,6 @@ Partial Class FrmAdminAccueil
         Me.APP_UtilisateurTableAdapter = New App.BDD_TurbotDataSetTableAdapters.APP_UtilisateurTableAdapter()
         Me.TableAdapterManager = New App.BDD_TurbotDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnModifyPassword = New System.Windows.Forms.Button()
         Me.btnModifyEmail = New System.Windows.Forms.Button()
         Me.lblTime = New System.Windows.Forms.Label()
@@ -264,7 +263,6 @@ Partial Class FrmAdminAccueil
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btnDelete)
         Me.GroupBox2.Controls.Add(Me.btnModifyPassword)
         Me.GroupBox2.Controls.Add(Me.btnModifyEmail)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -275,19 +273,6 @@ Partial Class FrmAdminAccueil
         Me.GroupBox2.TabIndex = 33
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Paramètres du compte"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnDelete.ForeColor = System.Drawing.Color.Black
-        Me.btnDelete.Location = New System.Drawing.Point(10, 122)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(249, 45)
-        Me.btnDelete.TabIndex = 8
-        Me.btnDelete.Text = "Supprimer mon compte"
-        Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnModifyPassword
         '
@@ -386,7 +371,6 @@ Partial Class FrmAdminAccueil
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents APP_UtilisateurBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents btnDelete As Button
     Friend WithEvents btnModifyPassword As Button
     Friend WithEvents btnModifyEmail As Button
     Friend WithEvents lblTime As Label

@@ -74,6 +74,7 @@ Partial Class FrmUtilisateurs
         Me.rbFilterClient = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnResetFilter = New System.Windows.Forms.Button()
+        Me.btnRevenirAccueil = New System.Windows.Forms.Button()
         CType(Me.APP_UtilisateurDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.APP_UtilisateurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BDD_TurbotDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -522,13 +523,23 @@ Partial Class FrmUtilisateurs
         Me.btnResetFilter.Text = "Réinitialiser le filtre"
         Me.btnResetFilter.UseVisualStyleBackColor = True
         '
+        'btnRevenirAccueil
+        '
+        Me.btnRevenirAccueil.Location = New System.Drawing.Point(1019, 492)
+        Me.btnRevenirAccueil.Name = "btnRevenirAccueil"
+        Me.btnRevenirAccueil.Size = New System.Drawing.Size(138, 38)
+        Me.btnRevenirAccueil.TabIndex = 28
+        Me.btnRevenirAccueil.Text = "Revenir à l'accueil"
+        Me.btnRevenirAccueil.UseVisualStyleBackColor = True
+        '
         'FrmUtilisateurs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1179, 479)
+        Me.ClientSize = New System.Drawing.Size(1179, 542)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnRevenirAccueil)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.APP_UtilisateurDataGridView)
@@ -608,4 +619,5 @@ Partial Class FrmUtilisateurs
     Friend WithEvents rbFilterClient As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnResetFilter As Button
+    Friend WithEvents btnRevenirAccueil As Button
 End Class

@@ -26,6 +26,7 @@ Public Class FrmCommandes
     End Sub
 
     Private Sub btnaccueil_Click(sender As Object, e As EventArgs) Handles btnaccueil.Click
+        Me.Hide()
         FrmAdminAccueil.Show()
     End Sub
 

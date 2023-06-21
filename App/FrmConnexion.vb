@@ -82,7 +82,7 @@ Public Class FrmConnexion
 
     Private Sub lkNewClient_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkNewClient.LinkClicked
         Me.Hide()
-        FrmReinitialisation.Show()
+        FrmInscription.Show()
     End Sub
 
     Private Sub lkResetPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkResetPassword.LinkClicked
